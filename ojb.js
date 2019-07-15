@@ -5,7 +5,7 @@ const Obj = {
     details:[
     {
         title: 'Cashier Updates',
-        detail:'fgdjfghkdfjhgkdjhgkjdfhgkjdfgh',
+        detail:'Ruqyay Alzayer ',
     },
     {
         name: 'Precurements Updats',
