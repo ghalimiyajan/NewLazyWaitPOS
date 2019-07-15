@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList } from 'react-native';
-import Obj from './ojb'
+import Obj from './ojb';
 
 
 const { width } = Dimensions.get('screen');
@@ -27,7 +27,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View style={styles.ViewStyle}>
+        <View style={styles.ViewStyle}>
           <TextInput style={styles.InputStyle} placeholder='Enter value'></TextInput>
         </View>
         <View style={styles.ViewStyle}>
@@ -36,21 +36,10 @@ export default class App extends React.Component {
 
           </NameHolder>
           <Button onPress={() => { this.changeName(123) }} title="Change your name"></Button>
-          {Obj.map((item, index) => (
-            <Text key={index}>{item.name}</Text>
+          {Obj.details.map((item, index) => (
+            <Text key={index}>{item.title}</Text>
           ))}
-        </View> */}
-{/* 
-        <FlatList
-          data={Obj}
-          renderItem={({item}) => (
-            <Text key={index}>{item.name}</Text>
-          )}
-        /> */}
-
-          {Obj.map((item, index) => (
-            <Text key={index}>{item.name}</Text>
-          ))}
+        </View>
       </View>
     )
   };
