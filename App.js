@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Icon } from 'expo';
 // import MainNavigator from './mainNavigator'
@@ -56,13 +56,15 @@ export default class App extends React.Component {
           {/* leftside */}
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <View style={{ flex: 0.2, alignItems:"flex-end"}}>
-              <TouchableHighlight style={{ zIndex: 3 }}>
+              <TouchableOpacity 
+              // onPress={() => }
+              style={{ zIndex: 3 }}>
                 <View style={{ backgroundColor: '#E6E6E6', borderRadius: 50 / 2, height: 50, width: 50, justifyContent: 'center', alignItems: 'center', }}>
 
                   <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} color={'#707070'} />
 
                 </View>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View
               style={styles.Shadow}>
