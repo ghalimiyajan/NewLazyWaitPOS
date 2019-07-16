@@ -9,7 +9,7 @@ const Obj = {
         detail:'Ruqyay Alzayer ',
     },
     {
-        name: 'Precurements Updats',
+        title: 'Precurements Updats',
         detail:'fsdfsdfdsfdsfsdjkfhsdjhfksdjhfksdjhfkdsfs',
 
     },
