@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView } from 'react-native';
 // import MainNavigator from './mainNavigator'
 import noticeBoard from './ojb';
-
+import Dictionary from './dictionary';
 
 const { width } = Dimensions.get('screen');
 // export default function App() {
@@ -13,7 +13,7 @@ const { width } = Dimensions.get('screen');
 //   );
 // }
 
-
+let lan = 'en';
 export default class App extends React.Component {
   state = {
     name: 'ghali',
@@ -67,7 +67,40 @@ export default class App extends React.Component {
 
           </View>
           <View style={{ flex: 1 }}>
+            <View style={styles.container}>
+              <View style={styles.ViewStyle}>
+                <TextInput style={styles.InputStyle} placeholder='Enter value'></TextInput>
+              </View>
 
+              <View style={styles.ViewStyle}>
+
+                <View style={styles.ViewStyle}>
+                  <Text>{Dictionary.ADD_PIN_CODE[lan]}</Text>
+                  <TextInput style={styles.InputStyle} placeholder='Enter value'></TextInput>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>1</Text>
+                    <Text style={styles.LoginNumber}>2</Text>
+                    <Text style={styles.LoginNumber}>3</Text>
+                  </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>4</Text>
+                    <Text style={styles.LoginNumber}>5</Text>
+                    <Text style={styles.LoginNumber}>6</Text>
+                  </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>7</Text>
+                    <Text style={styles.LoginNumber}>8</Text>
+                    <Text style={styles.LoginNumber}>9</Text>
+                  </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>Icon</Text>
+                    <Text style={styles.LoginNumber}>0</Text>
+                    <Text style={styles.LoginNumber}>C</Text>
+                  </View>
+                </View>
+
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -75,10 +108,6 @@ export default class App extends React.Component {
   };
 
 }
-
-
-
-
 
 const styles = StyleSheet.create({
   Shadow: {
