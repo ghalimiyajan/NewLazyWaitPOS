@@ -1,6 +1,7 @@
 const Obj = {
     title:'Last update',
-    dateTime:'10:00',
+    day:'5',
+    Month:'December',
     VERSIONnUMBER:'V4.2.2',
     details:[
     {
