@@ -118,9 +118,8 @@ export default class App extends React.Component {
       </View>
     )
   };
-
 }
-
+ 
 const styles = StyleSheet.create({
   Shadow: {
     shadowColor: "#000",
@@ -136,6 +135,22 @@ const styles = StyleSheet.create({
     width: wp('35%'),
     borderRadius: 16,
     flex: 0.8
-  }
+  },
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  },
+  InputStyle: {
+    backgroundColor: 'red',
+    color: 'white',
+    borderColor: 'black',
+    borderRadius: 15,
+    width: width / 2
+  },
+  ViewStyle: {
+    flex: 1,
+  },
 
 });
