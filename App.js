@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableHighlight } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { Icon } from 'expo';
 // import MainNavigator from './mainNavigator'
 import noticeBoard from './ojb';
 import Dictionary from './dictionary';
@@ -49,23 +51,33 @@ export default class App extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ backgroundColor: '#3FAEA3', height: "100%", width: "100%", transform: [{ rotate: '43deg' }], borderRadius: 100, position: "absolute", zIndex: 1, right: '50%' }} />
-        <View style={{ flex: 1, flexDirection: 'row', zIndex: 2 }}>
 
+        <View style={{ flex: 1, flexDirection: 'row', zIndex: 2 }}>
+          {/* leftside */}
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <ScrollView horizontal
-            style={styles.Shadow}>
+            <View style={{ flex: 0.2, alignItems:"flex-end"}}>
+              <TouchableHighlight style={{ zIndex: 3 }}>
+                <View style={{ backgroundColor: '#E6E6E6', borderRadius: 50 / 2, height: 50, width: 50, justifyContent: 'center', alignItems: 'center', }}>
+
+                  <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} color={'#707070'} />
+
+                </View>
+              </TouchableHighlight>
+            </View>
+            <View
+              style={styles.Shadow}>
 
               <FlatList
                 horizontal
-                scrollEnabled= {false}
                 data={noticeBoard.details}
                 renderItem={({ item }) => this._renderItem(item)}
                 keyExtractor={(item, index) => index.toString()}
               />
-            </ScrollView>
+            </View>
 
 
           </View>
+          {/* rightside */}
           <View style={{ flex: 1 }}>
             <View style={styles.container}>
               <View style={styles.ViewStyle}>
@@ -120,10 +132,10 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     backgroundColor: '#FFFFFF',
-    height: 550,
-    width: 350,
+    height: hp('70%'),
+    width: wp('35%'),
     borderRadius: 16,
-
+    flex: 0.8
   }
 
 });
