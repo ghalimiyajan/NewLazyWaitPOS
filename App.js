@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView } from 'react-native';
 // import MainNavigator from './mainNavigator'
-import Obj from './ojb';
+import noticeBoard from './ojb';
 
 
 const { width } = Dimensions.get('screen');
@@ -24,15 +24,15 @@ export default class App extends React.Component {
     return (
       <View>
         <View style={{ marginTop: 30, alignItems: 'center' }}>
-          <Text style={{ fontSize: 40, color: '#707070' }}>{Obj.title}</Text>
+          <Text style={{ fontSize: 40, color: '#707070' }}>{noticeBoard.title}</Text>
         </View>
         <View style={{ backgroundColor: '#F8F8F8', height: 450, width: 300, alignItems: 'flex-start', marginLeft: 25, padding: 10, borderRadius: 16 }}>
-          <Text style={{ fontSize: 65 }}>{Obj.day}</Text>
+          <Text style={{ fontSize: 65 }}>{noticeBoard.day}</Text>
           <View style={{ flexDirection: 'column' }}>
-            <Text style={{ fontSize: 28, color: '#C4C4C4' }}>{Obj.Month}</Text>
+            <Text style={{ fontSize: 28, color: '#C4C4C4' }}>{noticeBoard.Month}</Text>
           </View>
           <View style={{ flexDirection: 'column' }}>
-            <Text style={{ fontSize: 21, color: '#D92E28', fontWeight: 'bold' }}>New!</Text>
+            <Text style={{ fontSize: 21, color: '#D92E28', fontWeight: 'bold' }}>{noticeBoard.tag}</Text>
           </View>
           <View style={{ flexDirection: 'column' }}>
             <Text style={{ fontSize: 21, color: '#48C4B7', fontWeight: 'bold' }}>{item.title}:</Text>
@@ -52,14 +52,17 @@ export default class App extends React.Component {
         <View style={{ flex: 1, flexDirection: 'row', zIndex: 2 }}>
 
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <View style={styles.Shadow}>
+            <ScrollView horizontal
+            style={styles.Shadow}>
 
               <FlatList
                 horizontal
-                data={Obj.details}
+                scrollEnabled= {false}
+                data={noticeBoard.details}
                 renderItem={({ item }) => this._renderItem(item)}
+                keyExtractor={(item, index) => index.toString()}
               />
-            </View>
+            </ScrollView>
 
 
           </View>

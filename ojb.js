@@ -1,5 +1,6 @@
-const Obj = {
+const noticeBoard = {
     title:'Last update',
+    tag:'New!',
     day:'5',
     Month:'December',
     VERSIONnUMBER:'V4.2.2',
@@ -17,4 +18,4 @@ const Obj = {
 ]}
 
 
-export default Obj
+export default noticeBoard
