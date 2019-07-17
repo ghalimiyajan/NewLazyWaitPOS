@@ -1,10 +1,12 @@
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-const MainNavigator = createStackNavigator({
-  Home: {screen: App},
-  Dashboard: {screen: DashboardScreen},
-});
+import Dashboard from './screens/DashboardScreen';
+import Login from './screens/LoginScreen';
 
-const App = createAppContainer(MainNavigator);
+const Navigation = createStackNavigator({
+  Login: { screen: Login },
+  Dashboard: { screen: Dashboard },
+})
+const Nav = createAppContainer(Navigation);
 
-export default App;
+export default Nav;
