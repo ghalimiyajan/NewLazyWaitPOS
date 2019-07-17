@@ -20,7 +20,7 @@ export default class App extends React.Component {
   state = {
     name: 'ghali',
     Screens: [1, 2, 3, 45],
-    pass:'',
+    pass: '',
   }
   _renderItem = item => {
     console.log(item)
@@ -99,80 +99,80 @@ export default class App extends React.Component {
             </View>
             <View style={{ width: "50%", justifyContent: "flex-end", alignItems: "center", flex: 0.9, }}>
               <Text>{Dictionary.ADD_PIN_CODE[lan]}</Text>
-              <View style={{ flex: 1, backgroundColor: color1, justifyContent:'center', alignItems:'center', borderColor:color1, width:wp('30%'), height:-100,  borderRadius:16}} >
-              <Text numberOfLines={1} style={{fontSize:32, fontWeight:'bold', color:'#fff'}}>{this.state.pass}</Text>
+              <View style={{ flex: 1, backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: wp('30%'), height: -100, borderRadius: 16 }} >
+                <Text numberOfLines={1} style={{ fontSize: 32, fontWeight: 'bold', color: '#fff' }}>{this.state.pass}</Text>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}>
-               <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 1 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>1</Text>
-                </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 1 })}>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>1</Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 2 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>2</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>2</Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 3 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>3</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>3</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
 
 
-              <View style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}>
-              <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 4 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>4</Text>
-                </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 4 })}>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>4</Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 5 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>5</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>5</Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 6})}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>6</Text>
-                </View>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 6 })}>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>6</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}>
-              <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 7 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>7</Text>
-                </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 7 })}>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>7</Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 8 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>8</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>8</Text>
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 9 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>9</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>9</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent:'center', alignItems:'center' }}>
-              <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass.slice(0,-1) })}>
-                <View style={styles.NumberContainer}>
-                <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} size={43} color={color1} />                
-                </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass.slice(0, -1) })}>
+                  <View style={styles.NumberContainer}>
+                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} size={43} color={color1} />
+                  </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 0 })}>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>0</Text>
-                </View>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>0</Text>
+                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                <View style={styles.NumberContainer}>
-                  <Text style={styles.LoginNumber}>C</Text>
-                </View>
+                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass.slice(0, -4) })}>
+                  <View style={styles.NumberContainer}>
+                    <Text style={styles.LoginNumber}>C</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
 
@@ -212,30 +212,30 @@ const styles = StyleSheet.create({
     backgroundColor: color1,
     color: 'white',
     borderColor: 'black',
-    borderRadius:16,
+    borderRadius: 16,
     width: "110%",
-    height:'10%',
+    height: '10%',
     justifyContent: "center",
-     alignItems: "center"
+    alignItems: "center"
   },
   NumberContainer: {
     // flexDirection: "row",
     width: wp('10%'),
-    height:wp('10%'),
+    height: wp('10%'),
     alignItems: 'center',
-   justifyContent: 'center',
-   borderWidth: 2,
-   borderColor: color1,
-   borderRadius: wp('10%'),
-   margin:'1%',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: color1,
+    borderRadius: wp('10%'),
+    margin: '1%',
 
   },
   LoginNumber: {
-   fontSize:43,
-   color: color1
+    fontSize: 43,
+    color: color1
   },
-   
-   
+
+
   ViewStyle: {
     flex: 1,
   },
