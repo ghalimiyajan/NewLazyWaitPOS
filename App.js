@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import { Icon } from 'expo';
 // import MainNavigator from './mainNavigator'
 import noticeBoard from './ojb';
@@ -16,11 +18,18 @@ const { width } = Dimensions.get('screen');
 // }
 
 let lan = 'en';
+const color1 = "#707070";
+let pass = "1234"
+
+
 export default class App extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
   state = {
     name: 'ghali',
     Screens: [1, 2, 3, 45],
-    pass: '',
+    enterdPass: '',
   }
   _renderItem = item => {
     console.log(item)
@@ -49,7 +58,26 @@ export default class App extends React.Component {
     )
   }
 
+  _getPass = val => {
+    var ep = this.state.enterdPass;
+    ep = ep + val;
+    console.log(ep)
+    if (ep.length.toString() == 4) {
+      console.log(ep + "*********" + pass)
+      if (ep == pass) {
+        alert("Welocome")
+
+      } else {
+        alert("No way");
+        ep = '';
+      }
+    }
+    this.setState({ enterdPass: ep });
+
+  }
+
   render() {
+   
     return (
       <View style={{ flex: 1 }}>
         <View style={{ backgroundColor: '#3FAEA3', height: "100%", width: "100%", transform: [{ rotate: '43deg' }], borderRadius: 100, position: "absolute", zIndex: 1, right: '50%' }} />
@@ -100,21 +128,21 @@ export default class App extends React.Component {
             <View style={{ width: "50%", justifyContent: "flex-end", alignItems: "center", flex: 0.9, }}>
               <Text>{Dictionary.ADD_PIN_CODE[lan]}</Text>
               <View style={{ flex: 1, backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: wp('30%'), height: -100, borderRadius: 16 }} >
-                <Text numberOfLines={1} style={{ fontSize: 32, fontWeight: 'bold', color: '#fff' }}>{this.state.pass}</Text>
+                <Text numberOfLines={1} style={{ fontSize: 32, fontWeight: 'bold', color: '#fff' }}>{this.state.enterdPass}</Text>
               </View>
 
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 1 })}>
+                <TouchableOpacity onPress={() => this._getPass("1")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>1</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 2 })}>
+                <TouchableOpacity onPress={() => this._getPass("2")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>2</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 3 })}>
+                <TouchableOpacity onPress={() => this._getPass("3")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>3</Text>
                   </View>
@@ -123,17 +151,17 @@ export default class App extends React.Component {
 
 
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 4 })}>
+                <TouchableOpacity onPress={() => this._getPass("4")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>4</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 5 })}>
+                <TouchableOpacity onPress={() => this._getPass("5")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>5</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 6 })}>
+                <TouchableOpacity onPress={() => this._getPass("6")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>6</Text>
                   </View>
@@ -141,17 +169,17 @@ export default class App extends React.Component {
               </View>
 
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 7 })}>
+                <TouchableOpacity onPress={() => this._getPass("7")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>7</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 8 })}>
+                <TouchableOpacity onPress={() => this._getPass("8")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>8</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 9 })}>
+                <TouchableOpacity onPress={() => this._getPass("9")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>9</Text>
                   </View>
@@ -159,7 +187,7 @@ export default class App extends React.Component {
               </View>
 
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass.slice(0, -1) })}>
+                <TouchableOpacity onPress={() => this.setState({ enterdPass: this.state.enterdPass.slice(0, -1) })}>
                   <View style={styles.NumberContainer}>
                     <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} size={43} color={color1} />
                   </View>
@@ -169,7 +197,7 @@ export default class App extends React.Component {
                     <Text style={styles.LoginNumber}>0</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass.slice(0, -4) })}>
+                <TouchableOpacity onPress={() => this.setState({ enterdPass: '' })}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>C</Text>
                   </View>
@@ -181,11 +209,10 @@ export default class App extends React.Component {
             </View>
           </View>
         </View>
-      </View>
+      </View >
     )
   };
 }
-const color1 = "#707070";
 const styles = StyleSheet.create({
   Shadow: {
     shadowColor: "#000",
