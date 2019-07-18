@@ -1,20 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+
 import { Icon } from 'expo';
-import noticeBoard from '../ojb';
-import Dictionary from '../dictionary';
-import Swiper from "react-native-web-swiper";
+// import MainNavigator from './mainNavigator'
+// import noticeBoard from '../ojb';
+// import Dictionary from '../dictionary';
 
 
 const { width } = Dimensions.get('screen');
+// export default function App() {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Open up App.js to start working on your app!</Text>
+//     </View>
+//   );
+// }
 
 let lan = 'en';
 const color1 = "#707070";
 let pass = "1234"
 
 
-export default class Login extends React.Component {
+ export default class Login extends React.Component {
   static navigationOptions = {
     header: null
   };
@@ -22,33 +31,31 @@ export default class Login extends React.Component {
     name: 'ghali',
     Screens: [1, 2, 3, 45],
     enterdPass: '',
-  };
+  }
   _renderItem = item => {
     console.log(item)
     return (
 
       <View>
-        <View style={{ alignItems: 'center', padding: hp('1%'), justifyContent: 'center' }}>
-          <Text style={{ fontSize: 40, color: color1 }}>{noticeBoard.title}</Text>
+        <View style={{ marginTop: 30, alignItems: 'center' }}>
+          <Text style={{ fontSize: 40, color: '#707070' }}>{noticeBoard.title}</Text>
         </View>
         <View style={{ backgroundColor: '#F8F8F8', height: 450, width: 300, alignItems: 'flex-start', marginLeft: 25, padding: 10, borderRadius: 16 }}>
           <Text style={{ fontSize: 65 }}>{noticeBoard.day}</Text>
-          <View>
+          <View style={{ flexDirection: 'column' }}>
             <Text style={{ fontSize: 28, color: '#C4C4C4' }}>{noticeBoard.Month}</Text>
           </View>
-          <View>
+          <View style={{ flexDirection: 'column' }}>
             <Text style={{ fontSize: 21, color: '#D92E28', fontWeight: 'bold' }}>{noticeBoard.tag}</Text>
           </View>
-          <View>
+          <View style={{ flexDirection: 'column' }}>
             <Text style={{ fontSize: 21, color: '#48C4B7', fontWeight: 'bold' }}>{item.title}:</Text>
           </View>
-          <View>
-            <Text style={{ fontSize: 15 }}>- {item.detail}</Text>
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ fontSize: 15, }}>- {item.detail}</Text>
           </View>
         </View>
       </View>
-
-
     )
   }
 
@@ -60,7 +67,6 @@ export default class Login extends React.Component {
       console.log(ep + "*********" + pass)
       if (ep == pass) {
         alert("Welocome")
-        this.props.navigation.navigate('Dashboard')
 
       } else {
         alert("No way");
@@ -72,16 +78,18 @@ export default class Login extends React.Component {
   }
 
   render() {
+   const {navigate}= this.props.navigation;
 
     return (
       <View style={{ flex: 1 }}>
         <View style={{ backgroundColor: '#3FAEA3', height: "100%", width: "100%", transform: [{ rotate: '43deg' }], borderRadius: 100, position: "absolute", zIndex: 1, right: '50%' }} />
+
         <View style={{ flex: 1, flexDirection: 'row', zIndex: 2 }}>
           {/* leftside */}
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <View style={{ flex: 0.2, alignItems: "flex-end" }}>
               <TouchableOpacity
-                //   onPress={() =>}
+                  onPress={() => navigate('Dashboard')}
                 style={{ zIndex: 3 }}>
                 <View style={{ backgroundColor: '#E6E6E6', borderRadius: 50 / 2, height: 50, width: 50, justifyContent: 'center', alignItems: 'center', }}>
 
@@ -90,19 +98,15 @@ export default class Login extends React.Component {
                 </View>
               </TouchableOpacity>
             </View>
-
             <View
               style={styles.Shadow}>
-              <Swiper>
-                {noticeBoard.details.map((item, key) =>
-                  (
-                    <View>
-                      {this._renderItem(item)}
-                    </View>
-                  )
-                )
-                }
-              </Swiper>
+
+              <FlatList
+                horizontal
+                data={noticeBoard.details}
+                renderItem={({ item }) => this._renderItem(item)}
+                keyExtractor={(item, index) => index.toString()}
+              />
             </View>
             <View style={{ flex: 0.2, justifyContent: 'flex-start', flexDirection: 'row' }}>
               <View style={{ borderWidth: 1, height: hp('10%'), width: hp('10%'), alignItems: 'center', justifyContent: 'center', }}>
@@ -195,7 +199,7 @@ export default class Login extends React.Component {
                     <Text style={styles.LoginNumber}>0</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this._getPass("0")}>
+                <TouchableOpacity onPress={() => this.setState({ enterdPass: '' })}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>C</Text>
                   </View>
