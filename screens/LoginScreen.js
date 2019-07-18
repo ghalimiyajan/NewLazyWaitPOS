@@ -1,6 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity } from 'react-native';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
+
+/*************************************** Styling ********************************************/
+import EStyleSheet from 'react-native-extended-stylesheet';
+let entireScreenWidth = Dimensions.get('window').width;
+EStyleSheet.build({ $rem: entireScreenWidth / 380 });
 
 
 import { Icon } from 'expo';
@@ -15,7 +20,7 @@ const color1 = "#707070";
 let pass = "1234"
 
 
- export default class Login extends React.Component {
+export default class Login extends React.Component {
   static navigationOptions = {
     header: null
   };
@@ -59,7 +64,7 @@ let pass = "1234"
       console.log(ep + "*********" + pass)
       if (ep == pass) {
         alert("Welocome")
-this.props.navigation.navigate('Dashboard')
+        this.props.navigation.navigate('Dashboard')
 
       } else {
         alert("No way");
@@ -84,15 +89,12 @@ this.props.navigation.navigate('Dashboard')
                 //   onPress={() =>}
                 style={{ zIndex: 3 }}>
                 <View style={{ backgroundColor: '#E6E6E6', borderRadius: 50 / 2, height: 50, width: 50, justifyContent: 'center', alignItems: 'center', }}>
-
                   <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} color={'#707070'} />
-
                 </View>
               </TouchableOpacity>
             </View>
             <View
               style={styles.Shadow}>
-
               <FlatList
                 horizontal
                 data={noticeBoard.details}
@@ -108,10 +110,6 @@ this.props.navigation.navigate('Dashboard')
                 <Text>Lazywait POS</Text>
 
               </View>
-
-
-
-
             </View>
 
           </View>
@@ -208,7 +206,7 @@ this.props.navigation.navigate('Dashboard')
   };
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   Shadow: {
     shadowColor: "#000",
     shadowOffset: {
@@ -241,9 +239,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   NumberContainer: {
-    // flexDirection: "row",
-    width: wp('10%'),
-    height: wp('10%'),
+    width: wp('7%'),
+    height: wp('7%'),
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 2,
@@ -253,7 +250,7 @@ const styles = StyleSheet.create({
 
   },
   LoginNumber: {
-    fontSize: 43,
+    fontSize: "5rem",
     color: color1
   },
 
