@@ -20,7 +20,7 @@ const styles = EStyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
         backgroundColor: '#FFFFFF',
-        height: hp('70%'),
+        height: hp('65%'),
         width: wp('35%'),
         borderRadius: 16,
         padding: '3%'
@@ -29,48 +29,38 @@ const styles = EStyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
     },
-    InputStyle: {
-        backgroundColor: color1,
-        color: 'white',
-        borderColor: 'black',
-        borderRadius: 16,
-        width: "110%",
-        height: '10%',
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    NumberContainer: {
+    numberContainer: {
         width: wp('9%'),
         height: wp('9%'),
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: color1,
         borderRadius: wp('10%'),
         margin: '1%'
     },
-    LoginNumber: {
+    loginNumber: {
         fontSize: "10rem",
         color: color1
     },
-
-    ViewStyle: {
-        flex: 1,
-    },
     title: {
-        fontSize: '15rem',
+        fontSize: '12rem',
     },
     plustitle: {
         fontSize: '20rem',
     },
     subTitle: {
-        fontSize: '10rem',
+        fontSize: '8rem',
     },
     text: {
-        fontSize: '8rem',
+        fontSize: '7rem',
 
     },
-    loginBackground: {
+    versionNumber: {
+        fontSize: '5rem',
+
+    },
+    loginLeftSideBackground: {
         backgroundColor: '#3FAEA3',
         height: "300rem",
         width: "400rem",
@@ -86,8 +76,10 @@ const styles = EStyleSheet.create({
     menuIcon: {
         fontSize: '15rem',
         color: color1,
+        right: '60%',
+
     },
-    loginLeftSideBackground: {
+    loginRightSideBackground: {
         backgroundColor: '#D0ECEA',
         height: "100rem",
         width: "100rem",
@@ -174,7 +166,16 @@ const styles = EStyleSheet.create({
         borderRadius: wp('10%'),
         margin: '1%'
 
-    }
+    },
+    LWinfo: {
+        fontSize: '4rem',
+    },
+    menuIcon: {
+        fontSize: '15rem',
+        color: color1,
+
+    },
+
 });
 
 export default styles;
