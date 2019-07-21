@@ -79,7 +79,6 @@ const styles = EStyleSheet.create({
         position: "absolute",
         zIndex: 1,
         right: '50%',
-
     },
     LWinfo: {
         fontSize: '6rem',
@@ -87,7 +86,6 @@ const styles = EStyleSheet.create({
     menuIcon: {
         fontSize: '15rem',
         color: color1,
-
     },
     loginLeftSideBackground: {
         backgroundColor: '#D0ECEA',
@@ -101,6 +99,82 @@ const styles = EStyleSheet.create({
         justifyContent: 'flex-end',
 
     },
+    dashboardHeaderContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    dashboardBodyContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    dashboardItem_h: {
+        backgroundColor: 'white',
+        borderRadius: 16,
+        margin: '5rem',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    dashboardItem_v: {
+        backgroundColor: 'white',
+        borderRadius: 16,
+        margin: '5rem'
+
+    },
+    dashboardItemContainer: {
+        flexDirection: 'row',
+    },
+    dashboardItemInfo: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+
+    flexRow: {
+        flexDirection: 'row',
+    },
+    flex1: {
+        flex: 1,
+    },
+    flex01: {
+        flex: 0.1,
+    },
+    flex02: {
+        flex: 0.2,
+    },
+    flex03: {
+        flex: 0.3,
+    },
+    flex04: {
+        flex: 0.4,
+    },
+    flex05: {
+        flex: 0.5,
+    },
+    flex06: {
+        flex: 0.6,
+    },
+    flex07: {
+        flex: 0.7,
+    },
+    flex08: {
+        flex: 0.8,
+    },
+    flex09: {
+        flex: 0.9,
+    },
+    mainBackgroundColor: {
+        backgroundColor: '#F6F6F8',
+    },
+    circleBotton: {
+        width: wp('5%'),
+        height: wp('5%'),
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderColor: color1,
+        borderRadius: wp('10%'),
+        margin: '1%'
+
+    }
 });
 
 export default styles;

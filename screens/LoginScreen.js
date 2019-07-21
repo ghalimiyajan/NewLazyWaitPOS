@@ -10,7 +10,6 @@ import noticeBoard from '../ojb';
 import Dictionary from '../dictionary';
 import styles from '../style/styleSheet';
 /*************************************** Variables ********************************************/
-let lan = 'en';
 const color1 = "#707070";
 let pass = "1234"
 let version = ' V3.4.2'

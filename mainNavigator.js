@@ -4,8 +4,8 @@ import Dashboard from './screens/DashboardScreen';
 import Login from './screens/LoginScreen';
 
 const Navigation = createStackNavigator({
-  Login: { screen: Login },
   Dashboard: { screen: Dashboard },
+  Login: { screen: Login },
 })
 const Nav = createAppContainer(Navigation);
 
