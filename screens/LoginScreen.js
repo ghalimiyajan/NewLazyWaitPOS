@@ -1,24 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity } from 'react-native';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
-/*************************************** Styling ********************************************/
-import EStyleSheet from 'react-native-extended-stylesheet';
-let entireScreenWidth = Dimensions.get('window').width;
-EStyleSheet.build({ $rem: entireScreenWidth / 380 });
-
-
+/*************************************** Library ********************************************/
+import Swiper from "react-native-web-swiper";
 import { Icon } from 'expo';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
+/*************************************** Pages ********************************************/
 import noticeBoard from '../ojb';
 import Dictionary from '../dictionary';
-import Swiper from "react-native-web-swiper";
-
-
-const { width } = Dimensions.get('screen');
-
+import styles from '../style/styleSheet';
+/*************************************** Variables ********************************************/
 let lan = 'en';
 const color1 = "#707070";
 let pass = "1234"
+let version = ' V3.4.2'
 
 
 export default class Login extends React.Component {
@@ -36,23 +31,23 @@ export default class Login extends React.Component {
 
       <View>
         <View style={{ alignItems: 'center', padding: hp('1%'), justifyContent: 'center' }}>
-          <Text style={{ fontSize: 40, color: color1 }}>{noticeBoard.title}</Text>
+          <Text style={[styles.title, { color: color1 }]}>{noticeBoard.title}</Text>
         </View>
-        <View style={{ backgroundColor: '#F8F8F8', height: 450, width: 300, alignItems: 'flex-start', marginLeft: 25, padding: 10, borderRadius: 16 }}>
-          <Text style={{ fontSize: 65 }}>{noticeBoard.day}</Text>
+        <ScrollView style={{ backgroundColor: '#F8F8F8', height: hp('60%'), width: wp('32%'), padding: hp('1%'), borderRadius: 16 }}>
+          <Text style={[styles.plustitle, { fontWeight: 'bold' }]}>{noticeBoard.day}</Text>
           <View>
-            <Text style={{ fontSize: 28, color: '#C4C4C4' }}>{noticeBoard.Month}</Text>
+            <Text style={[styles.subTitle, { color: '#C4C4C4' }]}>{noticeBoard.Month}</Text>
           </View>
           <View>
-            <Text style={{ fontSize: 21, color: '#D92E28', fontWeight: 'bold' }}>{noticeBoard.tag}</Text>
+            <Text style={[styles.subTitle, { color: '#D92E28' }]}>{noticeBoard.tag}</Text>
           </View>
           <View>
-            <Text style={{ fontSize: 21, color: '#48C4B7', fontWeight: 'bold' }}>{item.title}:</Text>
+            <Text style={[styles.subTitle, { color: '#48C4B7' }]}>{item.title}:</Text>
           </View>
           <View>
-            <Text style={{ fontSize: 15 }}>- {item.detail}</Text>
+            <Text style={styles.text}>- {item.detail}</Text>
           </View>
-        </View>
+        </ScrollView>
       </View>
 
 
@@ -82,55 +77,62 @@ export default class Login extends React.Component {
 
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ backgroundColor: '#3FAEA3', height: "100%", width: "100%", transform: [{ rotate: '43deg' }], borderRadius: 100, position: "absolute", zIndex: 1, right: '50%' }} />
+        <View style={styles.loginBackground} />
+        <View style={styles.loginLeftSideBackground} />
         <View style={{ flex: 1, flexDirection: 'row', zIndex: 2 }}>
-          {/* leftside */}
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <View style={{ flex: 0.2, alignItems: "flex-end" }}>
+          {/********************************************************************************* leftside **************************************************************************************/}
+          <View style={{ flex: 1 }}>
+            <View style={{ flex: 0.2, padding: '2%' }}>
               <TouchableOpacity
                 //   onPress={() =>}
                 style={{ zIndex: 3 }}>
-                <View style={{ backgroundColor: '#E6E6E6', borderRadius: 50 / 2, height: 50, width: 50, justifyContent: 'center', alignItems: 'center', }}>
-                  <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} size={30} color={'#707070'} />
+                <View style={{ backgroundColor: '#E6E6E6', borderRadius: 100, height: wp('5%'), width: wp('5%'), justifyContent: 'center', alignItems: 'center', marginLeft: '2%' }}>
+                  <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-menu' : 'md-menu'} style={styles.menuIcon} />
                 </View>
               </TouchableOpacity>
             </View>
+            <View style={{ flex: 0.8, justifyContent: 'center', alignItems: 'center' }}>
 
-            <View
-              style={styles.Shadow}>
-              <Swiper>
-                {noticeBoard.details.map((item, key) =>
-                  (
-                    <View>
-                      {this._renderItem(item)}
-                    </View>
+              <View
+                style={styles.noticeBoard}>
+                <Swiper
+                >
+                  {noticeBoard.details.map((item, key) =>
+                    (
+                      <View>
+                        {this._renderItem(item)}
+                      </View>
+                    )
                   )
-                )
-                }
-              </Swiper>
+                  }
+                </Swiper>
+              </View>
             </View>
-            <View style={{ flex: 0.2, justifyContent: 'flex-start', flexDirection: 'row' }}>
+            <View style={{ flex: 0.2, justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', marginLeft: '2%' }}>
               <View style={{ borderWidth: 1, height: hp('10%'), width: hp('10%'), alignItems: 'center', justifyContent: 'center', }}>
                 <Text>LW</Text>
               </View>
-              <View>
-                <Text>Lazywait POS</Text>
+              <View style={{ alignItems: 'flex-start' }}>
+                <Text style={styles.LWinfo} > Lazywait POS {version} </Text>
+                <Text style={styles.LWinfo}> support@cloudapps.net.sa </Text>
+                <Text style={styles.LWinfo}> Dammam, Saudi Arabia </Text>
+
 
               </View>
             </View>
 
           </View>
-          {/* rightside */}
-          <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "center", }}>
-            <View style={{ flex: 0.2, }}>
+          {/************************************************************************************** rightside *******************************************************************************************/}
+          <View style={{ flex: 1, alignItems: "center", }}>
+            <View style={{ flex: 0.2 }}>
             </View>
-            <View style={{ width: "50%", justifyContent: "flex-end", alignItems: "center", flex: 0.9, }}>
-              <Text>{Dictionary.ADD_PIN_CODE[lan]}</Text>
-              <View style={{ flex: 1, backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: wp('30%'), height: -100, borderRadius: 16 }} >
-                <Text numberOfLines={1} style={{ fontSize: 32, fontWeight: 'bold', color: '#fff' }}>{this.state.enterdPass}</Text>
-              </View>
+            <View style={{ width: "50%", alignItems: "center", flex: 0.8, }}>
+              <Text style={[styles.text, { color: '#33877F' }]}>{Dictionary.ADD_PIN_CODE[lan]}</Text>
+              <View style={{ backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: '100%', height: '10%', borderRadius: 16 }} >
 
-              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <Text numberOfLines={1} style={[styles.text, { color: '#fff', textDecorationStyle: 'dashed' }]}>{this.state.enterdPass}</Text>
+              </View>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
                 <TouchableOpacity onPress={() => this._getPass("1")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>1</Text>
@@ -188,15 +190,15 @@ export default class Login extends React.Component {
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                 <TouchableOpacity onPress={() => this.setState({ enterdPass: this.state.enterdPass.slice(0, -1) })}>
                   <View style={styles.NumberContainer}>
-                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} size={43} color={color1} />
+                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-arrow-back' : 'md-arrow-back'} style={styles.LoginNumber} />
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ pass: this.state.pass + 0 })}>
+                <TouchableOpacity onPress={() => this._getPass("0")}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>0</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this._getPass("0")}>
+                <TouchableOpacity onPress={() => this.setState({ enterdPass: ' ' })}>
                   <View style={styles.NumberContainer}>
                     <Text style={styles.LoginNumber}>C</Text>
                   </View>
@@ -213,57 +215,3 @@ export default class Login extends React.Component {
   };
 }
 
-const styles = EStyleSheet.create({
-  Shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    backgroundColor: '#FFFFFF',
-    height: hp('70%'),
-    width: wp('35%'),
-    borderRadius: 16,
-    flex: 0.9
-  },
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  InputStyle: {
-    backgroundColor: color1,
-    color: 'white',
-    borderColor: 'black',
-    borderRadius: 16,
-    width: "110%",
-    height: '10%',
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  NumberContainer: {
-    width: wp('7%'),
-    height: wp('7%'),
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: color1,
-    borderRadius: wp('10%'),
-    margin: '1%',
-
-  },
-  LoginNumber: {
-    fontSize: "5rem",
-    color: color1
-  },
-
-
-  ViewStyle: {
-    flex: 1,
-  },
-
-});

@@ -11,7 +11,7 @@ const noticeBoard = {
     },
     {
         title: 'Precurements Updats',
-        detail:'Bla bla bla bla',
+        detail:'Bla bla bla bla Bla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla bla',
 
     },
     

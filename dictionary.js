@@ -1,7 +1,7 @@
 
 const Dictionary = {
     ADD_PIN_CODE: {
-      en: 'Add Bin Code',
+      en: 'Add Pin Code',
       ar: 'فضلا ادخل الرمز'
     }
   }
