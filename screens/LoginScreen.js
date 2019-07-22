@@ -103,10 +103,16 @@ export default class Login extends React.Component {
               <Modal
                 transparent={true}
                 visible={this.state.modalVisible}
+
               >
-                <View style={{ justifyContent: 'center', alignItems:'center' }}>
+                <View style={{ justifyContent: 'center', alignItems:'center', flex:1 }}>
+                  <TouchableOpacity  onPress={() => {
+                        this.setModalVisible(!this.state.modalVisible);
+                      }}
+                      style={{flex:1, width:'100%', height:'100%', position:'absolute'}}                     
+                    />
                   <View style={{
-                    backgroundColor: '#ffffffff', width: '45%', height: '80%', shadowColor: "#000",
+                    backgroundColor: '#ffffffff', width: '40%', height: '70%', shadowColor: "#000",
                     shadowOffset: {
                       width: 0,
                       height: 2,
@@ -116,36 +122,29 @@ export default class Login extends React.Component {
                     elevation: 5,
                     
                   }}>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1, padding:'3%', }}>
+                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%' }}>
                     <TouchableOpacity
                     // onPress={()=>}
                     >
-                    <Text style={[styles.subTitle,{textAlign:'center', color:color1}]}>Connect Terminal</Text>
+                    <Text style={[styles.text,{textAlign:'center', color:color1}]}>Connect Terminal</Text>
                     </TouchableOpacity> 
                     </View>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1, padding:'3%',}}>
+                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%'}}>
                     <TouchableOpacity
                     // onPress={()=>}
                     >
-                    <Text  style={[styles.subTitle,{textAlign:'center', color:color1}]}>Demo Mode</Text>
+                    <Text  style={[styles.text,{textAlign:'center', color:color1}]}>Demo Mode</Text>
                     </TouchableOpacity> 
                     </View>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1, padding:'3%',}}>
+                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%'}}>
                     <TouchableOpacity
                     // onPress={()=>}
                     >
-                    <Text  style={[styles.subTitle,{textAlign:'center', color:color1}]}>Shutdown</Text>
+                    <Text  style={[styles.text,{textAlign:'center', color:color1}]}>Shutdown</Text>
                     </TouchableOpacity> 
                     </View>
-                    
-
-                    <TouchableHighlight
-                      onPress={() => {
-                        this.setModalVisible(!this.state.modalVisible);
-                      }}>
-                      <Text>Hide Modal</Text>
-                    </TouchableHighlight>
                   </View>
+                  
                 </View>
               </Modal>
               <TouchableOpacity
