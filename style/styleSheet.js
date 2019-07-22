@@ -20,8 +20,8 @@ const styles = EStyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
         backgroundColor: '#FFFFFF',
-        height: hp('65%'),
-        width: wp('35%'),
+        height: '100%',
+        width: '120rem',
         borderRadius: 16,
         padding: '3%'
     },
@@ -30,8 +30,8 @@ const styles = EStyleSheet.create({
         backgroundColor: 'white',
     },
     numberContainer: {
-        width: wp('9%'),
-        height: wp('9%'),
+        width:  '30rem',
+        height: '30rem',
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
