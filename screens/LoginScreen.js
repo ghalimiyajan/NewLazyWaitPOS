@@ -10,14 +10,13 @@ import noticeBoard from '../ojb';
 import storeInfo from '../storeinfo';
 import Dictionary from '../dictionary';
 import styles from '../style/styleSheet';
-/*************************************** Variables ********************************************/
-let lan = 'en';
+/*************************************** Variables ****************************************/
 const color1 = "#707070";
 let pass = "1234";
 let version = ' V3.4.2';
 const online = '#8EDF88';
 const offline = '#8EDF88';
-
+let lan = 'en';
 
 export default class Login extends React.Component {
   static navigationOptions = {
@@ -68,7 +67,6 @@ export default class Login extends React.Component {
     if (ep.length.toString() == 4) {
       console.log(ep + "*********" + pass)
       if (ep == pass) {
-        alert("Welocome")
         this.props.navigation.navigate('Dashboard')
 
       } else {
