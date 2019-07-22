@@ -24,6 +24,19 @@ const Dictionary = {
     en: 'Most Section Sales',
     ar: 'الاقسام الأكثر مبيعا'
   },
+  SETTING: {
+    en: 'Setting',
+    ar: 'الإعدادات'
+  },
+  CASHIER: {
+    en: 'Cashier',
+    ar: 'الكاشير'
+  },
+  WAITING: {
+    en: 'Waiting',
+    ar: 'الإنتظار'
+  },
+  
 
 }
 
