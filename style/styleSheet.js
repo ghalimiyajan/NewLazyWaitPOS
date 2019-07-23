@@ -60,6 +60,12 @@ const styles = EStyleSheet.create({
         fontSize: '5rem',
 
     },
+    menulist:{
+        fontSize:'6rem',
+        textAlign: 'center',
+         color: color1,
+
+    },
     loginLeftSideBackground: {
         backgroundColor: color2,
         height: "300rem",

@@ -105,14 +105,17 @@ export default class Login extends React.Component {
                 visible={this.state.modalVisible}
 
               >
-                <View style={{ justifyContent: 'center', alignItems:'center', flex:1 }}>
-                  <TouchableOpacity  onPress={() => {
-                        this.setModalVisible(!this.state.modalVisible);
-                      }}
-                      style={{flex:1, width:'100%', height:'100%', position:'absolute'}}                     
-                    />
+                <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                  <TouchableOpacity onPress={() => {
+                    this.setModalVisible(!this.state.modalVisible);
+                  }}
+                    style={{ flex: 1, width: '100%', height: '100%', position: 'absolute' }}
+                  />
                   <View style={{
-                    backgroundColor: '#ffffffff', width: '40%', height: '70%', shadowColor: "#000",
+                    backgroundColor: '#ffffffff',
+                    width: '40%',
+                    height: '70%',
+                    shadowColor: "#000",
                     shadowOffset: {
                       width: 0,
                       height: 2,
@@ -120,31 +123,44 @@ export default class Login extends React.Component {
                     shadowOpacity: 0.25,
                     shadowRadius: 3.84,
                     elevation: 5,
-                    
+                    position: 'absolute',
+                    flex: 1,
+                    borderRadius:16,
                   }}>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%' }}>
-                    <TouchableOpacity
-                    // onPress={()=>}
-                    >
-                    <Text style={[styles.text,{textAlign:'center', color:color1}]}>Connect Terminal</Text>
-                    </TouchableOpacity> 
+                    <View style={{ borderBottomWidth: 0.5, borderBottomColor: color1, flex: 0.1, marginTop: '4%', justifyContent: 'center', flexDirection: 'row', }}>
+                      <TouchableOpacity
+                      // onPress={()=>}
+                      >
+                        <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-wifi' : 'md-wifi'} style={styles.menulist} />
+                        <Text style={styles.menulist}>Connect Terminal</Text>
+                      </TouchableOpacity>
                     </View>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%'}}>
-                    <TouchableOpacity
-                    // onPress={()=>}
-                    >
-                    <Text  style={[styles.text,{textAlign:'center', color:color1}]}>Demo Mode</Text>
-                    </TouchableOpacity> 
+                    <View style={{ borderBottomWidth: 0.5, borderBottomColor: color1, flex: 0.1, marginTop: '4%', justifyContent: 'center', flexDirection: 'row' }}>
+                      <TouchableOpacity
+                      // onPress={()=>}
+                      >
+                        <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-videocam' : 'md-videocam'} style={styles.menulist} />
+                        <Text style={styles.menulist}>Demo Mode</Text>
+                      </TouchableOpacity>
                     </View>
-                    <View style={{borderBottomWidth:0.5,borderBottomColor:color1,margin:'1%'}}>
-                    <TouchableOpacity
-                    // onPress={()=>}
-                    >
-                    <Text  style={[styles.text,{textAlign:'center', color:color1}]}>Shutdown</Text>
-                    </TouchableOpacity> 
+                    <View style={{ borderBottomWidth: 0.5, borderBottomColor: color1, flex: 0.1, marginTop: '4%', justifyContent: 'center', flexDirection: 'row' }}>
+                      <TouchableOpacity
+                      // onPress={()=>}
+                      >
+                        <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-tablet-portrait' : 'md-tablet-portrait'} style={styles.menulist} />
+                        <Text style={styles.menulist}>Add A tablet</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{ borderBottomWidth: 0.5, borderBottomColor: color1, flex: 0.1, marginTop: '4%', justifyContent: 'center', flexDirection: 'row' }}>
+                      <TouchableOpacity
+                      // onPress={()=>}
+                      >
+                        <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-power' : 'md-power'} style={styles.menulist} />
+                        <Text style={styles.menulist}>Shutdown</Text>
+                      </TouchableOpacity>
                     </View>
                   </View>
-                  
+
                 </View>
               </Modal>
               <TouchableOpacity
