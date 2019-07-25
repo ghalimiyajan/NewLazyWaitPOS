@@ -93,9 +93,8 @@ const styles = EStyleSheet.create({
     },
     dashboardHeaderContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
-
     },
     dashboardBodyContainer: {
         flexDirection: 'row',
@@ -233,12 +232,12 @@ const styles = EStyleSheet.create({
         backgroundColor: '#F6F6F8',
     },
     circleBotton: {
-        width: wp('5%'),
-        height: wp('5%'),
+        width: "20rem",
+        height: "20rem",
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: color2,
-        borderRadius: wp('10%'),
+        borderRadius: "20rem",
         margin: '1%'
     },
     whiteFont: {
@@ -257,6 +256,13 @@ const styles = EStyleSheet.create({
         width: 80,
         borderRadius: 100,
         borderColor: color2
+    },
+    personImage: {
+        width: "20rem",
+        height: "20rem",
+        borderRadius: 100,
+        borderColor: color2,
+        margin: 10
     }
 });
 

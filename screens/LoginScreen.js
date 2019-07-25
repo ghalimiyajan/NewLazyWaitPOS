@@ -7,7 +7,7 @@ import { Icon } from 'expo';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 /*************************************** Pages ********************************************/
 import noticeBoard from '../ojb';
-import storeInfo from '../storeinfo';
+import storeInfo from '../jsons/storeinfo';
 import Dictionary from '../dictionary';
 import styles from '../style/styleSheet';
 /*************************************** Variables ****************************************/
