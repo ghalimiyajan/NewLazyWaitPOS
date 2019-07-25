@@ -5,10 +5,9 @@ import Login from './screens/LoginScreen';
 import Test from './screens/test';
 
 const Navigation = createStackNavigator({
+  Login: { screen: Login },
   Dashboard: { screen: Dashboard },
-  Login:     { screen: Login },
-  Test:      { screen: Test },
-
+  
 },
   {
     headerMode: 'none',

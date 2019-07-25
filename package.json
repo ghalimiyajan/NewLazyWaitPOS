@@ -19,7 +19,8 @@
     "react-native-swiper": "^1.5.14",
     "react-native-web": "^0.11.4",
     "react-native-web-swiper": "^1.15.1",
-    "react-navigation": "^3.11.1"
+    "react-navigation": "^3.11.1",
+    "save": "^2.4.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1"

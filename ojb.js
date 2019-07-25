@@ -7,7 +7,10 @@ const noticeBoard = {
         en: 'New!',
         ar: 'جديد!'
     },
-    day: '5',
+    day: {
+        en: '5',
+        ar: '5'
+    },
     Month: {
         en: 'December',
         ar: 'ديسمبر'
@@ -25,10 +28,13 @@ const noticeBoard = {
             },
         },
         {
-            title: { en: 'Precurements Updats', },
+            title: {
+                en: 'Precurements Updats',
+                ar: 'نظام الكاشير'
+            },
             detail: {
                 en: 'Bla bla bla bla Bla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla blaBla bla bla bla',
-                ar: '   على نسبة المجموع المضاف إضافة خاصية تحديد التخفيض للمنتجات المختارة بناء '
+                ar: 'على نسبة المجموع المضاف إضافة خاصية تحديد التخفيض للمنتجات المختارة بناء '
             },
 
         },
