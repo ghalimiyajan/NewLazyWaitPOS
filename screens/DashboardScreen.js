@@ -20,7 +20,7 @@ let personImage = 'https://placekitten.com/200/240';
 const online = '#8EDF88';
 const offline = '#8EDF88';
 /*************************************** JSONS      ********************************************/
-import Dictionary from '../dictionary';
+import Dictionary from '../services/dictionary';
 import storeInfo from '../jsons/storeinfo';
 
 /*************************************** StyleSheet ********************************************/
