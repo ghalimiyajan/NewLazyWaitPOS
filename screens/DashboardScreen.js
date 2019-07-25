@@ -1,10 +1,5 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity, PanResponder, Animated } from 'react-native';
-
-/*************************************** Library    ********************************************/
-import { Icon } from 'expo';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity, Image } from 'react-native';
 
 /*************************************** Library    ********************************************/
@@ -148,6 +143,32 @@ export default class DashboardScreen extends React.Component {
                     <View style={styles.dashboardLine}>
                     </View>
                   </View>
+                  <View style={[styles.flex1, styles.p_5]}>
+                    <View style={styles.dashboardItemInfo}>
+                      <Text>
+                        5
+                      </Text>
+                      <Text>
+                        {Dictionary.BILLS[lan]}
+                      </Text>
+                    </View>
+                    <View style={styles.dashboardItemInfo}>
+                      <Text>
+                        Salam
+                      </Text>
+                      <Text>
+                        {Dictionary.MOST_SALES[lan]}
+                      </Text>
+                    </View>
+                    <View style={styles.dashboardItemInfo}>
+                      <Text>
+                        Hala
+                     </Text>
+                      <Text>
+                        {Dictionary.MOST_SECTION_SALES[lan]}
+                      </Text>
+                    </View>
+                  </View>
 
                   <View style={styles.dashboardItemInfo}>
                     <Text>
@@ -203,7 +224,7 @@ export default class DashboardScreen extends React.Component {
                     </Text>
                   </View>
                 </View>
-              </View>
+              </Animated.View>
 
             </View>
 
@@ -252,39 +273,6 @@ export default class DashboardScreen extends React.Component {
           </View>
 
         </View>
-      </View>
-    )
-  }
-
-
-  render() {
-    const { navigate } = this.props.navigation;
-    return (
-      <View style={[styles.mainBackgroundColor, styles.flex1]}>
-        {/************************ TOP *************************/}
-        <View style={[styles.flex02, styles.dashboardHeaderContainer]} >
-          <View>
-            <Text style={styles.fs_13}>
-              LazyWait
-          </Text>
-          </View>
-          <View style={{ alignItems: 'center' }}>
-            <Text style={styles.fs_13}>
-              {currentDate.getHours()}:{currentDate.getMinutes()}
-            </Text>
-            <Text style={styles.fs_7}>
-              {dayName} {currentDate.getDay()} {monthName}
-            </Text>
-          </View>
-          <View>
-            <Text>
-              Logout
-          </Text>
-          </View>
-        </View>
-        {/* ******************************************HERE render draggable************************************************ */}
-        {this.renderDraggable()}
-
         {/************************ BOTTOM *************************/}
         <View style={[styles.flex02, styles.dashboardFooterContainer, { alignItems: 'center' }]}>
           <View>
