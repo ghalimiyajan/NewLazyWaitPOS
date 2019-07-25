@@ -6,9 +6,9 @@ import Swiper from 'react-native-web-swiper';
 import { Icon } from 'expo';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 /*************************************** Pages ********************************************/
-import noticeBoard from '../ojb';
-import storeInfo from '../storeinfo';
-import Dictionary from '../dictionary';
+import noticeBoard from '../jsons/ojb';
+import storeInfo from '../jsons/storeinfo';
+import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
 /*************************************** Variables ****************************************/
 const color1 = "#707070";

@@ -30,7 +30,7 @@ const styles = EStyleSheet.create({
         backgroundColor: 'white',
     },
     numberContainer: {
-        width:  '30rem',
+        width: '30rem',
         height: '30rem',
         alignItems: 'center',
         justifyContent: 'center',
@@ -60,10 +60,10 @@ const styles = EStyleSheet.create({
         fontSize: '5rem',
 
     },
-    menulist:{
-        fontSize:'6rem',
+    menulist: {
+        fontSize: '6rem',
         textAlign: 'center',
-         color: color1,
+        color: color1,
 
     },
     loginLeftSideBackground: {
@@ -99,9 +99,8 @@ const styles = EStyleSheet.create({
     },
     dashboardHeaderContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
-
     },
     dashboardBodyContainer: {
         flexDirection: 'row',
@@ -239,12 +238,12 @@ const styles = EStyleSheet.create({
         backgroundColor: '#F6F6F8',
     },
     circleBotton: {
-        width: wp('5%'),
-        height: wp('5%'),
+        width: "20rem",
+        height: "20rem",
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: color2,
-        borderRadius: wp('10%'),
+        borderRadius: "20rem",
         margin: '1%'
     },
     whiteFont: {
@@ -258,11 +257,63 @@ const styles = EStyleSheet.create({
         color: color1,
 
     },
+    sidebarIcon: {
+        fontSize: '12rem',
+        color: 'black'
+    },
     dashboardLine: {
         borderBottomWidth: 4,
         width: 80,
         borderRadius: 100,
         borderColor: color2
+    },
+    sidebarBoxes: {
+
+        backgroundColor: '#fff',
+        borderRadius: 16,
+        margin: '1.5rem',
+        width: '35rem',
+        height: '30rem',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    imagePicker: {
+        width: '80rem',
+        height: ' 80rem',
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: color1
+    },
+    lwPic: {
+        borderWidth: 1,
+        height: '40rem',
+        width: '40rem',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        borderColor: color1
+
+    },
+    textInput: {
+        margin: '1%',
+        width: '110rem',
+        height: '18rem',
+        backgroundColor: 'black',
+        borderRadius: 16
+    },
+    smallTextInput: {
+
+
+
+    },
+
+    personImage: {
+        width: "20rem",
+        height: "20rem",
+        borderRadius: 100,
+        borderColor: color2,
+        margin: 10
     }
 });
 
