@@ -261,6 +261,13 @@ const styles = EStyleSheet.create({
         fontSize: '12rem',
         color: 'black'
     },
+    trashIcon:{
+        fontSize: '12rem',
+        color: 'black',
+        alignSelf: 'center', 
+        padding:'2%', 
+
+    },
     dashboardLine: {
         borderBottomWidth: 4,
         width: 80,
@@ -283,7 +290,8 @@ const styles = EStyleSheet.create({
         height: ' 80rem',
         borderRadius: 100,
         borderWidth: 1,
-        borderColor: color1
+        borderColor: color1,
+        margin:'5%'
     },
     lwPic: {
         borderWidth: 1,
@@ -299,11 +307,15 @@ const styles = EStyleSheet.create({
         margin: '1%',
         width: '110rem',
         height: '18rem',
-        backgroundColor: 'black',
+        backgroundColor: '#F3F3F3',
         borderRadius: 16
     },
     smallTextInput: {
-
+        margin: '1%', 
+        width: '40rem', 
+        height: '15rem', 
+        backgroundColor: '#F3F3F3', 
+        borderRadius: 16
 
 
     },
@@ -314,7 +326,12 @@ const styles = EStyleSheet.create({
         borderRadius: 100,
         borderColor: color2,
         margin: 10
-    }
+    }, 
+    colorPalette:{
+        fontSize:'10rem',
+        color:'#59C9BF'
+    },
+
 });
 
 export default styles;

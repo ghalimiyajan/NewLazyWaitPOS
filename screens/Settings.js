@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, Platform, TouchableOpacity, TextInput, Image, Switch } from 'react-native';
 
 // ***************************Pages***********************//
-import noticeBoard from '../ojb';
-import storeInfo from '../storeinfo';
-import settingsNav from '../settingsNav';
-import Dictionary from '../dictionary';
+import noticeBoard from '../jsons/ojb';
+import storeInfo from '../jsons/storeinfo';
+// import settingsNav from '../settingsNav';
+import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
-import Sidebar from '../Sidebar';
+// import Sidebar from '../Sidebar';
 
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
 import base64 from 'react-native-base64'
+import Sidebar from '../Sidebar';
 
+
+let lan = 'en';
+const online = '#8EDF88';
+const offline = '#8EDF88';
 
 
 
@@ -22,6 +27,22 @@ export default class Settings extends Component {
         super(props);
         this.state = {
             image: null,
+            businessName: '',
+            businessAddress: '',
+            phoneNumber: '',
+            VATNumber: '',
+            AutoLock: false,
+            showTables: false,
+            time: {
+                hour: 0,
+                minute: 0
+            },
+            cutomizeColor: {
+                pallet1: '',
+                pallet2: '',
+                default: '',
+
+            }
         };
     }
     _pickImage = async () => {
@@ -40,137 +61,70 @@ export default class Settings extends Component {
     deleteImage() {
         this.setState({ image: null })
     }
+    autoLock() {
+        this.props.navigation.navigate('Login')
+    }
 
     render() {
         const { image } = this.state
         let pic = image ? image : require('../assets/img/no-image.jpg')
         return (
             <View style={[styles.mainBackgroundColor, { flex: 1, flexDirection: 'row', }]}>
-                <View style={{ flex: 0.11, margin: '1%', borderRadius: 16, backgroundColor: '#E4E4E4', justifyContent: 'center' }}>
-                    {/* **********************************************Sidebar Navigation************************************************************** */}
+                <Sidebar />
 
-                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                        {/* *****Home******* */}
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Dashboard')}>
-                            <View style={[styles.sidebarBoxes, { alignItems: 'center', justifyContent: 'center', alignContent: 'center' }]}>
-                                <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            </View>
-                        </TouchableOpacity>
-                        {/* *********Nav list******* */}
-                        <ScrollView showsVerticalScrollIndicator={false} showsHorizantalScrollIndicator={false} style={{ flex: 0.6, backgroundColor: 'red', }}>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>General</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-cash' : 'md-cash'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Cashier</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-cart' : 'md-cart'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Products</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-basket' : 'md-basket'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Add-ons</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-people' : 'md-people'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Users</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Users Roles</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-print' : 'md-print'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Printers</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Print Options</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-pricetags' : 'md-pricetags'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Discounts</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.sidebarBoxes}>
-                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-tablet-portrait' : 'md-tablet-portrait'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                                    <Text style={[styles.p_1, { textAlign: 'center' }]}>Tablet Settings</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </ScrollView>
-
-
-                        {/* *************Version Number************* */}
-
-                        <View style={{ flex: 0.05, justifyContent: 'center', alignItems: 'center' }}>
-                            <Text style={[styles.versionNumber, { color: '#484C4F' }]}>{noticeBoard.VERSIONnUMBER}</Text>
-                        </View>
-                    </View>
-                </View>
-
-                <View style={{ flex: 0.5, }}>
+                <View style={{ flex: 0.6, }}>
                     <View style={{ flex: 1, }}>
                         {/* ************************************************Header************************************************* */}
-                        <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', }}>
+                        <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
                             <Text style={styles.title}>Lazywait</Text>
+                            <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
 
                         </View>
 
                         {/* ************************************************left top************************************************* */}
-                        <View style={{ flex: 0.4, margin: '1%', backgroundColor: '#ffff', borderRadius: 16, alignItems: 'center', flexDirection: 'row',  }}>
-                           
-                                <View style={{ margin:'3%' }}>
-                                    <Text style={{ padding: '8%', }}>Auto Lock</Text>
-                                    <Text style={{ padding: '8%', }}>Show Tables</Text>
-                                    <Text style={{ padding: '8%', }}>Cut of Time</Text>
-                                    <Text style={{ padding: '8%', }}>Customize Colors</Text>
+                        <View style={{ flex: 0.45, margin: '2%', backgroundColor: '#ffff', borderRadius: 16, flexDirection: 'row', alignItems: 'center' }}>
+
+                            <View style={{ justifyContent: 'flex-start', padding: '5%', }}>
+                                <Text style={{ paddingBottom: '8%', paddingTop: '8%' }}> {Dictionary.AUTO_LOCK[lan]}</Text>
+                                <Text style={{ paddingBottom: '8%', paddingTop: '8%' }}>{Dictionary.SHOW_TABLES[lan]}</Text>
+                                <Text style={{ paddingBottom: '8%', paddingTop: '8%' }}>{Dictionary.CUT_OF_TIME[lan]}</Text>
+                                <Text style={{ paddingBottom: '8%', paddingTop: '8%' }}>{Dictionary.CUSTOMIZE_COLORS[lan]}</Text>
+                            </View>
+                            <View style={{ justifyContent: 'flex-start', }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: '5%', paddingTop: '5%' }}>
+                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} onChange={this.autoLock()} />
+                                    <TextInput onChangeText={time => this.setState({ time: time })} style={[styles.smallTextInput,]} />
                                 </View>
-                                <View>
-                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{ margin: '1%'}} />
-                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{ margin: '1%'}}/>
-                                    <TextInput style={{ margin: '1%', width: 100, height: 50, backgroundColor: '#F3F3F3', borderRadius: 16 }} />
-
+                                <View style={{ paddingBottom: '5%', paddingTop: '5%' }}>
+                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
+                                </View>
+                                <View style={{ paddingBottom: '5%', paddingTop: '5%' }}>
+                                    <TextInput onChangeText={time => this.setState({ time: time })} style={[styles.smallTextInput,]} />
+                                </View>
+                                <View style={{ paddingBottom: '5%', paddingTop: '5%' }}>
+                                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-color-palette' : 'md-color-palette'} style={styles.colorPalette} />
                                 </View>
 
+                            </View>
 
-                           
+
+
                         </View>
 
                         {/* ************************************************left Bottom************************************************* */}
 
                         <View style={{ flex: 0.45, margin: '2%', backgroundColor: '#ffff', borderRadius: 16, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ backgroundColor: 'pink', alignItems: 'center', }}>
-                                <Text style={{ padding: '4%', }}>Business Name</Text>
-                                <Text style={{ padding: '4%', }}>Business Address</Text>
-                                <Text style={{ padding: '4%', }}>Phone Number</Text>
-                                <Text style={{ padding: '4%', }}>VAT Number</Text>
+                            <View style={{ justifyContent: 'flex-start', }}>
+                                <Text style={{ marginBottom: '15%', marginTop: '15%' }}>{Dictionary.BUSINESS_NAME[lan]}</Text>
+                                <Text style={{ marginBottom: '15%', marginTop: '15%' }}>{Dictionary.BUSINESS_ADDRESS[lan]}</Text>
+                                <Text style={{ marginBottom: '15%', marginTop: '15%' }}>{Dictionary.PHONE_NUMBER[lan]}</Text>
+                                <Text style={{ marginBottom: '15%', marginTop: '15%' }}>{Dictionary.VAT_NUMBER[lan]}</Text>
                             </View>
                             <View style={{}}>
-                                <TextInput style={styles.textInput} />
-                                <TextInput style={styles.textInput} />
-                                <TextInput style={styles.textInput} />
-                                <TextInput style={styles.textInput} keyboardType={'numeric'} />
+                                <TextInput onChangeText={text => this.setState({ businessName: text })} style={styles.textInput} />
+                                <TextInput onChangeText={text => this.setState({ businessAddress: text })} style={styles.textInput} />
+                                <TextInput onChangeText={Number => this.setState({ phoneNumber: Number })} style={styles.textInput} />
+                                <TextInput onChangeText={Number => this.setState({ VATNumber: Number })} style={styles.textInput} keyboardType={'numeric'} />
                             </View>
 
                         </View>
@@ -178,16 +132,21 @@ export default class Settings extends Component {
                     </View>
 
                 </View>
-                <View style={{ flex: 0.4, padding: '0.5%' }}>
+                <View style={{ flex: 0.5, padding: '0.5%' }}>
                     <View style={{ flex: 1 }}>
                         {/* ************************************************right top************************************************* */}
-                        <View style={{ margin: '2%', flex: 0.5, backgroundColor: '#ffff', justifyContent: 'center', alignItems: 'center', borderRadius: 16 }}>
-                            <TouchableOpacity onPress={() => this.deleteImage()}>
-                                <Text>Delete</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this._pickImage()}>
-                                <Image source={pic} style={styles.imagePicker} />
-                            </TouchableOpacity>
+                        <View style={{ margin: '2%', flex: 0.5, backgroundColor: '#ffff', justifyContent: 'center', alignItems: 'center', borderRadius: 16, }}>
+                            <Text>{Dictionary.BUSINESS_LOGO[lan]}</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
+                                <TouchableOpacity onPress={() => this.deleteImage()}>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#F3F3F3', borderRadius: 16, width: 50, height: 50 }}>
+                                        <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-trash' : 'md-trash'} style={styles.trashIcon} />
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this._pickImage()}>
+                                    <Image source={pic} style={styles.imagePicker} />
+                                </TouchableOpacity>
+                            </View>
 
                         </View>
                         {/* ************************************************right botttom************************************************* */}
@@ -206,9 +165,9 @@ export default class Settings extends Component {
                                         <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>Dammam, Saudi Arabia </Text>
                                     </View>
                                     <View style={{ paddingTop: '2%' }}>
-                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>LW.POS Version: {noticeBoard.VERSIONnUMBER} </Text>
-                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>UUID: 3.3.3 </Text>
-                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>TeamViewr ID:1234567 </Text>
+                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>LW.POS Version: {storeInfo.LWPOSVersion} </Text>
+                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>UUID: {storeInfo.UUID} </Text>
+                                        <Text style={[styles.text, { color: '#484C4F', textAlign: 'center' }]}>TeamViewr ID:{storeInfo.TeamViewerID} </Text>
 
                                     </View>
                                 </View>

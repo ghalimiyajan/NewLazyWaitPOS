@@ -36,6 +36,43 @@ const Dictionary = {
     en: 'Waiting',
     ar: 'الإنتظار'
   },
+  AUTO_LOCK:{
+    en:'Auto Lock',
+    ar:'القفل التلقائي'
+  }, 
+  SHOW_TABLES:{
+    en:'Show Tables', 
+    ar:'إظهار الطاولات'
+  }, 
+  CUT_OF_TIME:{
+    en:'Cut of Time', 
+    ar:'وقت نهاية الدوام'
+  }, 
+  CUSTOMIZE_COLORS:{
+    en:' Customize Colors', 
+    ar:'تخصيص الألوان'
+  }, 
+  BUSINESS_NAME:{
+    en:'Business Name', 
+    ar:'اسم المتجر'
+  },
+  BUSINESS_ADDRESS:{
+    en:'Business Address', 
+    ar:'عنوان المتجر'
+  }, 
+  PHONE_NUMBER:{
+    en:'Phone Number', 
+    ar:'رقم التلفون'
+  }, 
+  VAT_NUMBER:{
+    en:'VAT Number', 
+    ar:'الرقم الضريبة'
+  }, 
+  BUSINESS_LOGO:{
+    en:'Business Logo', 
+    ar:'شعار المتجر'
+  }, 
+
   
 
 }
