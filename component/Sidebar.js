@@ -1,38 +1,36 @@
 import React, { Component } from 'react';
-import { View, Text,ScrollView, Platform, TouchableOpacity } from 'react-native';
-import noticeBoard from './jsons/ojb';
-import styles from './style/styleSheet';
+import { View, Text, ScrollView, Platform, TouchableOpacity } from 'react-native';
+
+/*************************************** Library ********************************************/
+
+/*************************************** Pages ********************************************/
+import styles from '../style/styleSheet';
 import { Icon } from 'expo';
+import storeInfo from '../jsons/storeinfo';
+/*************************************** Variables ****************************************/
 
-class Sidebar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
-
+export default class Sidebar extends Component {
     render() {
-
         return (
             <View>
                 {/* ****************Sidebar Navigation******************** */}
 
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',margin: '1%', borderRadius: 16, backgroundColor: '#E4E4E4', justifyContent: 'center' }}>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: '1%', borderRadius: 16, backgroundColor: '#E4E4E4', justifyContent: 'center' }}>
                     {/* *****Home******* */}
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('CashierSettings')}>
+                    <TouchableOpacity onPress={() => this.props.navigationVariable.props.navigation.navigate('Dashboard')}>
                         <View style={[styles.sidebarBoxes, { alignItems: 'center', justifyContent: 'center', alignContent: 'center' }]}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
                         </View>
                     </TouchableOpacity>
                     {/* *********Nav list******* */}
                     <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 0.6, }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigationVariable.props.navigation.navigate('Settings')}>
                             <View style={styles.sidebarBoxes}>
                                 <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
                                 <Text style={[styles.p_1, { textAlign: 'center' }]}>General</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity >
+                        <TouchableOpacity onPress={() => this.props.navigationVariable.props.navigation.navigate('CashierSettings')} >
                             <View style={styles.sidebarBoxes}>
                                 <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-cash' : 'md-cash'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
                                 <Text style={[styles.p_1, { textAlign: 'center' }]}>Cashier</Text>
@@ -92,11 +90,10 @@ class Sidebar extends Component {
                     {/* *************Version Number************* */}
 
                     <View style={{ flex: 0.05, justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={[styles.versionNumber, { color: '#484C4F' }]}>{noticeBoard.VERSIONnUMBER}</Text>
+                        <Text>{storeInfo.LWPOSVersion}</Text>
                     </View>
                 </View>
             </View>
         );
     }
 }
-export default Sidebar;

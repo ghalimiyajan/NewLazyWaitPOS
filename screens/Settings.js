@@ -12,7 +12,7 @@ import styles from '../style/styleSheet';
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
 import base64 from 'react-native-base64'
-import Sidebar from '../Sidebar';
+import Sidebar from '../component/Sidebar';
 
 
 let lan = 'en';
@@ -70,7 +70,8 @@ export default class Settings extends Component {
         let pic = image ? image : require('../assets/img/no-image.jpg')
         return (
             <View style={[styles.mainBackgroundColor, { flex: 1, flexDirection: 'row', }]}>
-                <Sidebar />
+
+                <Sidebar navigationVariable={this}/>
 
                 <View style={{ flex: 0.6, }}>
                     <View style={{ flex: 1, }}>
@@ -92,7 +93,9 @@ export default class Settings extends Component {
                             </View>
                             <View style={{ justifyContent: 'flex-start', }}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: '5%', paddingTop: '5%' }}>
-                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} onChange={this.autoLock()} />
+                                    <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}}
+                                    //onChange={this.autoLock()} 
+                                    />
                                     <TextInput onChangeText={time => this.setState({ time: time })} style={[styles.smallTextInput,]} />
                                 </View>
                                 <View style={{ paddingBottom: '5%', paddingTop: '5%' }}>

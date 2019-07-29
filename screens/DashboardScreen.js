@@ -1,39 +1,30 @@
-
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity, Image } from 'react-native';
-
+import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, ScrollView, Platform, TouchableOpacity, Image, Animated, PanResponder } from 'react-native';
 /*************************************** Library    ********************************************/
 import { Icon } from 'expo';
-
 /*************************************** Pages      ********************************************/
 /*************************************** Variables  ********************************************/
 let lan = 'en';
 let currentDate = new Date();
 let version = ' V3.4.2';
-
 let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let dayName = days[currentDate.getDay()];
 let monthName = monthNames[currentDate.getMonth()];
-
 let personImage = 'https://placekitten.com/200/240';
 const online = '#8EDF88';
 const offline = '#8EDF88';
 /*************************************** JSONS      ********************************************/
 import Dictionary from '../services/dictionary';
 import storeInfo from '../jsons/storeinfo';
-
 /*************************************** StyleSheet ********************************************/
 import styles from '../style/styleSheet';
-
 export default class DashboardScreen extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       pan: new Animated.ValueXY()   //Step 1
     };
-
     this.panResponder = PanResponder.create({    //Step 2
       onStartShouldSetPanResponder: () => true,
       onPanResponderMove: Animated.event([null, { //Step 3
@@ -48,7 +39,7 @@ export default class DashboardScreen extends React.Component {
       } //Step 4
     });
   }
-  renderDraggable() {
+  render() {
     return (
       <View style={[styles.mainBackgroundColor, styles.flex1]}>
         {/************************ TOP *************************/}
@@ -73,25 +64,19 @@ export default class DashboardScreen extends React.Component {
           <View style={{ alignItems: 'center', flex: 1 }}>
             <Text>
               <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-log-out'} style={styles.menuIcon} />
-
             </Text>
           </View>
         </View>
         {/************************ BODY *************************/}
         <View style={[styles.flex08, styles.dashboardBodyContainer]}>
-
           {/**************left side***************/}
-
           {/***********Report************/}
-
           <View style={styles.flex07}>
-
-            <Animated.View style={[styles.flex1, styles.dashboardItem_h, 
-              this.state.pan.getLayout()
-            ]} 
-             {...this.panResponder.panHandlers}
-               >
-
+            <Animated.View style={[styles.flex1, styles.dashboardItem_h,
+            this.state.pan.getLayout()
+            ]}
+              {...this.panResponder.panHandlers}
+            >
               <View style={[styles.flex1, styles.p_7, styles.dashboardItemInfo]}>
                 <View style={styles.flexCenter}>
                   <View style={styles.circleBotton}>
@@ -106,10 +91,8 @@ export default class DashboardScreen extends React.Component {
                   </View>
                 </View>
               </View>
-
               <View style={[styles.flex07, styles.p_5]}>
                 <View>
-
                   <View style={{ alignItems: 'flex-end' }}>
                     <View>
                       <Text style={{ textAlign: 'right' }}>
@@ -119,7 +102,6 @@ export default class DashboardScreen extends React.Component {
                     <View style={[styles.dashboardLine]}>
                     </View>
                   </View>
-
                   <View>
                     <View style={styles.dashboardItemInfo}>
                     </View>
@@ -132,7 +114,6 @@ export default class DashboardScreen extends React.Component {
                       {Dictionary.BILLS[lan]}
                     </Text>
                   </View>
-
                   <View style={styles.dashboardItemInfo}>
                     <Text>
                       Salam
@@ -169,7 +150,6 @@ export default class DashboardScreen extends React.Component {
                       </Text>
                     </View>
                   </View>
-
                   <View style={styles.dashboardItemInfo}>
                     <Text>
                       Hala
@@ -178,15 +158,11 @@ export default class DashboardScreen extends React.Component {
                       {Dictionary.MOST_SECTION_SALES[lan]}
                     </Text>
                   </View>
-
                 </View>
               </View>
             </Animated.View>
-
             <View style={[styles.flex1, styles.dashboardItemContainer]}>
-
               {/***********Waiting************/}
-
               <Animated.View style={[styles.flex03, styles.dashboardItem_h, styles.p_7]}>
                 <View style={styles.flexCenter}>
                   <View style={styles.circleBotton}>
@@ -225,20 +201,18 @@ export default class DashboardScreen extends React.Component {
                   </View>
                 </View>
               </Animated.View>
-
             </View>
-
           </View>
-
           {/************** right side ***************/}
           {/************** Cashier    ***************/}
-
           <View style={styles.flex03}>
             <View style={[styles.flex1, styles.dashboardItem_v, styles.p_7]}>
               <View style={styles.flexCenter}>
-                <View style={styles.circleBotton}>
-                  <Text style={[styles.whiteFont, styles.fs_8]}>1</Text>
-                </View>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Settings')}>
+                  <View style={styles.circleBotton}>
+                    <Text style={[styles.whiteFont, styles.fs_8]}>1</Text>
+                  </View>
+                </TouchableOpacity>
                 <Text>
                   {Dictionary.SETTING[lan]}
                 </Text>
@@ -271,7 +245,6 @@ export default class DashboardScreen extends React.Component {
               </View>
             </View>
           </View>
-
         </View>
         {/************************ BOTTOM *************************/}
         <View style={[styles.flex02, styles.dashboardFooterContainer, { alignItems: 'center' }]}>

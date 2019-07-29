@@ -4,12 +4,13 @@ import Dashboard from './screens/DashboardScreen';
 import Login from './screens/LoginScreen';
 import Settings from './screens/Settings';
 import CashierSettings from './screens/CashierSettings';
+import Sidebar from './component/Sidebar';
 
 
 const Navigation = createStackNavigator({ 
   // Login: { screen: Login },
   // Dashboard: { screen: Dashboard },
-  Settings: { screen: Settings},
+  // Settings: { screen: Settings},
   CashierSettings:{screen:CashierSettings },
 
 

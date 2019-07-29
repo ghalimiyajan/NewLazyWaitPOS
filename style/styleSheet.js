@@ -64,6 +64,7 @@ const styles = EStyleSheet.create({
         fontSize: '6rem',
         textAlign: 'center',
         color: color1,
+        fontFamily: 'cairo',
 
     },
     loginLeftSideBackground: {
@@ -330,6 +331,14 @@ const styles = EStyleSheet.create({
     colorPalette:{
         fontSize:'10rem',
         color:'#59C9BF'
+    },
+    commentInput:{
+        height:'30rem',
+        width:'120rem', 
+        borderRadius:16, 
+        backgroundColor:'#F3F3F3', 
+    
+
     },
 
 });
