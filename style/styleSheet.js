@@ -110,7 +110,6 @@ const styles = EStyleSheet.create({
     dashboardFooterContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-end'
     },
     dashboardItem_h: {
         backgroundColor: 'white',
@@ -262,11 +261,11 @@ const styles = EStyleSheet.create({
         fontSize: '12rem',
         color: 'black'
     },
-    trashIcon:{
+    trashIcon: {
         fontSize: '12rem',
         color: 'black',
-        alignSelf: 'center', 
-        padding:'2%', 
+        alignSelf: 'center',
+        padding: '2%',
 
     },
     dashboardLine: {
@@ -292,7 +291,7 @@ const styles = EStyleSheet.create({
         borderRadius: 100,
         borderWidth: 1,
         borderColor: color1,
-        margin:'5%'
+        margin: '5%'
     },
     lwPic: {
         borderWidth: 1,
@@ -312,10 +311,10 @@ const styles = EStyleSheet.create({
         borderRadius: 16
     },
     smallTextInput: {
-        margin: '1%', 
-        width: '40rem', 
-        height: '15rem', 
-        backgroundColor: '#F3F3F3', 
+        margin: '1%',
+        width: '40rem',
+        height: '15rem',
+        backgroundColor: '#F3F3F3',
         borderRadius: 16
 
 
@@ -327,10 +326,6 @@ const styles = EStyleSheet.create({
         borderRadius: 100,
         borderColor: color2,
         margin: 10
-    }, 
-    colorPalette:{
-        fontSize:'10rem',
-        color:'#59C9BF'
     },
     commentInput:{
         height:'30rem',
@@ -340,6 +335,13 @@ const styles = EStyleSheet.create({
     
 
     },
+    colorPalette: {
+        fontSize: '10rem',
+        color: '#59C9BF'
+    },
+    fs_7rem: {
+        fontSize: '7rem',
+    }
 
 });
 
