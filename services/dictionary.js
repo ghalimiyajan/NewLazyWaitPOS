@@ -125,7 +125,7 @@ const Dictionary = {
     ar:'تنبيه بعدم وجود الإسم'
   }, 
   SHOW_WITHOUT_RECEIPT_PAYMENT:{
-    en:"show 'Without Receipt' Payment", 
+    en:"Show 'Without Receipt' Payment", 
     ar:'إظهار زر بدون إيصال'
   }, 
   HIDE_CLOSING_STATE:{
@@ -154,12 +154,77 @@ const Dictionary = {
   }, 
   FLEXIBLE_PRICE:{
     en:'Flexible Price', 
-    ar:'سعر مرن'
+    ar:'تعديل الأسعار قبل الطلب'
   }, 
   MADA_BILL_PRINTING:{
     en:'Mada Bill Printing', 
     ar:'طباعة إيصال مدى'
+  },
+  NAME_AR:{
+    en:'Name|عربي', 
+    ar:'عربي|الأسم'
   }, 
+  NAME_EN:{
+    en:'Name|English', 
+    ar:'الأسم|English'
+  }, 
+ ADD:{
+    en:'Add', 
+    ar:'إضافة'
+  },
+  ZERO_DIGITS:{
+    en:'0 Digits',
+    ar:'0 خانات',
+  },
+  ONE_DIGITS:{
+    en:'1 Digits',
+    ar:'1 خانات',
+  },
+  TWO_DIGITS:{
+    en:'2 Digits',
+    ar:'2 خانات',
+  },
+  ADD_USER:{
+    en:'Add User',
+    ar:'اضافة مستخدم',
+  },
+  NAME:{
+    en:'Name', 
+    ar:'الأسم'
+  }, 
+ EMAIL:{
+    en:'E-mail', 
+    ar:'الإيميل'
+  },
+  ADMIN:{
+    en:'Admin',
+    ar:'المسؤول',
+  },
+  PIN_CODE:{
+    en:'Pin Code',
+    ar:'الرمز السري',
+  },
+  LANGUAGE:{
+    en:'Language',
+    ar:'اللغة',
+  },
+  USER_TYPE:{
+    en:'User Type',
+    ar:'صلاحية المستخدم',
+  },
+  ARABIC:{
+    en:'Arabic',
+    ar:'عربي',
+  },
+  ENGLISH:{
+    en:'English',
+    ar:'إنجليزي',
+  },
+  DELETE:{
+    en:'Delete',
+    ar:'حذف',
+  },
+
 
   
 

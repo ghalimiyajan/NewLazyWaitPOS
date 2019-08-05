@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Platform, TouchableOpacity, TextInput, Image, Switch } from 'react-native';
+import { View, Text, ScrollView, Platform, TouchableOpacity, TextInput, Image, Switch, Modal } from 'react-native';
 
 // ***************************Pages***********************//
 import noticeBoard from '../jsons/ojb';
@@ -7,16 +7,24 @@ import storeInfo from '../jsons/storeinfo';
 // import settingsNav from '../settingsNav';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
+import nav from '../jsons/nav_bar';
+import Sidebar from '../component/Sidebar';
+import AddActionButton from '../component/AddActionButton';
+import OptionsTab from '../component/OptionsTab';
 
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
 import base64 from 'react-native-base64'
-import Sidebar from '../component/Sidebar';
+import { Button, ButtonGroup } from 'react-native-elements';
 
 
 let lan = 'en';
 const online = '#8EDF88';
 const offline = '#8EDF88';
+const component1 = () => <Text>{Dictionary.ZERO_DIGITS[lan]}</Text>
+const component2 = () => <Text>{Dictionary.ONE_DIGITS[lan]}</Text>
+const component3 = () => <Text>{Dictionary.TWO_DIGITS[lan]}</Text>
+
 
 
 export default class CashierSettings extends Component {
@@ -28,105 +36,288 @@ export default class CashierSettings extends Component {
     this.state = {
       VAT: '10%',
       currencyAR: 'ر.س',
-      currencyEN: 'SAR', 
-      smsReadyText:'',
+      currencyEN: 'SAR',
+      smsReadyText: '',
+      orderModal: false,
+      disabled: false,
+      selectedIndex: 1
     };
+    this.updateIndex = this.updateIndex.bind(this)
   }
 
+  updateIndex(selectedIndex) {
+    this.setState({ selectedIndex })
+  }
+
+  setModalVisible(visible) {
+    this.setState({ orderModal: visible });
+  }
+  // _choseItem(){
+  //   this.setState({disabled:true})
+  // }
+
   render() {
+    const buttons = [{ element: component1 }, { element: component2 }, { element: component3 }]
+    const { selectedIndex } = this.state
+
     return (
-      <View style={[styles.mainBackgroundColor, { flex: 1, flexDirection: 'row', }]}>
-        <Sidebar navigationVariable={this} />
-
-
-        <View style={{ flex: 0.6, }}>
-          <View style={{ flex: 1, }}>
-            {/* ************************************************Header************************************************* */}
-            <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
-              <Text style={styles.title}>Lazywait</Text>
-              <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
-
-            </View>
-
-            {/* ************************************************left top************************************************* */}
-            <View style={{ flex: 0.45, padding: '5%', margin: '2%', backgroundColor: '#ffff', borderRadius: 16, flexDirection: 'row', alignItems: 'center', flexDirection: 'row' }}>
-              <View style={{ flex: 0.5 }}>
-                <Text style={{ padding: '8%' }}>{Dictionary.VAT[lan]}</Text>
-                <Text style={{ padding: '8%' }}>{Dictionary.PRICE_INCLUDE_TAX[lan]}</Text>
-                <Text style={{ padding: '8%' }}>{Dictionary.CURRENCY_AR[lan]}</Text>
-                <Text style={{ padding: '8%' }}>{Dictionary.CURRENCY_EN[lan]}</Text>
-                <Text style={{ padding: '8%' }}>{Dictionary.MADA_BILL_PRINTING[lan]}</Text>
-                <Text style={{ padding: '8%' }}>{Dictionary.SHOW_PRICE[lan]}</Text>
-              </View>
-
-              <View style={{ flex: 0.5, padding: '5%' }}>
-                <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput,]} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <TextInput onChangeText={Text => this.setState({ currencyAR: Text })} style={[styles.smallTextInput,]} />
-                <TextInput onChangeText={Text => this.setState({ currencyEN: Text })} style={[styles.smallTextInput,]} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-              </View>
-
-
-            </View>
-
-            {/* ************************************************left Bottom************************************************* */}
-
-            <View style={{ flex: 0.45, margin: '2%', backgroundColor: '#ffff', borderRadius: 16, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-              <View style={{ flex: 0.4, justifyContent: 'center', alignItems: 'center' }}>
-
-                <Text style={{ padding: '10%' }}>{Dictionary.SHOW_WITHOUT_RECEIPT_PAYMENT[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.QUICK_ITEM_ADD[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.ALLOW_DEPOSIT[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.BARCODE_VIEW[lan]}</Text>
-
-              </View>
-
-              <View style={{ flex: 0.1, padding: '5%' }}>
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-
-              </View>
-              <View style={{ flex: 0.4 }}>
-                <Text style={{ padding: '10%' }}>{Dictionary.SHOW_ALL_CATEGORY[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.ADD_ITEM_ON_TOP[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.DELIVERY_ACTIVE[lan]}</Text>
-                <Text style={{ padding: '10%' }}>{Dictionary.SHOW_STOCK[lan]}</Text>
-              </View>
-
-              <View style={{ flex: 0.1, padding: '5%' }}>
-
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} style={{}} />
-              </View>
-
-            </View>
-
-          </View>
-
+      <View style={[styles.mainBackgroundColor, { flex: 1, flexDirection: 'row', paddingBottom: '2%', paddingTop: '2%' }]}>
+        {/* *********************Navigation Sidebar************************** */}
+        <View style={{ margin: '1%' }}>
+          <Sidebar navigationVariable={this} nav={nav.nav} />
         </View>
-        <View style={{ flex: 0.5, padding: '0.5%', backgroundColor: '#fff', margin: '1%', borderRadius: 16, }}>
-          <View style={{ flex: 0.2, }}>
-          <Text style={{ padding: '10%' }}>{Dictionary.READY_SMS_TEXT[lan]}</Text>
-          <TextInput onChangeText={Text => this.setState({ smsReadyText: Text })} style={styles.commentInput} placeholder={'The order is ready'} multiline={true}/>
-          </View>
-          <View style={{ flex: 0.2, }}>
 
-          </View>
-          <View style={{ flex: 0.2, }}>
-
-          </View>
-          <View style={{ flex: 0.2, }}>
+        <View style={{ flex: 2, padding: 5, justifyContent: 'space-around' }}>
+          {/* ************************************************Header************************************************* */}
+          <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
+            <Text style={styles.title}>Lazywait</Text>
+            <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
 
           </View>
 
+          {/* ************************************************left top************************************************* */}
+          <View style={{ flex: 0.3, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+              <Text style={{ flex: 1 }}>{Dictionary.VAT[lan]}</Text>
+              <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ flex: 1 }}>{Dictionary.CURRENCY_AR[lan]}</Text>
+              <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ flex: 1 }}>{Dictionary.CURRENCY_EN[lan]}</Text>
+              <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ flex: 1 }}>{Dictionary.MADA_BILL_PRINTING[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ flex: 1 }}>{Dictionary.SHOW_PRICE[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+            </View>
+
+          </View>
+
+          {/* ************************************************left Bottom************************************************* */}
+
+          <View style={{ flex: 0.45, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20, }}>
+            <View>
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5, }}>
+                <Text style={{ flex: 1, }}>{Dictionary.SHOW_WITHOUT_RECEIPT_PAYMENT[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.QUICK_ITEM_ADD[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.ALLOW_DEPOSIT[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.BARCODE_VIEW[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.SHOW_ALL_CATEGORY[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.DELIVERY_ACTIVE[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.SHOW_STOCK[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5 }}>
+                <Text style={{ flex: 1 }}>{Dictionary.ADD_ITEM_ON_TOP[lan]}</Text>
+                <View style={{ flex: 1, justifyContent: "center" }}>
+                  <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+                </View>
+              </View>
+
+            </View>
+
+          </View>
+        </View>
+        {/* **************************************************Rightside****************************************************** */}
+        <View style={{ flex: 1, padding: '2%', backgroundColor: '#fff', borderRadius: 16, padding: 20, margin: '1%' }}>
+
+          <View style={{}}>
+            {/* Ready SMS text */}
+            <View style={{ padding: 20 }}>
+              <Text style={{ paddingBottom: 15 }}>{Dictionary.READY_SMS_TEXT[lan]}</Text>
+              <TextInput onChangeText={Text => this.setState({ smsReadyText: Text })} style={styles.commentInput} placeholder={'The order is ready'} multiline={true} />
+            </View>
+
+            {/* Order Status */}
+            <View style={{ padding: 20 }}>
+              <View style={{ flexDirection: 'row', }}>
+                <Text style={{ paddingBottom: 15, paddingRight: 15, }}>{Dictionary.ORDER_STATUS[lan]}</Text>
+                {/* ****************Plus icon to open Modal************** */}
+                <TouchableOpacity onPress={() => this.setModalVisible(true)}>
+                  <View style={{ borderColor: '#707070', borderRadius: 100, height: 20, width: 20, borderWidth: 1, justifyContent: 'center', alignItems: 'center', }}>
+                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_7, {}]} />
+                  </View>
+                </TouchableOpacity>
+              </View>
+              {/* {noticeBoard.details.map((item, key) =>
+                ( */}
+              <View style={[styles.square]}>
+                {/* {this._renderItem(item)} */}
+              </View>
+              {/* )
+              )
+              } */}
 
 
+            </View>
+
+
+            {/* Rounding order total */}
+            <View style={{ padding: 20 }}>
+              <Text style={{ paddingBottom: 15 }}>{Dictionary.ROUNDING_ORDER_TOTAL[lan]}</Text>
+              <ButtonGroup
+                onPress={this.updateIndex}
+                selectedIndex={selectedIndex}
+                buttons={buttons}
+                containerStyle={{ borderWidth: 0, }}
+                buttonStyle={{ borderRadius: 10, }}
+                underlayColor={'#48C4B7'}
+                innerBorderStyle={{ width: 0, }}
+                selectedButtonStyle={{ backgroundColor: '#48C4B7' }}
+                disabledSelectedStyle={{ borderColor: 'gray', borderWidth: 1 }}
+                
+              />
+            </View>
+          </View>
+          {/* switches */}
+
+          <View style={{ justifyContent: 'space-around', padding: 20 }}>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 15 }}>
+              <Text style={{ flex: 1 }}>{Dictionary.FLEXIBLE_PRICE[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 15 }}>
+              <Text style={{ flex: 1 }}>{Dictionary.EMAIL_ADMIN_WHEN_VOIDING_ORDER[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 15 }}>
+              <Text style={{ flex: 1 }}>{Dictionary.MISSING_NAME_ALERT[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 15 }}>
+              <Text style={{ flex: 1 }}>{Dictionary.HIDE_CLOSING_STATE[lan]}</Text>
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <Switch ios_backgroundColor={'#59C9BF'} trackColor={{ false: '#707070', true: '#707070' }} />
+              </View>
+
+            </View>
+
+          </View>
+
+
+          {/* ********************************Order Status Modal************************ */}
+          <Modal
+            transparent={true}
+            visible={this.state.orderModal}
+
+          >
+            <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)' }}>
+              <TouchableOpacity onPress={() => {
+                this.setModalVisible(!this.state.orderModal);
+              }}
+                style={{ flex: 1, width: '100%', height: '100%', position: 'absolute' }}
+              />
+              <View style={{
+                backgroundColor: '#ffffffff',
+                width: '40%',
+                height: '70%',
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 2,
+                },
+                shadowOpacity: 0.25,
+                shadowRadius: 3.84,
+                elevation: 5,
+                position: 'absolute',
+                flex: 1,
+                borderRadius: 16,
+              }}>
+                <View style={{ flex: 0.4, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-evenly', padding: 20 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={{ flex: 1 }}>{Dictionary.NAME_AR[lan]}</Text>
+                    <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
+                  </View>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={{ flex: 1 }}>{Dictionary.NAME_EN[lan]}</Text>
+                    <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
+                  </View>
+
+
+
+                  {/* 
+                  <View style={{ flexDirection: 'row', }}>
+                    <Text style={{ padding: '5%' }}>{Dictionary.NAME_AR[lan]}</Text>
+                    <TextInput style={[styles.smallTextInput,]} />
+
+                  </View>
+                  <View style={{ flexDirection: 'row', }}>
+                    <Text style={{ padding: '5%' }}>{Dictionary.NAME_EN[lan]}</Text>
+                    <TextInput style={[styles.smallTextInput,]} />
+                  </View> */}
+                </View>
+                <View style={{flex:0.5}}>
+
+                </View>
+
+                {/* ***********************Add button inside modal************** */}
+                <AddActionButton />
+              </View>
+            </View>
+          </Modal>
 
         </View>
       </View>
