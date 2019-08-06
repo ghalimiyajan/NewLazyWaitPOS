@@ -8,6 +8,7 @@ import storeInfo from '../jsons/storeinfo';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
 import nav from '../jsons/nav_bar';
+import cashier_settings from '../jsons/cashier_settings_info';
 import Sidebar from '../component/Sidebar';
 import AddActionButton from '../component/AddActionButton';
 import OptionsTab from '../component/OptionsTab';
@@ -15,15 +16,12 @@ import OptionsTab from '../component/OptionsTab';
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
 import base64 from 'react-native-base64'
-import { Button, ButtonGroup } from 'react-native-elements';
 
 
 let lan = 'en';
 const online = '#8EDF88';
 const offline = '#8EDF88';
-const component1 = () => <Text>{Dictionary.ZERO_DIGITS[lan]}</Text>
-const component2 = () => <Text>{Dictionary.ONE_DIGITS[lan]}</Text>
-const component3 = () => <Text>{Dictionary.TWO_DIGITS[lan]}</Text>
+
 
 
 
@@ -40,7 +38,7 @@ export default class CashierSettings extends Component {
       smsReadyText: '',
       orderModal: false,
       disabled: false,
-      selectedIndex: 1
+      digitVal: 'Zero',
     };
     this.updateIndex = this.updateIndex.bind(this)
   }
@@ -57,7 +55,6 @@ export default class CashierSettings extends Component {
   // }
 
   render() {
-    const buttons = [{ element: component1 }, { element: component2 }, { element: component3 }]
     const { selectedIndex } = this.state
 
     return (
@@ -183,23 +180,27 @@ export default class CashierSettings extends Component {
 
             {/* Order Status */}
             <View style={{ padding: 20 }}>
+              <Text style={{ paddingBottom: 15, paddingRight: 15, }}>{Dictionary.ORDER_STATUS[lan]}</Text>
+              {/* ****************Plus icon to open Modal************** */}
+
               <View style={{ flexDirection: 'row', }}>
-                <Text style={{ paddingBottom: 15, paddingRight: 15, }}>{Dictionary.ORDER_STATUS[lan]}</Text>
-                {/* ****************Plus icon to open Modal************** */}
                 <TouchableOpacity onPress={() => this.setModalVisible(true)}>
-                  <View style={{ borderColor: '#707070', borderRadius: 100, height: 20, width: 20, borderWidth: 1, justifyContent: 'center', alignItems: 'center', }}>
-                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_7, {}]} />
+                  <View style={[styles.square, { alignItems: 'center', justifyContent: 'center', marginLeft: 0 }]}>
+                    <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_10, {}]} />
                   </View>
                 </TouchableOpacity>
-              </View>
-              {/* {noticeBoard.details.map((item, key) =>
-                ( */}
-              <View style={[styles.square]}>
-                {/* {this._renderItem(item)} */}
-              </View>
-              {/* )
+                
+                <ScrollView horizontal >
+                  {cashier_settings.order_status.map((item, key) =>
+                (
+                  <View style={[styles.square]}>
+                  <Text>{item.name[lan]}</Text>
+                  </View>
+                 )
               )
-              } */}
+              }
+                </ScrollView>
+              </View>
 
 
             </View>
@@ -208,18 +209,13 @@ export default class CashierSettings extends Component {
             {/* Rounding order total */}
             <View style={{ padding: 20 }}>
               <Text style={{ paddingBottom: 15 }}>{Dictionary.ROUNDING_ORDER_TOTAL[lan]}</Text>
-              <ButtonGroup
-                onPress={this.updateIndex}
-                selectedIndex={selectedIndex}
-                buttons={buttons}
-                containerStyle={{ borderWidth: 0, }}
-                buttonStyle={{ borderRadius: 10, }}
-                underlayColor={'#48C4B7'}
-                innerBorderStyle={{ width: 0, }}
-                selectedButtonStyle={{ backgroundColor: '#48C4B7' }}
-                disabledSelectedStyle={{ borderColor: 'gray', borderWidth: 1 }}
-                
-              />
+              <View style={{ flexDirection: 'row', }}>
+                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "Zero" ? "#48C4B7" : '#fffff' }}>
+                  {Dictionary.ZERO_DIGITS[lan]}
+                </Text>
+                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "One" ? "#48C4B7" : '#fffff' }}>{Dictionary.ONE_DIGITS[lan]}}</Text>
+                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "Two" ? "#48C4B7" : '#fffff' }}>{Dictionary.TWO_DIGITS[lan]}}</Text>
+              </View>
             </View>
           </View>
           {/* switches */}
@@ -286,12 +282,12 @@ export default class CashierSettings extends Component {
                 flex: 1,
                 borderRadius: 16,
               }}>
-                <View style={{ flex: 0.4, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-evenly', padding: 20 }}>
-                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={{ flex: 0.4, backgroundColor: '#ffff', borderRadius: 16, padding: 20, justifyContent:'center' }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom:20 }}>
                     <Text style={{ flex: 1 }}>{Dictionary.NAME_AR[lan]}</Text>
                     <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
                   </View>
-                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom:20 }}>
                     <Text style={{ flex: 1 }}>{Dictionary.NAME_EN[lan]}</Text>
                     <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
                   </View>
@@ -309,7 +305,7 @@ export default class CashierSettings extends Component {
                     <TextInput style={[styles.smallTextInput,]} />
                   </View> */}
                 </View>
-                <View style={{flex:0.5}}>
+                <View style={{ flex: 0.5 }}>
 
                 </View>
 

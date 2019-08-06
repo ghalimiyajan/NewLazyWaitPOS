@@ -78,14 +78,12 @@ export default class Settings extends Component {
 
                 <View style={{ flex: 2, padding: 5, justifyContent: 'space-around' }}>
                     {/* ************************************************Header************************************************* */}
-                    <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
+                    <View style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
                         <Text style={styles.title}>Lazywait</Text>
                         <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
-
                     </View>
-
                     {/* ************************************************left top************************************************* */}
-                    <View style={{ flex: 0.3, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
+                    <View style={{ flex: 0.38, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                             <Text style={{ flex: 1 }}>{Dictionary.AUTO_LOCK[lan]}</Text>
                             <View style={{ flex: 1, justifyContent: "center" }}>
@@ -113,22 +111,22 @@ export default class Settings extends Component {
 
                     {/* ************************************************left Bottom************************************************* */}
 
-                    <View style={{ flex: 0.45, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20, }}>
+                    <View style={{ flex: 0.48, backgroundColor: '#ffff', borderRadius: 16, padding: 20, }}>
 
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.BUSINESS_NAME[lan]}</Text>
                             <TextInput onChangeText={text => this.setState({ businessName: text })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.BUSINESS_ADDRESS[lan]}</Text>
                             <TextInput onChangeText={text => this.setState({ businessAddress: text })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.PHONE_NUMBER[lan]}</Text>
                             <TextInput onChangeText={Number => this.setState({ phoneNumber: Number })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.VAT_NUMBER[lan]}</Text>
                             <TextInput onChangeText={Number => this.setState({ VATNumber: Number })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
@@ -140,7 +138,7 @@ export default class Settings extends Component {
                 {/* **************************************************Rightside****************************************************** */}
                 <View style={{ flex: 1, justifyContent: 'space-around', margin:'1%' }}>
                     {/* ************************************************right top************************************************* */}
-                    <View style={{ flex: 0.47, backgroundColor: '#ffff', justifyContent: 'center', alignItems: 'center', borderRadius: 16, padding: 20, }}>
+                    <View style={{ flex: 0.48, backgroundColor: '#ffff', justifyContent: 'center', alignItems: 'center', borderRadius: 16, padding: 20, }}>
                         <Text>{Dictionary.BUSINESS_LOGO[lan]}</Text>
                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
                             <TouchableOpacity onPress={() => this.deleteImage()}>
@@ -155,7 +153,7 @@ export default class Settings extends Component {
 
                     </View>
                     {/* ************************************************right botttom************************************************* */}
-                    <View style={{ flex: 0.47, backgroundColor: '#ffff', padding: 20, borderRadius: 16 }}>
+                    <View style={{ flex: 0.48, backgroundColor: '#ffff', padding: 20, borderRadius: 16, justifyContent:'center' }}>
                         <View style={{ alignItems: 'center' }}>
                             <View style={styles.lwPic}>
                                 <Text style={[styles.plustitle, { color: '#484C4F' }]}>LW</Text>

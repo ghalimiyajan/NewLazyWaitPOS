@@ -23,6 +23,7 @@ export default class Sidebar extends Component {
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'} style={[styles.homeIcon, { alignSelf: 'center', }]} />
                         </View>
                     </TouchableOpacity>
+                    {/* *****Empty View***** */}
                     <View style={{ marginBottom:50 }}>
                            
                         </View>

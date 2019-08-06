@@ -44,16 +44,16 @@ const styles = EStyleSheet.create({
         color: color1
     },
     title: {
-        fontSize: '12rem',
+        fontSize: '10rem',
     },
     plustitle: {
-        fontSize: '20rem',
+        fontSize: '15rem',
     },
     subTitle: {
-        fontSize: '8rem',
+        fontSize: '7rem',
     },
     text: {
-        fontSize: '7rem',
+        fontSize: '6rem',
 
     },
     versionNumber: {
@@ -305,9 +305,9 @@ const styles = EStyleSheet.create({
 
     },
     imagePickerCircle: {
-        width: '70rem',
-        height: '70rem',
-        borderRadius: '35rem',
+        width: '60rem',
+        height: '60rem',
+        borderRadius: '30rem',
         borderWidth: 1,
         borderColor: color1,
         margin: '5%'
@@ -328,8 +328,8 @@ const styles = EStyleSheet.create({
     },
     lwPic: {
         borderWidth: 1,
-        height: '40rem',
-        width: '40rem',
+        height: '30rem',
+        width: '30rem',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
@@ -385,8 +385,10 @@ const styles = EStyleSheet.create({
         width: '30rem',
         height: '15rem',
         backgroundColor: '#F3F3F3',
-        borderRadius: 10
-
+        borderRadius: 10, 
+        margin:10,
+        justifyContent:'center', 
+        alignItems:'center',
     },
     activeSquare: {
         width: '25rem',
@@ -407,15 +409,16 @@ const styles = EStyleSheet.create({
         width: '60rem',
         height: '60rem',
         backgroundColor: '#E6E6E6',
-        borderRadius: 10
+        borderRadius: 16, 
+        padding:10,
 
     },
     sidebar: {
         backgroundColor: '#E6E6E6',
-        width: '35%',
-        height: '95%',
-        position: 'absolute',
+        width: '100%',
+        height: '100%',
         borderRadius: 16,
+        flex:1,
 
     },
     greenTag: {
@@ -424,7 +427,14 @@ const styles = EStyleSheet.create({
         width: '13rem',
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10,
-        alignSelf: 'flex-start',
+        alignItems:'center',
+        justifyContent:'center',
+        position:'absolute'
+    },
+    userImage: {
+        width:'18rem', 
+        height:'18rem', 
+        borderRadius:'9rem'
     },
 
 
