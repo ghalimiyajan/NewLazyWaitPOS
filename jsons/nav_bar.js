@@ -78,7 +78,7 @@ const navBar = {
                 ios: 'ios-person',
                 android: 'md-person'
             },
-            navigate: 'CashierSettings',
+            navigate: 'UsersRolesSettings',
             active: true,
 
 

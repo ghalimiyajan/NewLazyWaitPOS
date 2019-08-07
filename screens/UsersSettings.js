@@ -13,7 +13,7 @@ import OptionsTab from '../component/OptionsTab';
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
 import usersInfo from '../jsons/usersInfo';
-import { ThemeConsumer } from 'react-native-elements';
+
 
 
 let lan = 'en';
@@ -33,14 +33,16 @@ export default class UsersSettings extends Component {
 
         };
     }
+    // when click on add user box
     handleClick() {
         this.setState({ sidebarAdd: true });
     }
-
+    // when click on edit user box
     handleClick2() {
         this.setState({ sidebarAdd: false });
     }
 
+    // premission for open photo gallery 
     _pickImage = async () => {
 
         if (Platform.OS === 'ios') {
@@ -54,13 +56,15 @@ export default class UsersSettings extends Component {
 
         this.setState({ image: result.cancelled ? this.state.image : result });
     };
+    // To delete image 
     deleteImage() {
         this.setState({ image: null })
     }
 
+    // Users Boxes View 
     _renderItem = item => {
         return (
-            <TouchableOpacity onPress={()=> this.handleClick2()}>
+            <TouchableOpacity onPress={() => this.handleClick2()}>
                 <View style={[styles.usersCards, { margin: 10 }]}>
                     <View style={styles.greenTag}>
                         <Text style={[styles.fs_7, { color: '#ffff', fontWeight: 'bold', }]}>{item.user_Id}</Text>
@@ -77,12 +81,11 @@ export default class UsersSettings extends Component {
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-call' : 'md-call'} style={[styles.fs_7, { flex: 0.2 }]} />
                             <Text style={[styles.fs_4, { color: '#707070', flex: 1 }]}>{item.phone_number}</Text>
                         </View>
-                        {true &&
-                            <View style={{ alignItems: 'center', flexDirection: 'row' }}>
-                                <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-mail' : 'md-mail'} style={[styles.fs_7, { flex: 0.2 }]} />
-                                <Text style={[styles.fs_4, { color: '#707070', flex: 1, }]}>{item.Email}</Text>
-                            </View>
-                        }
+
+                        <View style={{ alignItems: 'center', flexDirection: 'row' }}>
+                            <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-mail' : 'md-mail'} style={[styles.fs_7, { flex: 0.2 }]} />
+                            <Text style={[styles.fs_4, { color: '#707070', flex: 1, }]}>{item.Email}</Text>
+                        </View>
                         <View style={{ alignItems: 'center', flexDirection: 'row' }}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-key' : 'md-key'} style={[styles.fs_7, { flex: 0.2 }]} />
                             <Text style={[styles.fs_4, { color: '#707070', flex: 1, }]}>{item.user_type}</Text>
@@ -99,6 +102,7 @@ export default class UsersSettings extends Component {
     render() {
         const { image } = this.state
         let pic = image
+        // if statment thet handel the click in edit or add users 
         const sidebarAdd = this.state.sidebarAdd;
         if (sidebarAdd) {
             button = <AddActionButton />;
@@ -122,7 +126,7 @@ export default class UsersSettings extends Component {
                     {/* *************************************************Cards********************************************* */}
                     <View style={{ flex: 0.9, flexDirection: 'row', flexWrap: 'wrap' }}>
                         {/* Add user View */}
-                        <TouchableOpacity onPress={()=> this.handleClick()}>
+                        <TouchableOpacity onPress={() => this.handleClick()}>
                             <View style={[styles.usersCards, { justifyContent: 'center', alignItems: 'center', margin: 10 }]}>
                                 <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_20, {}]} />
                             </View>
@@ -223,15 +227,11 @@ export default class UsersSettings extends Component {
                             </View>
 
                         </View>
-
-
+                        {/* Add or Delete button */}
                         {button}
-
-
 
                     </View>
                 </View>
-
             </View>
         );
     }

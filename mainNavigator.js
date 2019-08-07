@@ -7,6 +7,7 @@ import CashierSettings from './screens/CashierSettings';
 import Sidebar from './component/Sidebar';
 import Cashier from './screens/Cashier';
 import UsersSettings from './screens/UsersSettings';
+import UsersRolesSettings from './screens/UsersRolesSettings';
 
 
 const Navigation = createStackNavigator({
@@ -15,7 +16,8 @@ const Navigation = createStackNavigator({
   // Settings: { screen: Settings },
   // CashierSettings: { screen: CashierSettings },
   // Cashier: { screen: Cashier },
-  UsersSettings:{screen: UsersSettings},
+  // UsersSettings:{screen: UsersSettings},
+  UsersRolesSettings:{screen:UsersRolesSettings}
 
 
 

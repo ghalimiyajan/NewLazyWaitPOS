@@ -224,7 +224,74 @@ const Dictionary = {
     en:'Delete',
     ar:'حذف',
   },
-
+ OPEN_CASHIER_DRAWER_WITHOUT_TRANSACTION:{
+    en:'Open Cashier Drawer Without Transaction',
+    ar:'فتح درج الكاشير بدون عملية بيع',
+  },
+  RETURN_SOLD_ITEMS:{
+    en:'Return Sold Items',
+    ar:'استرجاع أصناف مباعة',
+  },
+  CANCEL_KITCHEN_ORDERS:{
+    en:'Cancel Kitchen Orders',
+    ar:'إلغاء طلبات المطبخ',
+  },
+  CLOSE_CASHIER:{
+    en:'Close Cashier',
+    ar:'إقفال درج الكاشير',
+  },
+  MODIFY_PRODUCTS:{
+    en:'Modify Products',
+    ar:'تعديل المنتجات',
+  },
+  MODIFY_ADDONS:{
+    en:'Modify Addons',
+    ar:'تعديل الإضافات',
+  },
+  MODIFY_USERS:{
+    en:'Modify Users',
+    ar:'تعديل المستخدمين',
+  },
+ MODIFY_PRINTERS:{
+    en:'Modify Printers',
+    ar:'تعديل الطابعات',
+  },
+  MODIFY_GENERAL_SETTINGS:{
+    en:'Modify General Settings',
+    ar:'التحكم بالاعدادات العامة',
+  },
+  MODIFY_TABELS:{
+    en:'Modify Tables',
+    ar:'تغير الطاولات',
+  },
+  MODIFY_DISCOUNTS:{
+    en:'Modify Discounts',
+    ar:'تغير الخصومات',
+  },
+  VIEW_SALES:{
+    en:'View Sales',
+    ar:'معاينة المبيعات',
+  },
+ CANCEL_UNPAID_ORDERS:{
+    en:'Cancel Unpaid Orders',
+    ar:'إلغاء الطلبات الغير مدفوعة',
+  },
+  CANCEL_PAID_ORDERS:{
+    en:'Cancel Unpaid Orders',
+    ar:'إلغاء الطلبات المدفوعة',
+  },
+  ALLOW_MANUAL_DISCOUNTS:{
+    en:'Allow Manual Disounts',
+    ar:'إضافة تخفيض غير معروف',
+  },
+  MODIFY_CASHIER_SETTINGS:{
+    en:'Modify Cashier Settings',
+    ar:'تعديل اعدادات الكاشير',
+  },
+  MODIFY_TABLET_SETTINGS:{
+    en:'Modify Tablet Settings',
+    ar:'تعديل اعدادات الأجهزة الجانبية',
+  },
 
   
 
