@@ -6,7 +6,7 @@ import { Icon } from 'expo';
 
 /*************************************** Pages      ****************************************/
 /*************************************** Variables  ****************************************/
-let lan = 'ar';
+let lan = 'en';
 let currentDate = new Date();
 let version = ' V3.4.2';
 let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
@@ -149,7 +149,7 @@ export default class DashboardScreen extends React.Component {
                       </View>
                     </TouchableOpacity>
                     <Text style={styles.fs_7rem}>
-                      {Dictionary.SETTING[lan]}
+                      {Dictionary.SETTINGS[lan]}
                     </Text>
                     <View style={styles.dashboardLine}>
                     </View>

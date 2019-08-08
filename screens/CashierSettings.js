@@ -66,14 +66,14 @@ export default class CashierSettings extends Component {
 
         <View style={{ flex: 2, padding: 5, justifyContent: 'space-around' }}>
           {/* ************************************************Header************************************************* */}
-          <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
+          <View style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', }}>
             <Text style={styles.title}>Lazywait</Text>
             <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
 
           </View>
 
           {/* ************************************************left top************************************************* */}
-          <View style={{ flex: 0.3, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
+          <View style={{ flex: 0.37, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
 
             <View style={{ flexDirection: 'row', alignItems: 'center', }}>
               <Text style={{ flex: 1 }}>{Dictionary.VAT[lan]}</Text>
@@ -106,7 +106,7 @@ export default class CashierSettings extends Component {
 
           {/* ************************************************left Bottom************************************************* */}
 
-          <View style={{ flex: 0.45, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20, }}>
+          <View style={{ flex: 0.48, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20, }}>
             <View>
               <View style={{ flexDirection: 'row', alignItems: 'center', paddingBottom: 5, }}>
                 <Text style={{ flex: 1, }}>{Dictionary.SHOW_WITHOUT_RECEIPT_PAYMENT[lan]}</Text>
@@ -189,16 +189,16 @@ export default class CashierSettings extends Component {
                     <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_10, {}]} />
                   </View>
                 </TouchableOpacity>
-                
+
                 <ScrollView horizontal >
                   {cashier_settings.order_status.map((item, key) =>
-                (
-                  <View style={[styles.square]}>
-                  <Text>{item.name[lan]}</Text>
-                  </View>
-                 )
-              )
-              }
+                    (
+                      <View style={[styles.square]}>
+                        <Text>{item.name[lan]}</Text>
+                      </View>
+                    )
+                  )
+                  }
                 </ScrollView>
               </View>
 
@@ -210,11 +210,22 @@ export default class CashierSettings extends Component {
             <View style={{ padding: 20 }}>
               <Text style={{ paddingBottom: 15 }}>{Dictionary.ROUNDING_ORDER_TOTAL[lan]}</Text>
               <View style={{ flexDirection: 'row', }}>
-                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "Zero" ? "#48C4B7" : '#fffff' }}>
-                  {Dictionary.ZERO_DIGITS[lan]}
-                </Text>
-                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "One" ? "#48C4B7" : '#fffff' }}>{Dictionary.ONE_DIGITS[lan]}}</Text>
-                <Text style={{ padding: 10, borderWidth: 1, borderRadius: 16, marginHorizontal: 5, backgroundColor: this.state.digitVal == "Two" ? "#48C4B7" : '#fffff' }}>{Dictionary.TWO_DIGITS[lan]}}</Text>
+                <TouchableOpacity onPress={() => this.setState({ digitVal: 'zero' })}>
+                  <View style={{ padding: 10, borderRadius: 16, marginHorizontal: 3, backgroundColor: this.state.digitVal == "Zero" ? "#48C4B7" : '#fffff' }}>
+                    <Text>{Dictionary.ZERO_DIGITS[lan]}</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.setState({ digitVal: 'One' })}>
+                  <View style={{ padding: 10, borderRadius: 16, marginHorizontal: 3, backgroundColor: this.state.digitVal == "One" ? "#48C4B7" : '#fffff' }}>
+                    <Text>{Dictionary.ONE_DIGITS[lan]}</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.setState({ digitVal: 'Two' })}>
+                  <View style={{ padding: 10, borderRadius: 16, marginHorizontal: 3,  backgroundColor: this.state.digitVal == "Two" ? "#48C4B7" : '#fffff' }}>
+                    <Text>{Dictionary.TWO_DIGITS[lan]}</Text>
+                  </View>
+                </TouchableOpacity>
+            
               </View>
             </View>
           </View>
@@ -282,12 +293,12 @@ export default class CashierSettings extends Component {
                 flex: 1,
                 borderRadius: 16,
               }}>
-                <View style={{ flex: 0.4, backgroundColor: '#ffff', borderRadius: 16, padding: 20, justifyContent:'center' }}>
-                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom:20 }}>
+                <View style={{ flex: 0.4, backgroundColor: '#ffff', borderRadius: 16, padding: 20, justifyContent: 'center' }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                     <Text style={{ flex: 1 }}>{Dictionary.NAME_AR[lan]}</Text>
                     <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
                   </View>
-                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom:20 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                     <Text style={{ flex: 1 }}>{Dictionary.NAME_EN[lan]}</Text>
                     <TextInput onChangeText={Text => this.setState({ VAT: Text })} style={[styles.smallTextInput, { flex: 1 }]} />
                   </View>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import styles from '../style/styleSheet';
 
  class Checkbox extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
         return (
             <View>
                 <TouchableOpacity onPress={() => this.setState({ selected: !this.state.selected })}>
-                    <View style={{ backgroundColor: this.state.selected == true ? "#59C9BF" : '#fff', borderColor: this.state.selected == true ? "rgba(0,0,0,0)" : '#707070', width: 20, height: 20, borderWidth: 0.5 }} />
+                    <View style={[styles.checkbox,{ backgroundColor: this.state.selected == true ? "#59C9BF" : '#fff', borderColor: this.state.selected == true ? "rgba(0,0,0,0)" : '#707070', }]} />
                 </TouchableOpacity>
             </View>
         );

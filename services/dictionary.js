@@ -24,8 +24,8 @@ const Dictionary = {
     en: 'Most Section Sales',
     ar: 'الاقسام الأكثر مبيعا'
   },
-  SETTING: {
-    en: 'Setting',
+  SETTINGS: {
+    en: 'Settings',
     ar: 'الإعدادات'
   },
   CASHIER: {

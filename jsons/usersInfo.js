@@ -1,7 +1,7 @@
 const usersInfo = {
     Info: [
         {
-            image:require('../assets/img/profile-image.png'),
+            image:require('../assets/img/user.png'),
             name: 'Ruqaya',
             user_Id:'1',
             user_type: 'Admin',
@@ -11,7 +11,7 @@ const usersInfo = {
             language:'Arabic'
         },
         {
-            image:require('../assets/img/profile-image.png'),
+            image:require('../assets/img/user.png'),
             name: 'Ghali',
             user_Id:'2',
             user_type: 'Cashier',
@@ -21,20 +21,20 @@ const usersInfo = {
             language:'English'
         },
         {
-            image:require('../assets/img/profile-image.png'),
+            image:require('../assets/img/user.png'),
             name: 'Feda',
             user_Id:'3',
-            user_type: 'Cashier',
+            user_type: 'Server',
             phone_number: '966548605446',
             Email: 'Feda@gmail.com',
             pin_code: '2345', 
             language:'English'
         },
         {
-            image:require('../assets/img/profile-image.png'),
+            image:require('../assets/img/user.png'),
             name: 'Qunoot',
             user_Id:'4',
-            user_type: 'Cashier',
+            user_type: 'Chef',
             phone_number: '966548605446',
             Email: 'Qunoot@gmail.com',
             pin_code: '5678', 

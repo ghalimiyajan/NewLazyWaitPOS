@@ -16,6 +16,7 @@ import base64 from 'react-native-base64'
 import Sidebar from '../component/Sidebar';
 
 
+
 let lan = 'en';
 const online = '#8EDF88';
 const offline = '#8EDF88';
@@ -83,7 +84,7 @@ export default class Settings extends Component {
                         <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
                     </View>
                     {/* ************************************************left top************************************************* */}
-                    <View style={{ flex: 0.38, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
+                    <View style={{ flex: 0.37, backgroundColor: '#ffff', borderRadius: 16, justifyContent: 'space-around', padding: 20 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                             <Text style={{ flex: 1 }}>{Dictionary.AUTO_LOCK[lan]}</Text>
                             <View style={{ flex: 1, justifyContent: "center" }}>
@@ -104,7 +105,9 @@ export default class Settings extends Component {
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Text style={{ flex: 1 }}>{Dictionary.CUSTOMIZE_COLORS[lan]}</Text>
                             <View style={{ flex: 1, justifyContent: "center" }}>
-                                <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-color-palette' : 'md-color-palette'} style={styles.colorPalette} />
+                                <TouchableOpacity>
+                                   <View style={{height:20, width:20, backgroundColor:'#3FAEA3', borderRadius:10}}/> 
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -114,19 +117,19 @@ export default class Settings extends Component {
                     <View style={{ flex: 0.48, backgroundColor: '#ffff', borderRadius: 16, padding: 20, }}>
 
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.BUSINESS_NAME[lan]}</Text>
                             <TextInput onChangeText={text => this.setState({ businessName: text })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.BUSINESS_ADDRESS[lan]}</Text>
                             <TextInput onChangeText={text => this.setState({ businessAddress: text })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.PHONE_NUMBER[lan]}</Text>
                             <TextInput onChangeText={Number => this.setState({ phoneNumber: Number })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center',marginBottom:20 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
                             <Text style={{ flex: 1 }}>{Dictionary.VAT_NUMBER[lan]}</Text>
                             <TextInput onChangeText={Number => this.setState({ VATNumber: Number })} style={[styles.smallTextInput, { flex: 1 }]} />
                         </View>
@@ -136,13 +139,13 @@ export default class Settings extends Component {
                 </View>
 
                 {/* **************************************************Rightside****************************************************** */}
-                <View style={{ flex: 1, justifyContent: 'space-around', margin:'1%' }}>
+                <View style={{ flex: 1, justifyContent: 'space-around', margin: '1%' }}>
                     {/* ************************************************right top************************************************* */}
                     <View style={{ flex: 0.48, backgroundColor: '#ffff', justifyContent: 'center', alignItems: 'center', borderRadius: 16, padding: 20, }}>
                         <Text>{Dictionary.BUSINESS_LOGO[lan]}</Text>
                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
                             <TouchableOpacity onPress={() => this.deleteImage()}>
-                                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#F3F3F3', borderRadius: 10, padding:10 }}>
+                                <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#F3F3F3', borderRadius: 10, padding: 10 }}>
                                     <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-trash' : 'md-trash'} style={styles.trashIcon} />
                                 </View>
                             </TouchableOpacity>
@@ -153,7 +156,7 @@ export default class Settings extends Component {
 
                     </View>
                     {/* ************************************************right botttom************************************************* */}
-                    <View style={{ flex: 0.48, backgroundColor: '#ffff', padding: 20, borderRadius: 16, justifyContent:'center' }}>
+                    <View style={{ flex: 0.48, backgroundColor: '#ffff', padding: 20, borderRadius: 16, justifyContent: 'center' }}>
                         <View style={{ alignItems: 'center' }}>
                             <View style={styles.lwPic}>
                                 <Text style={[styles.plustitle, { color: '#484C4F' }]}>LW</Text>

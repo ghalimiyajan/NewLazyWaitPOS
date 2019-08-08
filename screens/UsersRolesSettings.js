@@ -119,105 +119,105 @@ export default class UsersRolesSettings extends Component {
 
                             </View>
 
-                            <ScrollView style={{padding: 10,}} contentContainerStyle={{justifyContent:'space-around'}}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "center", paddingBottom:10 }}>
+                            <ScrollView style={{padding: 10,}} showsVerticalScrollIndicator={false}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "center", padding:5 }}>
                                     <View style={{ flex: 0.3, justifyContent: "center" }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.OPEN_CASHIER_DRAWER_WITHOUT_TRANSACTION[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.RETURN_SOLD_ITEMS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.CANCEL_KITCHEN_ORDERS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.CLOSE_CASHIER[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_PRODUCTS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_ADDONS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_USERS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_PRINTERS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_GENERAL_SETTINGS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_TABELS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_DISCOUNTS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.VIEW_SALES[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.CANCEL_UNPAID_ORDERS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.CANCEL_PAID_ORDERS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.ALLOW_MANUAL_DISCOUNTS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_CASHIER_SETTINGS[lan]}</Text>
                                 </View>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", paddingBottom:10 }}>
+                                    <View style={{ flex: 0.3, justifyContent: "center", justifyContent: "center", padding:5 }}>
                                         <Checkbox/>
                                     </View>
                                     <Text style={{ flex: 2 }}>{Dictionary.MODIFY_TABLET_SETTINGS[lan]}</Text>

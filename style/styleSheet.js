@@ -376,7 +376,7 @@ const styles = EStyleSheet.create({
     },
     colorPalette: {
         fontSize: '10rem',
-        color: '#59C9BF'
+        // color: '#59C9BF'
     },
     fs_7rem: {
         fontSize: '7rem',
@@ -435,6 +435,11 @@ const styles = EStyleSheet.create({
         width:'18rem', 
         height:'18rem', 
         borderRadius:'9rem'
+    },
+    checkbox:{
+        width: '8rem', 
+        height: '8rem', 
+        borderWidth: 0.5,
     },
 
 
