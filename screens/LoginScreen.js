@@ -39,7 +39,7 @@ export default class Login extends React.Component {
         <View style={{ alignItems: 'center', padding: hp('1%'), justifyContent: 'center', }}>
           <Text style={[styles.title, { color: color1 }]}>{noticeBoard.title[lan]}</Text>
         </View>
-        <ScrollView style={{ backgroundColor: '#F8F8F8', height: hp('60%'), width: wp('32%'), padding: hp('1%'), borderRadius: 16 }}>
+        <ScrollView style={{ backgroundColor: '#F8F8F8', height: hp('60%'), width: wp('32%'), padding: hp('1%'), borderRadius: 10 }}>
           <Text style={[styles.plustitle, { fontWeight: 'bold', flexDirection: lan == 'en' ? 'row' : 'row-reverse' }]}>{noticeBoard.day[lan]}</Text>
           <View>
             <Text style={[styles.subTitle, { color: '#C4C4C4' }]}>{noticeBoard.Month[lan]}</Text>
@@ -225,7 +225,7 @@ export default class Login extends React.Component {
             {/* *******************************Password View********************************* */}
             <View style={{ flex: 0.70, width: "100%", alignItems: 'center', justifyContent: 'center', }}>
               <Text style={[styles.text, { color: '#33877F', paddingBottom: '2%' }]}>{Dictionary.ADD_PIN_CODE[lan]}</Text>
-              <View style={{ backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: '60%', height: '10%', borderRadius: 16, marginBottom: '2%' }} >
+              <View style={{ backgroundColor: color1, justifyContent: 'center', alignItems: 'center', borderColor: color1, width: '60%', height: '10%', borderRadius: 10, marginBottom: '2%' }} >
                 <Text numberOfLines={1} style={[styles.text, { color: '#fff' }]}>{this.state.enterdPass}</Text>
               </View>
               <View style={{ flexDirection: 'row' }}>

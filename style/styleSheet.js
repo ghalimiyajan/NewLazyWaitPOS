@@ -44,27 +44,28 @@ const styles = EStyleSheet.create({
         color: color1
     },
     title: {
-        fontSize: '12rem',
+        fontSize: '10rem',
     },
     plustitle: {
-        fontSize: '20rem',
+        fontSize: '15rem',
     },
     subTitle: {
-        fontSize: '8rem',
+        fontSize: '7rem',
     },
     text: {
-        fontSize: '7rem',
+        fontSize: '6rem',
 
     },
     versionNumber: {
-        fontSize: '5rem',
+        fontSize: '4rem',
+        color: '#484C4F',
 
     },
     menulist: {
         fontSize: '6rem',
         textAlign: 'center',
         color: color1,
-        fontFamily: 'cairo',
+
 
     },
     loginLeftSideBackground: {
@@ -233,6 +234,9 @@ const styles = EStyleSheet.create({
     fs_13: {
         fontSize: '13rem',
     },
+    fs_20: {
+        fontSize: '20rem',
+    },
 
     mainBackgroundColor: {
         backgroundColor: '#F6F6F8',
@@ -258,6 +262,10 @@ const styles = EStyleSheet.create({
 
     },
     sidebarIcon: {
+        fontSize: '8rem',
+        color: 'black'
+    },
+    homeIcon: {
         fontSize: '12rem',
         color: 'black'
     },
@@ -265,9 +273,20 @@ const styles = EStyleSheet.create({
         fontSize: '12rem',
         color: 'black',
         alignSelf: 'center',
-        padding: '2%',
 
     },
+    IconsView: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 10,
+        height: '20rem',
+        width: '20rem',
+        margin: 10,
+    },
+
+
+
     dashboardLine: {
         borderBottomWidth: 4,
         width: 80,
@@ -275,28 +294,42 @@ const styles = EStyleSheet.create({
         borderColor: color2
     },
     sidebarBoxes: {
-
         backgroundColor: '#fff',
         borderRadius: 16,
-        margin: '1.5rem',
-        width: '35rem',
-        height: '30rem',
+        margin: '2rem',
+        marginTop: 0,
+        width: '25rem',
+        height: '25rem',
         justifyContent: 'center',
         alignItems: 'center',
 
     },
-    imagePicker: {
-        width: '80rem',
-        height: ' 80rem',
-        borderRadius: 100,
+    imagePickerCircle: {
+        width: '60rem',
+        height: '60rem',
+        borderRadius: '30rem',
         borderWidth: 1,
         borderColor: color1,
         margin: '5%'
     },
+    imagePickerSquare: {
+        width: '70rem',
+        height: '70rem',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 10
+    },
+    imagePickerSquareView: {
+        width: '70rem',
+        height: '70rem',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 10,
+
+
+    },
     lwPic: {
         borderWidth: 1,
-        height: '40rem',
-        width: '40rem',
+        height: '30rem',
+        width: '30rem',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
@@ -309,10 +342,10 @@ const styles = EStyleSheet.create({
         backgroundColor: '#F3F3F3',
         borderRadius: 16
     },
-    smallTextInput: {
+    mTextInput: {
         margin: '1%',
-        width: '40rem',
-        height: '15rem',
+        width: '90rem',
+        height: '16rem',
         backgroundColor: '#F3F3F3',
         borderRadius: 16
     },
@@ -333,7 +366,13 @@ const styles = EStyleSheet.create({
         borderRadius: 16,
         alignItems: 'center'
     },
-
+    smallTextInput: {
+        margin: '1%',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 10
+    },
     personImage: {
         width: "20rem",
         height: "20rem",
@@ -343,17 +382,79 @@ const styles = EStyleSheet.create({
     },
     commentInput: {
         height: '30rem',
-        width: '120rem',
-        borderRadius: 16,
+        width: '100%',
+        borderRadius: 10,
         backgroundColor: '#F3F3F3',
+        padding: 10,
     },
     colorPalette: {
         fontSize: '10rem',
-        color: '#59C9BF'
+        // color: '#59C9BF'
     },
     fs_7rem: {
         fontSize: '7rem',
-    }
+    },
+    square: {
+        width: '30rem',
+        height: '15rem',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 10, 
+        margin:10,
+        justifyContent:'center', 
+        alignItems:'center',
+    },
+    activeSquare: {
+        width: '25rem',
+        height: '15rem',
+        backgroundColor: '#48C4B7',
+        borderRadius: 16
+
+    },
+    unactiveSquare: {
+        width: '35rem',
+        height: '20rem',
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: '#707070',
+
+    },
+    usersCards: {
+        width: '60rem',
+        height: '60rem',
+        backgroundColor: '#E6E6E6',
+        borderRadius: 16, 
+        padding:10,
+
+    },
+    sidebar: {
+        backgroundColor: '#E6E6E6',
+        width: '100%',
+        height: '100%',
+        borderRadius: 16,
+        flex:1,
+
+    },
+    greenTag: {
+        backgroundColor: '#3FAEA3',
+        height: '16rem',
+        width: '13rem',
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        alignItems:'center',
+        justifyContent:'center',
+        position:'absolute'
+    },
+    userImage: {
+        width:'18rem', 
+        height:'18rem', 
+        borderRadius:'9rem'
+    },
+    checkbox:{
+        width: '8rem', 
+        height: '8rem', 
+        borderWidth: 0.5,
+    },
+
 
 });
 

@@ -24,8 +24,8 @@ const Dictionary = {
     en: 'Most Section Sales',
     ar: 'الاقسام الأكثر مبيعا'
   },
-  SETTING: {
-    en: 'Setting',
+  SETTINGS: {
+    en: 'Settings',
     ar: 'الإعدادات'
   },
   CASHIER: {
@@ -36,148 +36,266 @@ const Dictionary = {
     en: 'Waiting',
     ar: 'الإنتظار'
   },
-  AUTO_LOCK: {
-    en: 'Auto Lock',
-    ar: 'القفل التلقائي'
+  AUTO_LOCK:{
+    en:'Auto Lock',
+    ar:'القفل التلقائي'
+  }, 
+  SHOW_TABLES:{
+    en:'Show Tables', 
+    ar:'إظهار الطاولات'
+  }, 
+  CUT_OF_TIME:{
+    en:'Cut of Time', 
+    ar:'وقت نهاية الدوام'
+  }, 
+  CUSTOMIZE_COLORS:{
+    en:' Customize Colors', 
+    ar:'تخصيص الألوان'
+  }, 
+  BUSINESS_NAME:{
+    en:'Business Name', 
+    ar:'اسم المتجر'
   },
-  SHOW_TABLES: {
-    en: 'Show Tables',
-    ar: 'إظهار الطاولات'
+  BUSINESS_ADDRESS:{
+    en:'Business Address', 
+    ar:'عنوان المتجر'
+  }, 
+  PHONE_NUMBER:{
+    en:'Phone Number', 
+    ar:'رقم التلفون'
+  }, 
+  VAT_NUMBER:{
+    en:'VAT Number', 
+    ar:'الرقم الضريبة'
+  }, 
+  BUSINESS_LOGO:{
+    en:'Business Logo', 
+    ar:'شعار المتجر'
+  }, 
+  VAT:{
+    en:'VAT%', 
+    ar:'%الضريبة'
+  }, 
+  PRICE_INCLUDE_TAX:{
+    en:'Price Include Tax', 
+    ar:'الأسعار شاملة الضريبة'
+  }, 
+  CURRENCY_AR:{
+    en:'Currency|عربي', 
+    ar:'العملة|عربي'
+  }, 
+  CURRENCY_EN:{
+    en:'Currency|English', 
+    ar:'العملة|English'
+  }, 
+  DELIVERY_ACTIVE:{
+    en:'Delivery Active', 
+    ar:'تفعيل التوصيل'
+  }, 
+  DELIVERY_FEE:{
+    en:'Delivery Fee', 
+    ar:'رسوم التوصيل'
+  }, 
+  READY_SMS_TEXT:{
+    en:'Ready SMS Text', 
+    ar:'نص رسالة الطلب جاهز'
+  }, 
+  ORDER_STATUS:{
+    en:'Order Status', 
+    ar:'حالة الطلب'
+  }, 
+  ROUNDING_ORDER_TOTAL:{
+    en:'Rounding Order Total', 
+    ar:'جبر قيمة المجموع'
+  }, 
+  ALLOW_DEPOSIT:{
+    en:'Allow Deposit', 
+    ar:'السماح بالعربون'
+  }, 
+  QUICK_ITEM_ADD:{
+    en:'َQuick Item Add', 
+    ar:'إضافة سريعة للمنتج'
+  }, 
+  EMAIL_ADMIN_WHEN_VOIDING_ORDER:{
+    en:'Email Admin When Voiding Order', 
+    ar:'إرسال ايميل للآدمن عند إلغاء طلب'
+  }, 
+  MISSING_NAME_ALERT:{
+    en:'Missing Name Alert', 
+    ar:'تنبيه بعدم وجود الإسم'
+  }, 
+  SHOW_WITHOUT_RECEIPT_PAYMENT:{
+    en:"Show 'Without Receipt' Payment", 
+    ar:'إظهار زر بدون إيصال'
+  }, 
+  HIDE_CLOSING_STATE:{
+    en:'Hide Closing State', 
+    ar:'إخفاء احصائيات الموازنة'
+  }, 
+  SHOW_ALL_CATEGORY:{
+    en:"Show 'All' Category", 
+    ar:'اظهر قسم الكل'
+  }, 
+  SHOW_PRICE:{
+    en:'Show Price', 
+    ar:'عرض الأسعار'
+  }, 
+  SHOW_STOCK:{
+    en:'َShow Stock', 
+    ar:'عرض المخزون'
+  }, 
+  BARCODE_VIEW:{
+    en:'Barcode View', 
+    ar:'واجهة الباركود'
+  }, 
+  ADD_ITEM_ON_TOP:{
+    en:'Add Item on Top', 
+    ar:'إضافة المنتج بالأعلى'
+  }, 
+  FLEXIBLE_PRICE:{
+    en:'Flexible Price', 
+    ar:'تعديل الأسعار قبل الطلب'
+  }, 
+  MADA_BILL_PRINTING:{
+    en:'Mada Bill Printing', 
+    ar:'طباعة إيصال مدى'
   },
-  CUT_OF_TIME: {
-    en: 'Cut of Time',
-    ar: 'وقت نهاية الدوام'
+  NAME_AR:{
+    en:'Name|عربي', 
+    ar:'عربي|الأسم'
+  }, 
+  NAME_EN:{
+    en:'Name|English', 
+    ar:'الأسم|English'
+  }, 
+ ADD:{
+    en:'Add', 
+    ar:'إضافة'
   },
-  CUSTOMIZE_COLORS: {
-    en: ' Customize Colors',
-    ar: 'تخصيص الألوان'
+  ZERO_DIGITS:{
+    en:'0 Digits',
+    ar:'0 خانات',
   },
-  BUSINESS_NAME: {
-    en: 'Business Name',
-    ar: 'اسم المتجر'
+  ONE_DIGITS:{
+    en:'1 Digits',
+    ar:'1 خانات',
   },
-  BUSINESS_ADDRESS: {
-    en: 'Business Address',
-    ar: 'عنوان المتجر'
+  TWO_DIGITS:{
+    en:'2 Digits',
+    ar:'2 خانات',
   },
-  PHONE_NUMBER: {
-    en: 'Phone Number',
-    ar: 'رقم التلفون'
+  ADD_USER:{
+    en:'Add User',
+    ar:'اضافة مستخدم',
   },
-  VAT_NUMBER: {
-    en: 'VAT Number',
-    ar: 'الرقم الضريبة'
+  NAME:{
+    en:'Name', 
+    ar:'الأسم'
+  }, 
+ EMAIL:{
+    en:'E-mail', 
+    ar:'الإيميل'
   },
-  BUSINESS_LOGO: {
-    en: 'Business Logo',
-    ar: 'شعار المتجر'
+  ADMIN:{
+    en:'Admin',
+    ar:'المسؤول',
   },
-  VAT: {
-    en: 'VAT%',
-    ar: '%الضريبة'
+  PIN_CODE:{
+    en:'Pin Code',
+    ar:'الرمز السري',
   },
-  PRICE_INCLUDE_TAX: {
-    en: 'Price Include Tax',
-    ar: 'الأسعار شاملة الضريبة'
+  LANGUAGE:{
+    en:'Language',
+    ar:'اللغة',
   },
-  CURRENCY_AR: {
-    en: 'Currency|عربي',
-    ar: 'العملة|عربي'
+  USER_TYPE:{
+    en:'User Type',
+    ar:'صلاحية المستخدم',
   },
-  CURRENCY_EN: {
-    en: 'Currency|English',
-    ar: 'العملة|English'
+  ARABIC:{
+    en:'Arabic',
+    ar:'عربي',
   },
-  DELIVERY_ACTIVE: {
-    en: 'Delivery Active',
-    ar: 'تفعيل التوصيل'
+  ENGLISH:{
+    en:'English',
+    ar:'إنجليزي',
   },
-  DELIVERY_FEE: {
-    en: 'Delivery Fee',
-    ar: 'رسوم التوصيل'
+  DELETE:{
+    en:'Delete',
+    ar:'حذف',
   },
-  READY_SMS_TEXT: {
-    en: 'Ready SMS Text',
-    ar: 'نص رسالة الطلب جاهز'
+ OPEN_CASHIER_DRAWER_WITHOUT_TRANSACTION:{
+    en:'Open Cashier Drawer Without Transaction',
+    ar:'فتح درج الكاشير بدون عملية بيع',
   },
-  ORDER_STATUS: {
-    en: 'Order Status',
-    ar: 'حالة الطلب'
+  RETURN_SOLD_ITEMS:{
+    en:'Return Sold Items',
+    ar:'استرجاع أصناف مباعة',
   },
-  ROUNDING_ORDER_TOTAL: {
-    en: 'Rounding Order Total',
-    ar: 'جبر قيمة المجموع'
+  CANCEL_KITCHEN_ORDERS:{
+    en:'Cancel Kitchen Orders',
+    ar:'إلغاء طلبات المطبخ',
   },
-  ALLOW_DEPOSIT: {
-    en: 'Allow Deposit',
-    ar: 'السماح بالعربون'
+  CLOSE_CASHIER:{
+    en:'Close Cashier',
+    ar:'إقفال درج الكاشير',
   },
-  QUICK_ITEM_ADD: {
-    en: 'َQuick Item Add',
-    ar: 'إضافة سريعة للمنتج'
+  MODIFY_PRODUCTS:{
+    en:'Modify Products',
+    ar:'تعديل المنتجات',
   },
-  EMAIL_ADMIN_WHEN_VOIDING_ORDER: {
-    en: 'Email Admin When Voiding Order',
-    ar: 'إرسال ايميل للآدمن عند إلغاء طلب'
+  MODIFY_ADDONS:{
+    en:'Modify Addons',
+    ar:'تعديل الإضافات',
   },
-  MISSING_NAME_ALERT: {
-    en: 'Missing Name Alert',
-    ar: 'تنبيه بعدم وجود الإسم'
+  MODIFY_USERS:{
+    en:'Modify Users',
+    ar:'تعديل المستخدمين',
   },
-  SHOW_WITHOUT_RECEIPT_PAYMENT: {
-    en: "show 'Without Receipt' Payment",
-    ar: 'إظهار زر بدون إيصال'
+ MODIFY_PRINTERS:{
+    en:'Modify Printers',
+    ar:'تعديل الطابعات',
   },
-  HIDE_CLOSING_STATE: {
-    en: 'Hide Closing State',
-    ar: 'إخفاء احصائيات الموازنة'
+  MODIFY_GENERAL_SETTINGS:{
+    en:'Modify General Settings',
+    ar:'التحكم بالاعدادات العامة',
   },
-  SHOW_ALL_CATEGORY: {
-    en: "Show 'All' Category",
-    ar: 'اظهر قسم الكل'
+  MODIFY_TABELS:{
+    en:'Modify Tables',
+    ar:'تغير الطاولات',
   },
-  SHOW_PRICE: {
-    en: 'Show Price',
-    ar: 'عرض الأسعار'
+  MODIFY_DISCOUNTS:{
+    en:'Modify Discounts',
+    ar:'تغير الخصومات',
   },
-  SHOW_STOCK: {
-    en: 'َShow Stock',
-    ar: 'عرض المخزون'
+  VIEW_SALES:{
+    en:'View Sales',
+    ar:'معاينة المبيعات',
   },
-  BARCODE_VIEW: {
-    en: 'Barcode View',
-    ar: 'واجهة الباركود'
+ CANCEL_UNPAID_ORDERS:{
+    en:'Cancel Unpaid Orders',
+    ar:'إلغاء الطلبات الغير مدفوعة',
   },
-  ADD_ITEM_ON_TOP: {
-    en: 'Add Item on Top',
-    ar: 'إضافة المنتج بالأعلى'
+  CANCEL_PAID_ORDERS:{
+    en:'Cancel Unpaid Orders',
+    ar:'إلغاء الطلبات المدفوعة',
   },
-  FLEXIBLE_PRICE: {
-    en: 'Flexible Price',
-    ar: 'سعر مرن'
+  ALLOW_MANUAL_DISCOUNTS:{
+    en:'Allow Manual Disounts',
+    ar:'إضافة تخفيض غير معروف',
   },
-  MADA_BILL_PRINTING: {
-    en: 'Mada Bill Printing',
-    ar: 'طباعة إيصال مدى'
+  MODIFY_CASHIER_SETTINGS:{
+    en:'Modify Cashier Settings',
+    ar:'تعديل اعدادات الكاشير',
   },
-  PHONE_NUMBER: {
-    en: 'Phone Number',
-    ar: 'رقم الجوال'
-  },
-  PHONE_NUMBER: {
-    en: 'Phone Number',
-    ar: 'رقم الجوال'
-  },
-  NAME: {
-    en: 'Name',
-    ar: 'الاسم'
+  MODIFY_TABLET_SETTINGS:{
+    en:'Modify Tablet Settings',
+    ar:'تعديل اعدادات الأجهزة الجانبية',
   },
   NOTES: {
     en: 'Notes',
     ar: 'ملاحظات'
   },
-
-
 
 }
 

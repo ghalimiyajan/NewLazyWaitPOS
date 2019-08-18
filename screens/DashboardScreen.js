@@ -6,7 +6,7 @@ import { Icon } from 'expo';
 
 /*************************************** Pages      ****************************************/
 /*************************************** Variables  ****************************************/
-let lan = 'ar';
+let lan = 'en';
 let currentDate = new Date();
 let version = ' V3.4.2';
 let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
@@ -44,9 +44,11 @@ export default class DashboardScreen extends React.Component {
             </Text>
           </View>
           <View style={{ alignItems: 'flex-end', flex: 1, paddingRight: '5%' }}>
-            <Text style={{ borderWidth: 1, borderRadius: 100, padding: 10 }}>
+            {/* <Text style={{ borderWidth: 1, borderRadius: 100, padding: 10 }}> */}
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
               <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-log-out' : 'md-log-out'} style={styles.menuIcon} />
-            </Text>
+            </TouchableOpacity>
+            {/* </Text> */}
           </View>
         </View>
         {/************************ BODY *************************/}
@@ -141,11 +143,13 @@ export default class DashboardScreen extends React.Component {
                 {/***********Setting************/}
                 <View style={[styles.flex1, styles.dashboardItem_h, styles.p_7]}>
                   <View style={styles.flexCenter}>
-                    <View style={styles.circleBotton}>
-                      <Text style={[styles.whiteFont, styles.fs_8]}>1</Text>
-                    </View>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
+                      <View style={styles.circleBotton}>
+                        <Text style={[styles.whiteFont, styles.fs_8]}>1</Text>
+                      </View>
+                    </TouchableOpacity>
                     <Text style={styles.fs_7rem}>
-                      {Dictionary.SETTING[lan]}
+                      {Dictionary.SETTINGS[lan]}
                     </Text>
                     <View style={styles.dashboardLine}>
                     </View>
