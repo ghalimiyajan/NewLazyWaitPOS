@@ -19,6 +19,7 @@
     "react-native-rem-stylesheet": "^0.1.0",
     "react-native-responsive-screen": "^1.2.2",
     "react-native-swiper": "^1.5.14",
+    "react-native-table-component": "^1.2.0",
     "react-native-web": "^0.11.4",
     "react-native-web-swiper": "^1.15.1",
     "react-navigation": "^3.11.1",

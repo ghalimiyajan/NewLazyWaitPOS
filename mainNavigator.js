@@ -5,9 +5,11 @@ import Login from './screens/LoginScreen';
 import Settings from './screens/Settings';
 import CashierSettings from './screens/CashierSettings';
 import Sidebar from './component/Sidebar';
+import Cashier from './screens/Cashier';
 
 
 const Navigation = createStackNavigator({ 
+     Cashier: { screen: Cashier },
   // Login: { screen: Login },
   // Dashboard: { screen: Dashboard },
   // Settings: { screen: Settings},

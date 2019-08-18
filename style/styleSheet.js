@@ -301,7 +301,6 @@ const styles = EStyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white',
         borderColor: color1
-
     },
     textInput: {
         margin: '1%',
@@ -316,8 +315,23 @@ const styles = EStyleSheet.create({
         height: '15rem',
         backgroundColor: '#F3F3F3',
         borderRadius: 16
-
-
+    },
+    flexTextInput: {
+        margin: '1%',
+        width: '100%',
+        height: '15rem',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 16,
+        paddingHorizontal: 10,
+        textAlign: 'left',
+    },
+    selectButton: {
+        margin: '1%',
+        width: '100%',
+        height: '15rem',
+        backgroundColor: '#F3F3F3',
+        borderRadius: 16,
+        alignItems: 'center'
     },
 
     personImage: {
@@ -327,13 +341,11 @@ const styles = EStyleSheet.create({
         borderColor: color2,
         margin: 10
     },
-    commentInput:{
-        height:'30rem',
-        width:'120rem', 
-        borderRadius:16, 
-        backgroundColor:'#F3F3F3', 
-    
-
+    commentInput: {
+        height: '30rem',
+        width: '120rem',
+        borderRadius: 16,
+        backgroundColor: '#F3F3F3',
     },
     colorPalette: {
         fontSize: '10rem',
