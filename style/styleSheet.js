@@ -231,8 +231,17 @@ const styles = EStyleSheet.create({
     fs_10: {
         fontSize: '10rem',
     },
+    fs_12: {
+        fontSize: '12rem',
+    },
+    fs_11: {
+        fontSize: '11rem',
+    },
     fs_13: {
         fontSize: '13rem',
+    },
+    fs_15: {
+        fontSize: '15rem',
     },
     fs_20: {
         fontSize: '20rem',
@@ -398,10 +407,10 @@ const styles = EStyleSheet.create({
         width: '30rem',
         height: '15rem',
         backgroundColor: '#F3F3F3',
-        borderRadius: 10, 
-        margin:10,
-        justifyContent:'center', 
-        alignItems:'center',
+        borderRadius: 10,
+        margin: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     activeSquare: {
         width: '25rem',
@@ -422,8 +431,8 @@ const styles = EStyleSheet.create({
         width: '60rem',
         height: '60rem',
         backgroundColor: '#E6E6E6',
-        borderRadius: 16, 
-        padding:10,
+        borderRadius: 16,
+        padding: 10,
 
     },
     sidebar: {
@@ -431,8 +440,13 @@ const styles = EStyleSheet.create({
         width: '100%',
         height: '100%',
         borderRadius: 16,
-        flex:1,
+        flex: 1,
 
+    },
+    whiteSidebar: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
     },
     greenTag: {
         backgroundColor: '#3FAEA3',
@@ -440,19 +454,40 @@ const styles = EStyleSheet.create({
         width: '13rem',
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10,
-        alignItems:'center',
-        justifyContent:'center',
-        position:'absolute'
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute'
     },
     userImage: {
-        width:'18rem', 
-        height:'18rem', 
-        borderRadius:'9rem'
+        width: '18rem',
+        height: '18rem',
+        borderRadius: '9rem'
     },
-    checkbox:{
-        width: '8rem', 
-        height: '8rem', 
+    checkbox: {
+        width: '8rem',
+        height: '8rem',
         borderWidth: 0.5,
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 30,
+    },
+    circle: {
+        height: 20,
+        width: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#ACACAC',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    checkedCircle: {
+        width: 14,
+        height: 14,
+        borderRadius: 7,
+        backgroundColor: '#794F9B',
     },
 
 

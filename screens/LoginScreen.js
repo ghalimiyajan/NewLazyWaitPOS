@@ -32,7 +32,6 @@ export default class Login extends React.Component {
     this.setState({ modalVisible: visible });
   }
   _renderItem = item => {
-    console.log(item)
     return (
 
       <View>
@@ -61,6 +60,8 @@ export default class Login extends React.Component {
   }
 
   _getPass = val => {
+    console.log("*********" + this.state.enterdPass + "*********" )
+
     var ep = this.state.enterdPass;
     ep = ep + val;
     console.log(ep)
@@ -68,7 +69,6 @@ export default class Login extends React.Component {
       console.log(ep + "*********" + pass)
       if (ep == pass) {
         this.props.navigation.navigate('Dashboard')
-
       } else {
         alert("No way");
         ep = '';
@@ -294,7 +294,7 @@ export default class Login extends React.Component {
                     <Text style={styles.loginNumber}>0</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.setState({ enterdPass: ' ' })}>
+                <TouchableOpacity onPress={() => this.setState({ enterdPass: '' })}>
                   <View style={styles.numberContainer}>
                     <Text style={styles.loginNumber}>C</Text>
                   </View>
