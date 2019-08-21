@@ -10,7 +10,7 @@ const navBar = {
                 ios: 'ios-cash',
                 android: 'md-cashcash'
             },
-            navigate: 'BillsReports',
+            navigate: 'Reports',
             active: true,
         },
         {
@@ -22,7 +22,7 @@ const navBar = {
                 ios: 'ios-cube',
                 android: 'md-cube'
             },
-            navigate: 'CategoriesReports',
+            navigate: 'CategoriesReport',
             active: true,
 
 

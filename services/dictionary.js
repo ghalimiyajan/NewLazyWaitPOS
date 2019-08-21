@@ -376,8 +376,85 @@ const Dictionary = {
     en: 'Total Orders',
     ar: 'اجمالي الطلبات'
   },
+  ID: {
+    en: 'ID',
+    ar: 'الرقم'
+  },
+  SOLD_QUANTITY: {
+    en: 'Sold Quantity',
+    ar: 'عدد المبيعات'
+  },
+  CATEGORY: {
+    en: 'Category',
+    ar: 'القسم'
+  },
+  SIZE: {
+    en: 'Size',
+    ar: 'الحجم'
+  },
+  DATE: {
+    en: 'Date',
+    ar: 'التاريخ'
+  },
+  USER: {
+    en: 'User',
+    ar: 'مستخدم'
+  },
+  AMOUNT: {
+    en: 'Amount',
+    ar: 'القيمة'
+  },
+  DAY_SALES: {
+    en: 'Day Sales',
+    ar: 'قيمة مبيعات اليوم'
+  },
+  DAY_COST: {
+    en: 'Day Cost',
+    ar: 'تكلفة مبيعات اليوم'
+  },
+  TAX: {
+    en: 'Tax',
+    ar: 'الضريبة'
+  },
+  PROFIT: {
+    en: 'Profit',
+    ar: 'الربح'
+  },
+  DISCOUNTS: {
+    en: 'Discounts',
+    ar: 'التخفيضات'
+  },
+  BEFORE_VAT: {
+    en: 'Before VAT',
+    ar: 'قبل الضريبة'
+  },
+  AFTER_VAT: {
+    en: 'After VAT',
+    ar: 'بعد الضريبة'
+  },
+  TRANSFER_TO_BANK: {
+    en: 'Transfer To Bank',
+    ar: 'التحويل للبنك'
+  },
+  LOSS_EARN_TOTAL: {
+    en: 'Loss/Earn Total',
+    ar: 'مجموع العائد/الخسارة',
+  },
+  PRINT: {
+    en: 'Print',
+    ar: 'الطباعة',
+  },
+  ORDER_ID: {
+    en: 'Order ID',
+    ar: 'رقم الطلب',
+  },
+  VENDOR_NAME: {
+    en: 'Vendor Name',
+    ar: 'اسم المورد',
+  },
   
-  
+
+
 
 
 

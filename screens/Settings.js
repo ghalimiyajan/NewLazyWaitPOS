@@ -4,15 +4,12 @@ import { View, Text, ScrollView, Platform, TouchableOpacity, TextInput, Image, S
 // ***************************Pages***********************//
 import noticeBoard from '../jsons/ojb';
 import storeInfo from '../jsons/storeinfo';
-// import settingsNav from '../settingsNav';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
-// import Sidebar from '../Sidebar';
 import nav from '../jsons/nav_bar';
 
 // ************************Libraries*********************//
 import { Icon, ImagePicker, Permissions } from 'expo';
-import base64 from 'react-native-base64'
 import Sidebar from '../component/Sidebar';
 
 

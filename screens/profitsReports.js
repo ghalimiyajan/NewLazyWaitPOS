@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Platform, TouchableOpacity, TextInput, Image, Switch, Modal, } from 'react-native';
 import Sidebar from '../component/Sidebar';
-import noticeBoard from '../jsons/ojb';
-import storeInfo from '../jsons/storeinfo';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
 import nav from '../jsons/nav_bar2';
+import profitsReportsInfo from '../jsons/profitsReportsInfo';
 import billsReportInfo from '../jsons/billsReportInfo';
 
 import AddActionButton from '../component/AddActionButton';
@@ -22,7 +21,7 @@ let lan = 'en';
 const online = '#8EDF88';
 const offline = '#8EDF88';
 
-export default class Reports extends Component {
+export default class profitsReports extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,6 +31,7 @@ export default class Reports extends Component {
             selectCustom: false,
         };
     }
+
 
     render() {
         return (
@@ -52,26 +52,24 @@ export default class Reports extends Component {
                     <View style={{ flex: 0.75, backgroundColor: '#ffffff', borderRadius: 16, }}>
                         {/* ***schedule Header**** */}
                         <View style={{ backgroundColor: '#E6E6E6', flex: 0.1, borderTopLeftRadius: 16, borderTopRightRadius: 16, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', paddingHorizontal: 5 }}>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.RECEIPT_ID[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.TIME[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.NOTES[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.DISCOUNT[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.DISCOUNT_NOTE[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.TYPE[lan]}</Text>
-                            <Text style={{ flex: 0.142, textAlign: 'center' }}>{Dictionary.TOTAL_SALES[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.DATE[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.DAY_SALES[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.DAY_COST[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.DISCOUNTS[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.TAX[lan]}</Text>
+                            <Text style={{ flex: 0.16, textAlign: 'center' }}>{Dictionary.PROFIT[lan]}</Text>
+
                         </View>
                         <View style={{ flex: 1 }}>
-                            {billsReportInfo.bill.map((item, key) =>
+                            {profitsReportsInfo.profits.map((item, key) =>
                                 (
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', borderBottomWidth: 1, borderBottomColor: '#F1F1F1', paddingVertical: 10 }}>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.receiptID}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.time}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.note}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.discount}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.discountNote}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.type}</Text>
-                                        <Text style={{ flex: 0.142, textAlign: 'center' }}>{item.totalSales}</Text>
-
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.date}</Text>
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.daySales}</Text>
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.dayCost}</Text>
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.discounts}</Text>
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.tax}</Text>
+                                        <Text style={{ flex: 0.16, textAlign: 'center' }}>{item.profit}</Text>
                                     </View>
                                 )
                             )
@@ -137,29 +135,29 @@ export default class Reports extends Component {
                                 </View>
                                 <View style={{ paddingVertical: 5, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <Text style={[styles.fs_5, { fontWeight: 'bold', flex: 0.4, color: '#707070' }]}>{Dictionary.PICKUP[lan]}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{billsReportInfo.pickup.paid}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{billsReportInfo.pickup.VOID}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{profitsReportsInfo.pickup.paid}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{profitsReportsInfo.pickup.VOID}</Text>
                                 </View>
                                 <View style={{ paddingVertical: 5, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <Text style={[styles.fs_5, { fontWeight: 'bold', flex: 0.4, color: '#707070' }]}>{Dictionary.DELIVERY[lan]}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{billsReportInfo.delivery.paid}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{billsReportInfo.delivery.VOID}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{profitsReportsInfo.delivery.paid}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{profitsReportsInfo.delivery.VOID}</Text>
                                 </View>
                                 <View style={{ paddingVertical: 5, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <Text style={[styles.fs_5, { fontWeight: 'bold', flex: 0.4, color: '#707070' }]}>{Dictionary.TABLE[lan]}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{billsReportInfo.table.paid}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{billsReportInfo.table.VOID}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{profitsReportsInfo.table.paid}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{profitsReportsInfo.table.VOID}</Text>
                                 </View>
                                 <View style={{ paddingVertical: 5, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <Text style={[styles.fs_5, { fontWeight: 'bold', flex: 0.4, color: '#707070' }]}>{Dictionary.APPLICATION[lan]}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{billsReportInfo.application.paid}</Text>
-                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{billsReportInfo.application.VOID}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#3FAEA3', flex: 0.2 }]}>{profitsReportsInfo.application.paid}</Text>
+                                    <Text style={[styles.fs_5, { textAlign: 'center', fontWeight: 'bold', color: '#D92E28', flex: 0.2 }]}>{profitsReportsInfo.application.VOID}</Text>
                                 </View>
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Text style={[styles.fs_8, { fontWeight: 'bold', color: '#707070' }]}>{Dictionary.TOTAL_ORDERS[lan]}</Text>
                                 <View style={{ paddingVertical: 5, flexDirection: 'row' }}>
-                                    <Text style={[styles.fs_5, { fontWeight: 'bold', color: '#D92E28', paddingHorizontal: 5 }]}>{billsReportInfo.totalOrders}</Text>
+                                    <Text style={[styles.fs_5, { fontWeight: 'bold', color: '#D92E28', paddingHorizontal: 5 }]}>{profitsReportsInfo.totalOrders}</Text>
                                     <Text style={[styles.fs_5, { fontWeight: 'bold', color: '#D92E28', paddingHorizontal: 5 }]}>{Dictionary.ORDERS[lan]}</Text>
                                 </View>
                             </View>
@@ -171,8 +169,8 @@ export default class Reports extends Component {
                             <View style={{ flex: 0.8, alignItems: 'center', justifyContent: 'center' }}>
                                 <Text style={[styles.fs_12, { color: '#707070' }]}> {Dictionary.TOTAL_SALES[lan]}</Text>
                                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={[styles.fs_12, { padding: 10, color: '#3FAEA3' }]}>{billsReportInfo.totalSales}</Text>
-                                    <Text style={[styles.fs_8, { color: '#707070' }]}>{billsReportInfo.curruncy[lan]}</Text>
+                                    <Text style={[styles.fs_12, { padding: 10, color: '#3FAEA3' }]}>{profitsReportsInfo.totalSales}</Text>
+                                    <Text style={[styles.fs_8, { color: '#707070' }]}>{profitsReportsInfo.curruncy[lan]}</Text>
                                 </View>
 
 
