@@ -5,6 +5,8 @@ import { StyleSheet, Text, View, Button, TextInput, Dimensions, FlatList, Scroll
 import Swiper from 'react-native-web-swiper';
 import { Icon } from 'expo';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import firebase from 'firebase';
+
 /*************************************** Pages ********************************************/
 import noticeBoard from '../jsons/ojb';
 import storeInfo from '../jsons/storeinfo';
@@ -19,6 +21,41 @@ const offline = '#8EDF88';
 let lan = 'en';
 
 export default class Login extends React.Component {
+
+  componentWillMount() {
+    var firebaseConfig = {
+      apiKey: "AIzaSyDXoIsEJqWpjbd9mF-IRIQVx5JE4Xyid78",
+      authDomain: "lazywaitpos.firebaseapp.com",
+      databaseURL: "https://lazywaitpos.firebaseio.com",
+      projectId: "lazywaitpos",
+      storageBucket: "",
+      messagingSenderId: "273046809876",
+      appId: "1:273046809876:web:e610bc45e9d842a9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    // firebase.database().ref('user/001').set(
+    //   {
+    //     name: 'salma',
+    //     age: 21123
+    //   }
+    // ).then(() => {
+    //   console.log('INSERTED');
+    // }).catch((error) => {
+    //   console.log(error)
+    // })
+
+    var newPostKey = firebase.database().ref().child('user').push().key;
+    console.log('***********************************************');
+    console.log(newPostKey);
+    console.log('***********************************************');
+
+
+
+  }
+
   static navigationOptions = {
     header: null
   };
@@ -55,7 +92,6 @@ export default class Login extends React.Component {
           </View>
         </ScrollView>
       </View>
-
 
     )
   }
@@ -125,7 +161,7 @@ export default class Login extends React.Component {
                     elevation: 5,
                     position: 'absolute',
                     flex: 1,
-                    borderRadius:16,
+                    borderRadius: 16,
                   }}>
                     <View style={{ borderBottomWidth: 0.5, borderBottomColor: color1, flex: 0.1, marginTop: '4%', justifyContent: 'center', flexDirection: 'row', }}>
                       <TouchableOpacity
