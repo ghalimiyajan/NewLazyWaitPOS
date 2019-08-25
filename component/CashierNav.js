@@ -24,74 +24,56 @@ export default class CashierNav extends Component {
                     </View>
                 </TouchableOpacity>
                 {/* *****Empty View***** */}
-                <View style={{ marginBottom: 40 }}>
+                <View style={{ marginBottom: 20 }}>
 
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false} >
                     <TouchableOpacity onPress={() => this.props.navigationVariable.props.navigation.navigate('CashierSettings')} >
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-cash' : 'md-cash'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>{Dictionary.CASHIER_NEW_ORDER[lan]}</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_NEW_ORDER[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-cart' : 'md-cart'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Products</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_ORDERS[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-basket' : 'md-basket'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Add-ons</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_DISCOUNTS[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-people' : 'md-people'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Users</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_FUNCTION[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Users Roles</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_CLOSING[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.sidebarBoxes}>
                             <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-print' : 'md-print'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Printers</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.sidebarBoxes}>
-                            <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Print Options</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.sidebarBoxes}>
-                            <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-pricetags' : 'md-pricetags'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Discounts</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.sidebarBoxes}>
-                            <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-tablet-portrait' : 'md-tablet-portrait'} style={[styles.sidebarIcon, { alignSelf: 'center', }]} />
-                            <Text style={[styles.p_1, { textAlign: 'center' }]}>Tablet Settings</Text>
+                            <Text style={[styles.p_1, { textAlign: 'center', fontSize:10 }]}>{Dictionary.CASHIER_TAKE_CASH[lan]}</Text>
                         </View>
                     </TouchableOpacity>
                 </ScrollView>
 
                 {/******Empty View******/}
-                <View style={{ marginTop: 40 }}></View>
+                <View style={{ marginTop: 20 }}></View>
 
                 {/****** Drawer********/}
                 <TouchableOpacity>
                     <View style={[styles.sidebarBoxes, { backgroundColor: '#D92E28' }]}>
                         <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-tablet-portrait' : 'md-tablet-portrait'} style={[styles.sidebarIcon, { alignSelf: 'center', color: 'white' }]} />
-                        <Text style={[styles.p_1, { textAlign: 'center', color: 'white' }]}>Drawer</Text>
+                        <Text style={[styles.p_1, { textAlign: 'center', color: 'white', fontSize:10 }]}>Drawer</Text>
                     </View>
                 </TouchableOpacity>
 

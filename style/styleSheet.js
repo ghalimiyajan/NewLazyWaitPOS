@@ -312,7 +312,14 @@ const styles = EStyleSheet.create({
         height: '22rem',
         justifyContent: 'center',
         alignItems: 'center',
-
+    },
+    cashierBoxes: {
+        borderRadius: 16,
+        margin: 5,
+        width: '40rem',
+        height: '40rem',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     imagePickerCircle: {
         width: '60rem',
@@ -389,6 +396,14 @@ const styles = EStyleSheet.create({
         borderRadius: 100,
         borderColor: color2,
         margin: 10
+    },
+    productImage: {
+        width: '100%',
+        height: '100%',
+        borderRadius: 16,
+        borderColor: color2,
+        margin: 10,
+        position: 'absolute'
     },
     commentInput: {
         height: '30rem',

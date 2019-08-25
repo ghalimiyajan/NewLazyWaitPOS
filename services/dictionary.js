@@ -461,7 +461,7 @@ const Dictionary = {
     ar: 'طلبات',
   },
   CASHIER_DISCOUNTS: {
-    en: 'DISCOUNT',
+    en: 'Discounts',
     ar: 'تخفيض',
   },
   CASHIER_FUNCTION: {
