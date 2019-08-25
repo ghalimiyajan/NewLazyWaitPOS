@@ -40,7 +40,7 @@ export default class CashierSettings extends Component {
       disabled: false,
       digitVal: 'Zero',
     };
-    this.updateIndex = this.updateIndex.bind(this)
+    // this.updateIndex = this.updateIndex.bind(this)
   }
 
   updateIndex(selectedIndex) {

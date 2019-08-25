@@ -36,7 +36,7 @@ const navBar = {
                 ios: 'ios-cart',
                 android: 'md-cart'
             },
-            navigate: 'CashierSettings',
+            navigate: 'ProductsSettings',
             active: true,
 
 
@@ -50,7 +50,7 @@ const navBar = {
                 ios: 'ios-basket',
                 android: 'md-basket'
             },
-            navigate: 'CashierSettings',
+            navigate: 'AddonsSettings',
             active: true,
 
 
@@ -92,7 +92,7 @@ const navBar = {
                 ios: 'ios-print',
                 android: 'md-print'
             },
-            navigate: 'CashierSettings',
+            navigate: 'PrintersSettings',
             active: true,
 
 
@@ -106,7 +106,7 @@ const navBar = {
                 ios: 'ios-options',
                 android: 'md-options'
             },
-            navigate: 'CashierSettings',
+            navigate: 'PrintOptions',
             active: true,
 
 
@@ -120,7 +120,7 @@ const navBar = {
                 ios: 'ios-pricetags',
                 android: 'md-pricetags'
             },
-            navigate: 'CashierSettings',
+            navigate: 'DiscountsSettings',
             active: true,
 
 
@@ -134,7 +134,7 @@ const navBar = {
                 ios: 'ios-tablet-portrait',
                 android: 'md-tablet-portrait'
             },
-            navigate: 'CashierSettings',
+            navigate: 'TabletSettings',
             active: true,
 
 

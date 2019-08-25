@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, Platform, TextInput } from 'r
 import Sidebar from '../component/Sidebar';
 import Categories from '../component/Categories';
 import Products from '../component/Products';
+import nav from '../jsons/nav_bar';
 
 import styles from '../style/styleSheet';
 import { Icon } from 'expo';
@@ -25,7 +26,7 @@ export default class CashierSettings extends Component {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
         <View>
-          <Sidebar />
+          <Sidebar  nav={nav.nav} />
         </View>
         <View style={{ flex: 0.6 }}>
           <Categories />
