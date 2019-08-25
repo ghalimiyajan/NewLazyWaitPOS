@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Platform, TextInput } from 'react-native';
-import Sidebar from '../component/Sidebar';
+import CashierNav from '../component/CashierNav';
 import Categories from '../component/Categories';
 import Products from '../component/Products';
 import nav from '../jsons/nav_bar';
@@ -26,7 +26,7 @@ export default class CashierSettings extends Component {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
         <View>
-          <Sidebar  nav={nav.nav} />
+          <CashierNav  nav={nav.nav} />
         </View>
         <View style={{ flex: 0.6 }}>
           <Categories />

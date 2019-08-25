@@ -21,11 +21,11 @@ import DiscountsReposrts from './screens/DiscountsReposrts';
 import UsersReports from './screens/UsersReports';
 import CustomersReports from './screens/CustomersReports';
 import PaymentMethodReports from './screens/PaymentMethodReports';
-// import OrderTypeReports from './screens/OrderTypeReports'; 
+import OrderTypeReports from './screens/OrderTypeReports';
 import CashMovementsReports from './screens/CashMovementsReports';
 import profitsReports from './screens/profitsReports';
-import TaxesReports from './screens/TaxesReports'; 
-import SignInReports from './screens/SignInReports'; 
+import TaxesReports from './screens/TaxesReports';
+import SignInReports from './screens/SignInReports';
 import CashierClosingReports from './screens/CashierClosingReports';
 import ProcurementsReports from './screens/ProcurementsReports';
 
@@ -36,7 +36,7 @@ const Navigation = createSwitchNavigator({
   // Dashboard: { screen: Dashboard },
   // Settings: { screen: Settings },
   // CashierSettings: { screen: CashierSettings },
-  // Cashier: { screen: Cashier },
+  Cashier: { screen: Cashier },
   // UsersSettings:{screen: UsersSettings},
   // UsersRolesSettings:{screen:UsersRolesSettings},
   // PrintOptions:{screen:PrintOptions},
@@ -58,7 +58,7 @@ const Navigation = createSwitchNavigator({
   // TaxesReports: { screen: TaxesReports },
   // SignInReports: { screen: SignInReports },
   // CashierClosingReports: { screen: CashierClosingReports },
-  ProcurementsReports: { screen: ProcurementsReports },
+  // ProcurementsReports: { screen: ProcurementsReports },
 
 
 

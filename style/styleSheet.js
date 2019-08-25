@@ -305,10 +305,11 @@ const styles = EStyleSheet.create({
     sidebarBoxes: {
         backgroundColor: '#fff',
         borderRadius: 16,
-        margin: '2rem',
+        marginHorizontal: '4rem',
+        marginVertical: '2rem',
         marginTop: 0,
-        width: '25rem',
-        height: '25rem',
+        width: '24rem',
+        height: '22rem',
         justifyContent: 'center',
         alignItems: 'center',
 

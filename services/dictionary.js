@@ -452,6 +452,34 @@ const Dictionary = {
     en: 'Vendor Name',
     ar: 'اسم المورد',
   },
+  CASHIER_NEW_ORDER: {
+    en: 'New Order',
+    ar: 'طلب جديد',
+  },
+  CASHIER_ORDERS: {
+    en: 'Orders',
+    ar: 'طلبات',
+  },
+  CASHIER_DISCOUNTS: {
+    en: 'DISCOUNT',
+    ar: 'تخفيض',
+  },
+  CASHIER_FUNCTION: {
+    en: 'Function',
+    ar: 'مهام',
+  },
+  CASHIER_CLOSING: {
+    en: 'Cashier Closing',
+    ar: 'إغلاق الكاشير',
+  },
+  CASHIER_CLOSING: {
+    en: 'Cashier Closing',
+    ar: 'إغلاق الكاشير',
+  },
+  CASHIER_TAKE_CASH: {
+    en: 'Add/Take Cash',
+    ar: 'إضاف/سحب كاش',
+  },
   
 
 
