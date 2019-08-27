@@ -480,11 +480,58 @@ const Dictionary = {
     en: 'Add/Take Cash',
     ar: 'إضاف/سحب كاش',
   },
-  
-
-
-
-
+  PAY_ORDER: {
+    en: 'Pay Order',
+    ar: 'دفع الطلب',
+  },
+  SAVE_ORDER: {
+    en: 'Save Order',
+    ar: 'إرسال الطلب',
+  },
+  QUANTITY: {
+    en: 'Qty',
+    ar: 'الكمية',
+  },
+  EACH: {
+    en: 'Each',
+    ar: 'للواحدة',
+  },
+  TOTAL: {
+    en: 'Total',
+    ar: 'المجموع',
+  },
+  SUBTOTAL: {
+    en: 'Subtotal',
+    ar: 'مبدئي',
+  },
+  RECEIVED: {
+    en: 'Received',
+    ar: 'مدفوع',
+  },
+  BALANCE_DUE: {
+    en: 'Balance Due',
+    ar: 'المستحق',
+  },
+  ORDERS_STATUS: {
+    en: 'Order Status',
+    ar: 'حالة الطلبات',
+  },
+  DRIVERS: {
+    en: 'Driver',
+    ar: 'السائق',
+  },
+  SERVANT: {
+    en: 'Servant',
+    ar: 'حالة الطلبات',
+  },
+  DELIVERED: {
+    en: 'Delivered',
+    ar: 'تم التوصيل',
+  },
+  READY: {
+    en: 'Ready',
+    ar: 'جاهز',
+  },
 
 }
 

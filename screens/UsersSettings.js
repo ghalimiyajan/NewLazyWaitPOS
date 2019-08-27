@@ -104,7 +104,7 @@ export default class UsersSettings extends Component {
         let pic = image
         // if statment thet handel the click in edit or add users 
         const sidebarAdd = this.state.sidebarAdd;
-        if (sidebarAdd) {
+        if (!sidebarAdd) {
             button = <AddActionButton />;
         } else {
             button = <DeleteActionButton />;

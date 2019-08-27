@@ -293,9 +293,6 @@ const styles = EStyleSheet.create({
         width: '20rem',
         margin: 10,
     },
-
-
-
     dashboardLine: {
         borderBottomWidth: 4,
         width: 80,
@@ -313,6 +310,17 @@ const styles = EStyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    categoriesBoxes: {
+        backgroundColor: '#fff',
+        borderRadius: 16,
+        marginHorizontal: '2rem',
+        marginVertical: '2rem',
+        margin: 5,
+        width: '30rem',
+        height: '30rem',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     cashierBoxes: {
         borderRadius: 16,
         margin: 5,
@@ -320,6 +328,14 @@ const styles = EStyleSheet.create({
         height: '40rem',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    cashierBoxesText: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        borderBottomRightRadius: 16,
+        borderBottomLeftRadius: 16,
+        width: '100%',
+        height: '100%'
     },
     imagePickerCircle: {
         width: '60rem',
