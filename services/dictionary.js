@@ -532,6 +532,26 @@ const Dictionary = {
     en: 'Ready',
     ar: 'جاهز',
   },
+  ORDERS_QTY: {
+    en: 'Orders Qty',
+    ar: 'عدد الطلبات',
+  },
+  TOTAL_PROCUREMENT: {
+    en: 'Total Procurment',
+    ar: 'مجموع المشتريات',
+  },
+  PRICE: {
+    en: 'Price',
+    ar: 'السعر',
+  },
+  REMAINING_QTY: {
+    en: 'Remaining Qty',
+    ar: 'الكمية المتبقية',
+  },
+  STOCK_VALUE: {
+    en: 'Stock Value',
+    ar: 'قيمة المخزون',
+  },
 
 }
 

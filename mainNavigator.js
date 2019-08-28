@@ -28,6 +28,8 @@ import TaxesReports from './screens/TaxesReports';
 import SignInReports from './screens/SignInReports';
 import CashierClosingReports from './screens/CashierClosingReports';
 import ProcurementsReports from './screens/ProcurementsReports';
+import VendorsReports from './screens/VendorsReports';
+import InventoryReports from './screens/InventoryReports';
 
 
 
@@ -36,7 +38,7 @@ const Navigation = createSwitchNavigator({
   // Dashboard: { screen: Dashboard },
   // Settings: { screen: Settings },
   // CashierSettings: { screen: CashierSettings },
-  Cashier: { screen: Cashier },
+  // Cashier: { screen: Cashier },
   // UsersSettings:{screen: UsersSettings},
   // UsersRolesSettings:{screen:UsersRolesSettings},
   // PrintOptions:{screen:PrintOptions},
@@ -45,20 +47,22 @@ const Navigation = createSwitchNavigator({
   // PrintersSettings:{screen:PrintersSettings}, 
   // DiscountsSettings:{screen:DiscountsSettings},  
   // TabletSettings:{screen:TabletSettings}, 
-  // Reports: { screen: Reports },
-  // CategoriesReport: { screen: CategoriesReport },
-  // ProductsReports: { screen: ProductsReports },
-  // DiscountsReposrts: { screen: DiscountsReposrts },
-  // UsersReports: { screen: UsersReports },
-  // CustomersReports: { screen: CustomersReports },
-  // PaymentMethodReports: { screen: PaymentMethodReports },
-  // OrderTypeReports: { screen: OrderTypeReports },
-  // CashMovementsReports: { screen: CashMovementsReports },
-  // profitsReports: { screen: profitsReports },
-  // TaxesReports: { screen: TaxesReports },
-  // SignInReports: { screen: SignInReports },
-  // CashierClosingReports: { screen: CashierClosingReports },
-  // ProcurementsReports: { screen: ProcurementsReports },
+  Reports: { screen: Reports },
+  CategoriesReport: { screen: CategoriesReport },
+  ProductsReports: { screen: ProductsReports },
+  DiscountsReposrts: { screen: DiscountsReposrts },
+  UsersReports: { screen: UsersReports },
+  CustomersReports: { screen: CustomersReports },
+  PaymentMethodReports: { screen: PaymentMethodReports },
+  OrderTypeReports: { screen: OrderTypeReports },
+  CashMovementsReports: { screen: CashMovementsReports },
+  profitsReports: { screen: profitsReports },
+  TaxesReports: { screen: TaxesReports },
+  SignInReports: { screen: SignInReports },
+  CashierClosingReports: { screen: CashierClosingReports },
+  ProcurementsReports: { screen: ProcurementsReports },
+  VendorsReports: { screen: VendorsReports },
+  InventoryReports: { screen: InventoryReports },
 
 
 
