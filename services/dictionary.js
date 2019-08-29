@@ -552,6 +552,58 @@ const Dictionary = {
     en: 'Stock Value',
     ar: 'قيمة المخزون',
   },
+  ADD_WAITING: {
+    en: 'Add Waiting',
+    ar: 'إضافة إنتظار',
+  },
+  PEOPLE_COUNT: {
+    en: 'People Count',
+    ar: 'عدد الأشخاص',
+  },
+  TABLE_TYPE: {
+    en: 'Table Type',
+    ar: 'نوع الطاولة',
+  },
+  WAITING_PLACE: {
+    en: 'Waiting Place',
+    ar: 'مكان الإنتظار',
+  },
+  CLOSED: {
+    en: 'Closed',
+    ar: 'مغلقة',
+  },
+  ANY_AVAILABLE_TABLE: {
+    en: 'Any Available Table',
+    ar: 'أي طاولة متاحة',
+  },
+  INSIDE: {
+    en: 'Inside',
+    ar: 'بالداخل',
+  },
+  OUTSIDE: {
+    en: 'Outside',
+    ar: 'بالخارج',
+  },
+  HOME: {
+    en: 'Home',
+    ar: 'الرئيسية',
+  },
+  CURRENT: {
+    en: 'Current ',
+    ar: 'الحالي'
+  },
+  HISTORY: {
+    en: 'History ',
+    ar: 'السجل'
+  },
+  SERVICE: {
+    en: 'Service ',
+    ar: 'الخدمة'
+  },
+  EMPLOYEE: {
+    en: 'Employee ',
+    ar: 'الموظف'
+  },
 
 }
 

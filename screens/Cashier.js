@@ -436,7 +436,7 @@ export default class CashierSettings extends Component {
 
         </View>
 
-        <View style={{ flex: 1, width: '100%', heigth: '100%', position: 'absolute', backgroundColor: 'black' }}>
+        {/* <View style={{ flex: 1, width: '100%', heigth: '100%', position: 'absolute', backgroundColor: 'black' }}>
           <TouchableOpacity>
             <View style={styles.cashierBoxes}>
               <View style={{ flex: 2 }}></View>
@@ -445,7 +445,7 @@ export default class CashierSettings extends Component {
               </ScrollView>
             </View>
           </TouchableOpacity>
-        </View >
+        </View > */}
 
       </View >
     );

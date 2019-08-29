@@ -460,11 +460,19 @@ const styles = EStyleSheet.create({
 
     },
     usersCards: {
-        width: '60rem',
-        height: '60rem',
+        width: '50rem',
+        height: '50rem',
         backgroundColor: '#E6E6E6',
         borderRadius: 16,
         padding: 10,
+
+    },
+    usersCards2: {
+        width: '50rem',
+        height: '50rem',
+        backgroundColor: '#E6E6E6',
+        borderRadius: 16,
+        
 
     },
     sidebar: {

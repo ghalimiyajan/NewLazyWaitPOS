@@ -30,6 +30,8 @@ import CashierClosingReports from './screens/CashierClosingReports';
 import ProcurementsReports from './screens/ProcurementsReports';
 import VendorsReports from './screens/VendorsReports';
 import InventoryReports from './screens/InventoryReports';
+import Waiting from './screens/Waiting';
+import Booking from './screens/Booking';
 
 
 
@@ -47,22 +49,24 @@ const Navigation = createSwitchNavigator({
   // PrintersSettings:{screen:PrintersSettings}, 
   // DiscountsSettings:{screen:DiscountsSettings},  
   // TabletSettings:{screen:TabletSettings}, 
-  Reports: { screen: Reports },
-  CategoriesReport: { screen: CategoriesReport },
-  ProductsReports: { screen: ProductsReports },
-  DiscountsReposrts: { screen: DiscountsReposrts },
-  UsersReports: { screen: UsersReports },
-  CustomersReports: { screen: CustomersReports },
-  PaymentMethodReports: { screen: PaymentMethodReports },
-  OrderTypeReports: { screen: OrderTypeReports },
-  CashMovementsReports: { screen: CashMovementsReports },
-  profitsReports: { screen: profitsReports },
-  TaxesReports: { screen: TaxesReports },
-  SignInReports: { screen: SignInReports },
-  CashierClosingReports: { screen: CashierClosingReports },
-  ProcurementsReports: { screen: ProcurementsReports },
-  VendorsReports: { screen: VendorsReports },
-  InventoryReports: { screen: InventoryReports },
+  // Reports: { screen: Reports },
+  // CategoriesReport: { screen: CategoriesReport },
+  // ProductsReports: { screen: ProductsReports },
+  // DiscountsReposrts: { screen: DiscountsReposrts },
+  // UsersReports: { screen: UsersReports },
+  // CustomersReports: { screen: CustomersReports },
+  // PaymentMethodReports: { screen: PaymentMethodReports },
+  // OrderTypeReports: { screen: OrderTypeReports },
+  // CashMovementsReports: { screen: CashMovementsReports },
+  // profitsReports: { screen: profitsReports },
+  // TaxesReports: { screen: TaxesReports },
+  // SignInReports: { screen: SignInReports },
+  // CashierClosingReports: { screen: CashierClosingReports },
+  // ProcurementsReports: { screen: ProcurementsReports },
+  // VendorsReports: { screen: VendorsReports },
+  // InventoryReports: { screen: InventoryReports },
+  // Waiting: { screen: Waiting },
+  Booking: { screen: Booking },
 
 
 
