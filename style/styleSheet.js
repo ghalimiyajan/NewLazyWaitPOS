@@ -521,7 +521,26 @@ const styles = EStyleSheet.create({
         borderRadius: 7,
         backgroundColor: '#794F9B',
     },
-
+    orderPopupContainer: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.5);',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    orderPopup: {
+        borderRadius: 16,
+        margin: 5,
+        width: '200rem',
+        height: '200rem',
+        //backgroundColor: 'white',
+        borderRadius: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 
 });
 

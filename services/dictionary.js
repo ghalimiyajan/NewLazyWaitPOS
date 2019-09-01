@@ -532,6 +532,18 @@ const Dictionary = {
     en: 'Ready',
     ar: 'جاهز',
   },
+  ACTIVE_ORDERS: {
+    en: 'Active Order',
+    ar: 'الطلبات النشطة',
+  },
+  TODAY_ORDERS: {
+    en: 'Today Bills',
+    ar: 'فواتير اليوم',
+  },
+  ORDERS_POPUP_SEARCH: {
+    en: 'Orders search by (ID, Name, Phone)',
+    ar: 'بحث الطلبات بإستخدام الرقم, الإسم, الجوال',
+  },
 
 }
 
