@@ -604,6 +604,90 @@ const Dictionary = {
     en: 'Employee ',
     ar: 'الموظف'
   },
+  EDIT: {
+    en: 'Edit ',
+    ar: 'تعديل'
+  },
+  FEE: {
+    en: 'Fee ',
+    ar: 'العربون'
+  },
+  ENABLE_EMAIL: {
+    en: 'Enable Email ',
+    ar: 'ارسال ايميل'
+  },
+  ENABLE_SMS: {
+    en: 'Enable SMS ',
+    ar: 'ارسال رسالة نصية'
+  },
+  INGREDIENTS: {
+    en: 'Ingredients ',
+    ar: 'المكونات'
+  },
+  GROUPS: {
+    en: 'Groups ',
+    ar: 'مجموعات'
+  },
+  ITEMS: {
+    en: 'Items ',
+    ar: 'المنتجات'
+  },
+  BILL_PRINTER: {
+    en: 'Bill Printer ',
+    ar: 'طابعة الفاتورة'
+  },
+  RECEIPT_PRINTER: {
+    en: 'Receipt Printer ',
+    ar: 'طابعة الإيصال'
+  },
+  MAIN_TERMINAL: {
+    en: 'Main Terminal ',
+    ar: 'الجهاز الرئيسي'
+  },
+  BANK_POS: {
+    en: 'Bank POS ',
+    ar: 'جهاز نقاط البيع'
+  },
+  HAS_DRAWER: {
+    en: 'Has Drawer',
+    ar: 'درج'
+  },
+  TERMINALS: {
+    en: 'Terminals',
+    ar: 'اجهزة'
+  },
+  WHICH_TERMINAL_DRAWER:{
+    en: 'Which Terminal Drawer',
+    ar: 'درج أي جهاز'
+  },
+  PRINTERS:{
+    en: 'Printers',
+    ar: 'الطابعات'
+  },
+  PRINTERS_LIST:{
+    en: 'Printers List',
+    ar: 'الطابعات المعرفة'
+  },
+  BARCODE_PRINTER:{
+    en: 'Barcode Printer',
+    ar: 'طابعة الباركود'
+  },
+  PAPER_SIZE:{
+    en: 'Paper Size',
+    ar: 'حجم الورق'
+  },
+  TEST_PRINTER:{
+    en: 'Test Printer',
+    ar: 'طباعة تجريبية'
+  },
+  MAIN_PRINTER_WARN:{
+    en: '* Main Printer is used to print receipt and bills. Only one printer can be a main printer.',
+    ar: '* الطابعة الرئيسية تستخدم لطابعة الايصالات والفواتير ولا يسمح بوجود اكثر من طابعة رئيسية'
+  },
+  BARCODE_PRINTER_WARN:{
+    en: '* Barcode Printer is used to print barcode labels. Only one printer can be a barcode printer.',
+    ar: '* طابعة الباركود تسختدم لطباعة لصقات الباركود ولا يسمح بوجود اكثر من طابعة باركود'
+  },
 
 }
 

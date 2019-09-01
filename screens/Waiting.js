@@ -5,7 +5,6 @@ import noticeBoard from '../jsons/ojb';
 import storeInfo from '../jsons/storeinfo';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
-import nav from '../jsons/nav-bar3';
 import Sidebar from '../component/Sidebar';
 import AddActionButton from '../component/AddActionButton';
 import DeleteActionButton from '../component/DeleteActionButton';

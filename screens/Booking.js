@@ -5,7 +5,6 @@ import noticeBoard from '../jsons/ojb';
 import storeInfo from '../jsons/storeinfo';
 import Dictionary from '../services/dictionary';
 import styles from '../style/styleSheet';
-import nav from '../jsons/nav-bar3';
 import Sidebar from '../component/Sidebar';
 import AddActionButton from '../component/AddActionButton';
 import DeleteActionButton from '../component/DeleteActionButton';
@@ -77,21 +76,16 @@ export default class Waiting extends Component {
         return (
             <TouchableOpacity onPress={() => this.handleClick()}>
                 <View style={[styles.usersCards2, { margin: 10 }]}>
-                    <View style={{ width: '100%', height: '20%', backgroundColor: '#3FAEA3', borderTopLeftRadius: 16, borderTopRightRadius: 16, justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={[styles.fs_7, { color: '#ffff', fontWeight: 'bold', }]}>{item.date}</Text>
+                    <View style={{ flex: 0.3, backgroundColor: '#3FAEA3', borderTopLeftRadius: 16, borderTopRightRadius: 16, justifyContent: 'center', alignItems: 'center' }}>
+                        <Text style={[styles.fs_6, { color: '#ffff', }]}>{item.date}</Text>
                     </View>
-                    <View style={{ justifyContent: 'center', padding: 10, alignItems: 'center', }}>
-                        <View style={{ alignItems: 'center', flexDirection: 'row' }}>
-                            <Text style={[styles.fs_4, { color: '#707070', flex: 1 }]}>{item.name}</Text>
-                        </View>
-                        <View style={{ alignItems: 'center', flexDirection: 'row' }}>
-                            <Text style={[styles.fs_4, { color: '#707070', flex: 1 }]}>{item.service}</Text>
-                        </View>
-
-                        <View style={{ alignSelf:'flex-end',alignItems: 'center', flexDirection: 'row',   }}>
-                            <Text style={[styles.fs_4, { color: '#707070', flex: 1, }]}>{item.stateus}</Text>
-                        </View>
-
+                    <View style={{ flex: 0.4, justifyContent: 'center', alignItems: 'center', }}>
+                        <Text style={[styles.fs_6, {}]}>{item.name}</Text>
+                        <Text style={[styles.fs_6, {}]}>{item.service[lan]}</Text>
+                    </View>
+                    <View style={{ flex: 0.3, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', backgroundColor: '#C4C4C4', borderBottomLeftRadius: 16, borderBottomRightRadius: 16, }}>
+                        <Text style={[styles.fs_6, { color: '#ffff', }]}>{item.stateus[lan]}</Text>
+                        <View style={{ backgroundColor: online, height: 10, width: 10, borderRadius: 100, margin: '2%' }} />
                     </View>
                 </View>
             </TouchableOpacity>
@@ -100,6 +94,7 @@ export default class Waiting extends Component {
 
         )
     }
+
 
     render() {
         let services = [{
@@ -121,8 +116,32 @@ export default class Waiting extends Component {
         const sidebarAdd = this.state.sidebarAdd;
         if (!sidebarAdd) {
             button = <AddActionButton />;
+            calander = <CalendarPicker
+                onDateChange={this.onDateChange}
+                width={350}
+                height={300}
+                selectedDayColor={'#48C4B7'}
+                previousTitle={'<'}
+                nextTitle={'>'}
+                style={{ flex: 1 }}
+            />;
         } else {
-            button = <DeleteActionButton />;
+            calander = <View style={{ paddingTop: 25 }}>
+                <Text style={[styles.fs_20, { textAlign: 'center', color: '#464A4D' }]}>10:35</Text>
+                <View style={{}} />
+            </View>;
+            button = <View style={{ flexDirection: 'row', flex: 0.1 }}>
+                <TouchableOpacity style={{ flex: 1 }}>
+                    <View style={{ flex: 1, backgroundColor: '#3FAEA3', borderBottomLeftRadius: 16, justifyContent: 'center' }}>
+                        <Text style={{ justifyContent: 'flex-end', color: '#fff', textAlign: 'center' }}>{Dictionary.EDIT[lan]}</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={{ flex: 2 }}>
+                    <View style={{ flex: 1, backgroundColor: '#D92E28', borderBottomRightRadius: 16, justifyContent: 'center' }}>
+                        <Text style={{ justifyContent: 'flex-end', color: '#fff', textAlign: 'center' }}>{Dictionary.DELETE[lan]}</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>;
         }
 
         return (
@@ -199,42 +218,37 @@ export default class Waiting extends Component {
                     {/* *****************************Add waiting Modal ******************************************* */}
 
                     <View style={styles.sidebar}>
-                        <View style={{ flex: 0.9, padding: 20, }}>
+                        <ScrollView style={{ flex: 1, padding: 20, }}>
                             <View style={{ borderBottomWidth: 2, borderBottomColor: '#4DB4AA', padding: 5 }}>
                                 <Text>{Dictionary.ADD_WAITING[lan]}</Text>
 
                             </View>
 
-                            <View style={{ flex: 0.9, justifyContent: 'space-between', }}>
+                            <View style={{  flex: 1, justifyContent: 'space-around', }}>
 
                                 {/* Calander */}
-                                <View style={{ alignItems: 'center', paddingButtom: 15 }}>
-                                    <CalendarPicker
-                                        onDateChange={this.onDateChange}
-                                        width={350}
-                                        height={400}
-                                        selectedDayColor={'#48C4B7'}
-                                        previousTitle={'<'}
-                                        nextTitle={'>'}
-                                    />
-                                    <View >
+                                <View style={{ alignItems: 'center', }}>
+                                    {calander}
+                                    {/* <View >
                                         <Text>{startDate}</Text>
-                                    </View>
+                                    </View> */}
                                 </View>
                                 {/* Service */}
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
-                                    <Text >{Dictionary.SERVICE[lan]}</Text>
+                                    <Text style={{ flex: 1 }}>{Dictionary.SERVICE[lan]}</Text>
                                     <Dropdown
-                                        containerStyle={{ width: '80%' }}
+                                        containerStyle={{ width: '50%' }}
                                         data={services}
+                                        style={{ flex: 1 }}
                                     />
                                 </View>
                                 {/* employee */}
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
-                                    <Text >{Dictionary.EMPLOYEE[lan]}</Text>
+                                    <Text style={{ flex: 1 }} >{Dictionary.EMPLOYEE[lan]}</Text>
                                     <Dropdown
-                                        containerStyle={{ width: '80%' }}
+                                        containerStyle={{ width: '50%' }}
                                         data={employee}
+                                        style={{ flex: 1 }}
                                     />
                                 </View>
                                 {/* name */}
@@ -248,6 +262,17 @@ export default class Waiting extends Component {
                                     <Text style={{ flex: 1 }}>{Dictionary.PHONE_NUMBER[lan]}</Text>
                                     <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
                                 </View>
+                                {/* fee */}
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                    <Text style={{ flex: 1 }}>{Dictionary.FEE[lan]}</Text>
+                                    <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
+                                </View>
+                                {/*Note */}
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                    <Text style={{ flex: 1 }}>{Dictionary.NOTES[lan]}</Text>
+                                    <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
+                                </View>
+                                
 
 
 
@@ -257,7 +282,7 @@ export default class Waiting extends Component {
 
                             </View>
 
-                        </View>
+                        </ScrollView>
                         {/* Add or Delete button */}
                         {button}
 

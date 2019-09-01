@@ -32,6 +32,8 @@ import VendorsReports from './screens/VendorsReports';
 import InventoryReports from './screens/InventoryReports';
 import Waiting from './screens/Waiting';
 import Booking from './screens/Booking';
+import Vendors from './screens/Vendors';
+import Terminals from './screens/Terminals'; 
 
 
 
@@ -46,7 +48,7 @@ const Navigation = createSwitchNavigator({
   // PrintOptions:{screen:PrintOptions},
   // ProductsSettings:{screen:ProductsSettings},
   // AddonsSettings:{screen:AddonsSettings},
-  // PrintersSettings:{screen:PrintersSettings}, 
+   PrintersSettings:{screen:PrintersSettings}, 
   // DiscountsSettings:{screen:DiscountsSettings},  
   // TabletSettings:{screen:TabletSettings}, 
   // Reports: { screen: Reports },
@@ -66,7 +68,10 @@ const Navigation = createSwitchNavigator({
   // VendorsReports: { screen: VendorsReports },
   // InventoryReports: { screen: InventoryReports },
   // Waiting: { screen: Waiting },
-  Booking: { screen: Booking },
+  // Booking: { screen: Booking },
+  // Vendors: { screen: Vendors },
+  // Terminals: { screen: Terminals },
+
 
 
 
