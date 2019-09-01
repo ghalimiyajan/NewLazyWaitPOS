@@ -499,6 +499,17 @@ export default class CashierSettings extends Component {
               </View>
             </View>
 
+        {/* <View style={{ flex: 1, width: '100%', heigth: '100%', position: 'absolute', backgroundColor: 'black' }}>
+          <TouchableOpacity>
+            <View style={styles.cashierBoxes}>
+              <View style={{ flex: 2 }}></View>
+              <ScrollView style={styles.cashierBoxesText}>
+                <Text style={{ fontSize: 10, textAlign: 'center', color: 'white' }}>Soft Drink (2.5 RS) (50 RS) (10 RS)</Text>
+              </ScrollView>
+            </View>
+          </TouchableOpacity>
+        </View > */}
+
           </View>
         </Modal>
       </View >

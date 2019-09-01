@@ -544,7 +544,79 @@ const Dictionary = {
     en: 'Orders search by (ID, Name, Phone)',
     ar: 'بحث الطلبات بإستخدام الرقم, الإسم, الجوال',
   },
+  ORDERS_QTY: {
+    en: 'Orders Qty',
+    ar: 'عدد الطلبات',
+  },
+  TOTAL_PROCUREMENT: {
+    en: 'Total Procurment',
+    ar: 'مجموع المشتريات',
+  },
+  PRICE: {
+    en: 'Price',
+    ar: 'السعر',
+  },
+  REMAINING_QTY: {
+    en: 'Remaining Qty',
+    ar: 'الكمية المتبقية',
+  },
+  STOCK_VALUE: {
+    en: 'Stock Value',
+    ar: 'قيمة المخزون',
+  },
+  ADD_WAITING: {
+    en: 'Add Waiting',
+    ar: 'إضافة إنتظار',
+  },
+  PEOPLE_COUNT: {
+    en: 'People Count',
+    ar: 'عدد الأشخاص',
+  },
+  TABLE_TYPE: {
+    en: 'Table Type',
+    ar: 'نوع الطاولة',
+  },
+  WAITING_PLACE: {
+    en: 'Waiting Place',
+    ar: 'مكان الإنتظار',
+  },
+  CLOSED: {
+    en: 'Closed',
+    ar: 'مغلقة',
+  },
+  ANY_AVAILABLE_TABLE: {
+    en: 'Any Available Table',
+    ar: 'أي طاولة متاحة',
+  },
+  INSIDE: {
+    en: 'Inside',
+    ar: 'بالداخل',
+  },
+  OUTSIDE: {
+    en: 'Outside',
+    ar: 'بالخارج',
+  },
+  HOME: {
+    en: 'Home',
+    ar: 'الرئيسية',
+  },
+  CURRENT: {
+    en: 'Current ',
+    ar: 'الحالي'
+  },
+  HISTORY: {
+    en: 'History ',
+    ar: 'السجل'
+  },
+  SERVICE: {
+    en: 'Service ',
+    ar: 'الخدمة'
+  },
+  EMPLOYEE: {
+    en: 'Employee ',
+    ar: 'الموظف'
+  },
 
 }
-
 export default Dictionary
+
