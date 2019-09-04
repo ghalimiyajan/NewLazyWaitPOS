@@ -370,7 +370,7 @@ const Dictionary = {
   },
   ORDERS: {
     en: 'Orders',
-    ar: 'طلب'
+    ar: 'الطلبات'
   },
   TOTAL_ORDERS: {
     en: 'Total Orders',
@@ -668,37 +668,121 @@ const Dictionary = {
     en: 'Terminals',
     ar: 'اجهزة'
   },
-  WHICH_TERMINAL_DRAWER:{
+  WHICH_TERMINAL_DRAWER: {
     en: 'Which Terminal Drawer',
     ar: 'درج أي جهاز'
   },
-  PRINTERS:{
+  PRINTERS: {
     en: 'Printers',
     ar: 'الطابعات'
   },
-  PRINTERS_LIST:{
+  PRINTERS_LIST: {
     en: 'Printers List',
     ar: 'الطابعات المعرفة'
   },
-  BARCODE_PRINTER:{
+  BARCODE_PRINTER: {
     en: 'Barcode Printer',
     ar: 'طابعة الباركود'
   },
-  PAPER_SIZE:{
+  PAPER_SIZE: {
     en: 'Paper Size',
     ar: 'حجم الورق'
   },
-  TEST_PRINTER:{
+  TEST_PRINTER: {
     en: 'Test Printer',
     ar: 'طباعة تجريبية'
   },
-  MAIN_PRINTER_WARN:{
+  MAIN_PRINTER_WARN: {
     en: '* Main Printer is used to print receipt and bills. Only one printer can be a main printer.',
     ar: '* الطابعة الرئيسية تستخدم لطابعة الايصالات والفواتير ولا يسمح بوجود اكثر من طابعة رئيسية'
   },
-  BARCODE_PRINTER_WARN:{
+  BARCODE_PRINTER_WARN: {
     en: '* Barcode Printer is used to print barcode labels. Only one printer can be a barcode printer.',
     ar: '* طابعة الباركود تسختدم لطباعة لصقات الباركود ولا يسمح بوجود اكثر من طابعة باركود'
+  },
+  SAVING_PAPER: {
+    en: 'Saving Paper',
+    ar: 'توفير الورق'
+  },
+  PRINT_INVOICE_ID: {
+    en: 'Print Invoice ID',
+    ar: 'اطبع رقم الفاتورة'
+  },
+  PRINT_ORDER_NUMBER: {
+    en: 'Print Order Number',
+    ar: 'اطبع رقم الطلب التسلسلي'
+  },
+  HIDE_CALORISE: {
+    en: 'Hide Calorise',
+    ar: 'إخفاء السعرات الحرارية'
+  },
+  ALWAYS_SHOW_SAVE_ONLY_BUTTON: {
+    en: 'Always Show Save-Only Button',
+    ar: 'دائما اظهر زر حفظ الطلب'
+  },
+  GENERAL: {
+    en: 'General',
+    ar: 'عام'
+  },
+  RECEIPT: {
+    en: 'Receipt',
+    ar: 'الإيصالات'
+  },
+  LABLES: {
+    en: 'Lables',
+    ar: 'الملصقات'
+  },
+  PRINT_ORDER: {
+    en: 'Print Order',
+    ar: 'طباعة الطلبات'
+  },
+  SHOW_CUTOMER_PHONE_NUMBER: {
+    en: 'Show Customer Phone Number',
+    ar: 'اطبع رقم العميل'
+  },
+  SHOW_SERVANT_NAME: {
+    en: 'Show Servant Name',
+    ar: 'اطبع اسم الخادم'
+  },
+  SHOW_PICKUP_DATE: {
+    en: 'Show Pickup Name',
+    ar: 'اظهر تاريخ الاستلام'
+  },
+  DUPLICATE_COPIES: {
+    en: 'Duplicate Copies',
+    ar: 'اطبع نسخة مزدوجة'
+  },
+  CUT_BY_CATEGORY: {
+    en: 'Cut By Category',
+    ar: 'فصل طلبات كل قسم'
+  },
+  REPRINT_HEADER_MASSAGE: {
+    en: 'Reprint Header Massage',
+    ar: 'نص إعادة الطلب'
+  },
+  VOID_TRANSACTION_MASSAGE: {
+    en: 'Void Transaction Massage',
+    ar: 'نص رسالة الإلغاء'
+  },
+  STATUS: {
+    en: 'Status',
+    ar: 'الحالة'
+  },
+  ADD_PURCHASE_ORDER: {
+    en: 'Add Purchase Order',
+    ar: 'اضافة طلب شراء'
+  },
+  ADD_ORDER_Bill: {
+    en: 'Add Order Bill',
+    ar: 'اضافة فاتورة شراء'
+  },
+  ACTIVE_ORDERS: {
+    en: 'Active Orders',
+    ar: 'الطلبات النشطة'
+  },
+  RECEIVED_ORDERS: {
+    en: 'Received Orders',
+    ar: 'الطلبات المستلمة'
   },
 
 }

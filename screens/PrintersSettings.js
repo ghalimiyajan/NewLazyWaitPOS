@@ -20,7 +20,7 @@ import { Dropdown } from 'react-native-material-dropdown';
 
 
 
-let lan = 'en';
+let lan = 'ar';
 const online = '#8EDF88';
 const offline = '#8EDF88';
 
@@ -113,7 +113,7 @@ export default class PrintersSettings extends Component {
           {/* *************************************************Cards********************************************* */}
           <View style={{ flex: 0.9, flexDirection: 'row', flexWrap: 'wrap' }}>
             {/* Add Printer View */}
-            <TouchableOpacity onPress={() => this.handleClick()}>
+            <TouchableOpacity onPress={() => this.handleClick2()}>
               <View style={[styles.usersCards, { justifyContent: 'center', alignItems: 'center', margin: 10 }]}>
                 <Icon.Ionicons name={Platform.OS === 'ios' ? 'ios-add' : 'md-add'} style={[styles.fs_20, {}]} />
               </View>
@@ -182,11 +182,11 @@ export default class PrintersSettings extends Component {
                     style={{ flex: 1 }}
                   />
                 </View>
-                <View style={{ paddingTop: 15, paddingBottom: 15 }}>
-                  <Text style={{ color: '#707070', paddingBottom: 5 }}>
+                <View style={{ paddingTop: 15, paddingBottom: 15, }}>
+                  <Text style={{ color: '#707070', paddingBottom: 5, flexDirection: lan == 'en' ? 'row' : 'row-reverse', }}>
                     {Dictionary.MAIN_PRINTER_WARN[lan]}
                   </Text>
-                  <Text style={{ color: '#707070', paddingBottom: 10 }}>
+                  <Text style={{ color: '#707070', paddingBottom: 10, flexDirection: lan == 'en' ? 'row' : 'row-reverse', }}>
                     {Dictionary.BARCODE_PRINTER_WARN[lan]}
                   </Text>
                   <Text>

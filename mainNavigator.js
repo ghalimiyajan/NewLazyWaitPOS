@@ -9,6 +9,7 @@ import Cashier from './screens/Cashier';
 import UsersSettings from './screens/UsersSettings';
 import UsersRolesSettings from './screens/UsersRolesSettings';
 import PrintOptions from './screens/PrintOptions';
+import PrintOptionsOrders from './screens/PrintOptionsOrders';
 import ProductsSettings from './screens/ProductsSettings';
 import AddonsSettings from './screens/AddonsSettings';
 import PrintersSettings from './screens/PrintersSettings';
@@ -33,7 +34,9 @@ import InventoryReports from './screens/InventoryReports';
 import Waiting from './screens/Waiting';
 import Booking from './screens/Booking';
 import Vendors from './screens/Vendors';
-import Terminals from './screens/Terminals'; 
+import Terminals from './screens/Terminals';
+import Procurements from './screens/Procurements';
+
 
 
 
@@ -46,9 +49,10 @@ const Navigation = createSwitchNavigator({
   // UsersSettings:{screen: UsersSettings},
   // UsersRolesSettings:{screen:UsersRolesSettings},
   // PrintOptions:{screen:PrintOptions},
+  // PrintOptionsOrders:{screen:PrintOptionsOrders},
   // ProductsSettings:{screen:ProductsSettings},
   // AddonsSettings:{screen:AddonsSettings},
-   PrintersSettings:{screen:PrintersSettings}, 
+  //  PrintersSettings:{screen:PrintersSettings}, 
   // DiscountsSettings:{screen:DiscountsSettings},  
   // TabletSettings:{screen:TabletSettings}, 
   // Reports: { screen: Reports },
@@ -71,6 +75,9 @@ const Navigation = createSwitchNavigator({
   // Booking: { screen: Booking },
   // Vendors: { screen: Vendors },
   // Terminals: { screen: Terminals },
+  Procurements: { screen: Procurements },
+
+
 
 
 

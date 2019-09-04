@@ -98,7 +98,7 @@ export default class Waiting extends Component {
 
     render() {
         let services = [{
-            value: 'Haircut',
+            value: 'Haircut ',
         }, {
             value: 'Massage',
         }, {
@@ -252,23 +252,23 @@ export default class Waiting extends Component {
                                     />
                                 </View>
                                 {/* name */}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
                                     <Text style={{ flex: 1 }}>{Dictionary.NAME[lan]}</Text>
                                     <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
                                 </View>
 
                                 {/* phone number */}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
                                     <Text style={{ flex: 1 }}>{Dictionary.PHONE_NUMBER[lan]}</Text>
                                     <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
                                 </View>
                                 {/* fee */}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
                                     <Text style={{ flex: 1 }}>{Dictionary.FEE[lan]}</Text>
                                     <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
                                 </View>
                                 {/*Note */}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingButtom: 15 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
                                     <Text style={{ flex: 1 }}>{Dictionary.NOTES[lan]}</Text>
                                     <TextInput style={[styles.smallTextInput, { flex: 1 }]} />
                                 </View>
